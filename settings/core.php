@@ -36,7 +36,8 @@ if (!function_exists('redirectUser')) {
 function checkLogin()
     {
         if (!isset($_SESSION['user_ID'])) {
-            header("Location: ../WebFinalProject/logins/login_view.php?msg=Yes");
+            echo $_SESSION['user_ID'];
+            // header("Location: ../WebFinalProject/logins/login_view.php?msg=Yes");
             die();
         }
     }
