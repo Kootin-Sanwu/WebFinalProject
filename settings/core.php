@@ -28,7 +28,7 @@ if (!function_exists('redirectUser')) {
                 die();
             }
         } else {
-            header("Location: ../logins/login_view.php?msg=You aren't being logged in");
+            header("Location: ../WebFinalProject/logins/login_view.php?msg=You aren't being logged in");
             die();
         }
     }
@@ -36,8 +36,7 @@ if (!function_exists('redirectUser')) {
 function checkLogin()
     {
         if (!isset($_SESSION['user_ID'])) {
-            echo $_SESSION['user_ID'];
-            // header("Location: ../logins/login_view.php");
+            header("Location: ../WebFinalProject/logins/login_view.php");
             die();
         }
     }
