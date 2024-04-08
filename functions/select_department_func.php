@@ -1,7 +1,7 @@
 <?php
 include "../settings/connection.php";
 
-// $sql = "SELECT * FROM departments";
+$sql = "SELECT * FROM departments";
 $department_result = $conn->query($sql);
 
 if ($department_result->num_rows > 0) {
