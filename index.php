@@ -1,5 +1,5 @@
 <?php
-include "../Web Technologies Final Project/settings/core.php";
+include "../WebFinalProject/settings/core.php";
 checkLogin();
 redirectUser();
 ?>

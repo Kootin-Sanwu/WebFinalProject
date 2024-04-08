@@ -24,7 +24,7 @@ if (!function_exists('redirectUser')) {
             $targetPage = $rolePages[$_SESSION['role_ID']];
         
             if ($currentPage !== $targetPage) {
-                header("Location: ../Web Technologies Final Project/dashboards/{$targetPage}");
+                header("Location: ../WebFinalProject/dashboards/{$targetPage}");
                 die();
             }
         } else {
