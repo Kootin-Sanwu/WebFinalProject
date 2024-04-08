@@ -37,8 +37,8 @@ function checkLogin()
     {
         if (!isset($_SESSION['user_ID'])) {
             echo $_SESSION['user_ID'];
-            echo 'is set';
-            // header("Location: ../WebFinalProject/logins/login_view.php?msg=Yes");
+            // echo 'is set';
+            header("Location: ../WebFinalProject/logins/login_view.php?msg=Yes");
             die();
         } else {
             echo 'not set';
