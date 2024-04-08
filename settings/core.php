@@ -39,6 +39,8 @@ function checkLogin()
             echo $_SESSION['user_ID'];
             // header("Location: ../WebFinalProject/logins/login_view.php?msg=Yes");
             die();
+        } else {
+            echo 'not set';
         }
     }
 }
