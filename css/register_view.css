@@ -1,0 +1,151 @@
+body {
+    justify-content: center;
+    overflow: hidden;
+    margin: auto;
+}
+
+.register-container {
+    background-color: #dddcdc;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    display: flex;
+    margin: auto;
+    box-shadow: 3.5px 3.5px grey;
+    border-radius: 10px;
+    margin-top: 5%;
+    max-width: 600px;
+}
+
+.register-form input,
+select {
+    border: 2.5px solid black;
+    background-color: #d2d1d1;
+    box-sizing: border-box;
+    transition-duration: 0.7s;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 70%;
+}
+
+.register-button {
+    font-family: 'Times New Roman';
+    background-color: #1f4a94;
+    font-weight: bolder;
+    text-align: center;
+    font-size: larger;
+    cursor: pointer;
+    color: white;
+    border: none;
+    transition-duration: 0.7s;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-right: 40%;
+    margin-left: 40%;
+}
+
+input:hover {
+    background-color: rgb(178, 176, 176);
+}
+
+.signIn-button {
+    background-color: #1f4a94;
+    font-weight: bolder;
+    text-align: center;
+    font-size: larger;
+    cursor: pointer;
+    color: white;
+    border: none;
+    transition-duration: 0.7s;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: -1.5%;
+}
+
+.signIn-link {
+    color: white;
+}
+
+.gender-container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.gender-container label {
+    font-family: 'Times New Roman';
+    text-align: center;
+    font-size: larger;
+    margin-bottom: 2%;
+}
+
+.gender-container input {
+    border: 3.5px solid black;
+    border-color: #1f4a94;
+    height: 25px;
+    width: 10%;
+}
+
+.container-one {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    width: 100%;
+}
+
+.container-four {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    width: 100%;
+}
+
+.container-five {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    width: 100%;
+}
+
+.container-six {
+    justify-content: center;
+    display: flex;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.password-message {
+    animation: fadeIn 0.5s ease-in-out;
+    margin-bottom: 5px;
+}
+
+.concept-container-one {
+    animation-timing-function: ease;
+    justify-content: center;
+    align-content: center;
+    font-weight: bolder;
+    text-align: center;
+    color: brown;
+    margin: auto;
+    animation-duration: 1s;
+    line-height: 25px;
+    margin-top: 10px;
+    height: 200px;
+    width: 40%;
+    animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

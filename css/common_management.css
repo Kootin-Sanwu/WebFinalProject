@@ -1,0 +1,197 @@
+body {
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    display: flex;
+    margin: auto;
+    height: 100vh;
+}
+
+.concept-container {
+    width: 100%;
+    display: flex;
+    height: 900px;
+    height: 100%;
+}
+
+.container-one {
+    /* background-color: orange; */
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.container-two {
+    background-color: rgb(200, 198, 198);
+    border-radius: 5px;
+    width: 20%;
+    transition: width 0.3s ease;
+}
+
+.container-two a {
+    text-decoration: none;
+}
+
+.container-two:hover {
+    width: 35%;
+}
+
+.title-container {
+    /* background-color: #3498db; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    height: 10%;
+    width: 100%;
+}
+
+.container-three {
+    /* background-color: orangered; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    margin-top: 30px;
+    height: 10%;
+    width: 100%;
+}
+
+.container-three button {
+    font-family: 'Times New Roman';
+    background-color: #6f006d;
+    box-shadow: 2px 2px grey;
+    font-weight: bolder;
+    text-align: center;
+    font-size: medium;
+    cursor: pointer;
+    color: white;
+    border: none;
+    transition-duration: 0.7s;
+    border-radius: 10px;
+    padding: 10px 20px;
+    height: 100%;
+    width: 90%;
+}
+
+.container-four {
+    /* background-color: orangered; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    margin-top: 490px;
+    height: 10%;
+    width: 100%;
+}
+
+.container-four button {
+    font-family: 'Times New Roman';
+    background-color: #6f006d;
+    box-shadow: 2px 2px grey;
+    font-weight: bolder;
+    text-align: center;
+    font-size: medium;
+    cursor: pointer;
+    color: white;
+    border: none;
+    transition-duration: 0.7s;
+    border-radius: 10px;
+    padding: 10px 20px;
+    height: 100%;
+    width: 90%;
+}
+
+
+.topcontainer-1 {
+    /* background-color: blue; */
+    display: flex;
+    height: 10%;
+    width: 100%;
+}
+
+.maintitle-container {
+    /* background-color: #4caf50; */
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    height: 10%;
+    width: 20%;
+}
+
+
+.addchore-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 75%;
+    width: 20%;
+}
+
+.addchore-container button {
+    font-family: 'Times New Roman';
+    background-color: #6f006d;
+    box-shadow: 2px 2px grey;
+    font-weight: bolder;
+    text-align: center;
+    font-size: medium;
+    cursor: pointer;
+    color: white;
+    border: none;
+    transition-duration: 0.7s;
+    border-radius: 10px;
+    padding: 10px 20px;
+    height: 90%;
+    width: 90%;
+    /* transition: 0.2s ease; */
+}
+
+.table-container {
+    /* background-color: bisque; */
+    margin-bottom: 100%;
+    margin-top: 80px;
+    width: 90%;
+}
+
+
+
+
+
+
+
+
+.styled-table {
+    border-collapse: collapse;
+    margin: auto;
+    width: 100%;
+    margin-top: -45px;
+}
+
+.styled-table th {
+    background-color: #6f006d;
+    color: white;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 15px;
+    border-bottom: 5px solid #ddd;
+    text-align: center;
+}
+
+.styled-table tbody tr {
+    transition: background-color 0.5s ease;
+}
+
+.styled-table tbody tr:hover {
+    background-color: rgb(170, 170, 170);
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    background-color: red;
+}
