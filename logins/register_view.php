@@ -1,6 +1,6 @@
 <?php
-// include "../functions/select_role_func.php";
-// include "../functions/select_department_func.php";
+include "../functions/select_role_func.php";
+include "../functions/select_department_func.php";
 
 // if (isset($_GET['msg']) && $_GET['msg'] == 'wrong_combination') {
 // }
