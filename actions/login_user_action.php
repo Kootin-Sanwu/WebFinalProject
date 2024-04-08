@@ -24,7 +24,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             $_SESSION['department_ID'] = $current_user['department_ID'];
 
             $_SESSION['role_ID'] = $current_user['role_ID'];
-            header("Location: ../../Web Technologies Final Project/index.php");
+            header("Location: ../../WebFinalProject/index.php");
             exit();
         } else {
             header("Location: ../logins/login_view.php?msg=Wrong Email or Password");
