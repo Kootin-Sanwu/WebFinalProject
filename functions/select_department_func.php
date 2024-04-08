@@ -1,5 +1,5 @@
 <?php
-include "../settings/connection.php";
+// include "../settings/connection.php";
 
 $sql = "SELECT * FROM departments";
 $department_result = $conn->query($sql);
