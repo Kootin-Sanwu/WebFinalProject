@@ -42,6 +42,7 @@ if ($conn->query($sql) === TRUE) {
     echo "No issues";
     // header("Location: ../logins/login_view.php");
 } else {
+    echo "There is an issue";
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
