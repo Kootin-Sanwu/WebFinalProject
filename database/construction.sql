@@ -42,7 +42,7 @@ CREATE TABLE employees (
     employee_ID INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(20) NOT NULL,
     last_name VARCHAR(20) NOT NULL,
-    phone_number INT(20) NOT NULL,
+    phone_number VARCHAR(20) NOT NULL,
     department_ID INT,
     role_ID INT,
     email VARCHAR(50) NOT NULL,
