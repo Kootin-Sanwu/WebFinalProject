@@ -103,7 +103,6 @@ body {
     width: 90%;
 }
 
-
 .topcontainer-1 {
     /* background-color: blue; */
     display: flex;
@@ -175,7 +174,7 @@ body {
 
 .styled-table tbody tr {
     transition: background-color 0.5s ease;
-    height: 100%;
+    height: 100px;
 }
 
 .styled-table tbody tr:hover {
