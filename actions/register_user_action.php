@@ -35,8 +35,8 @@ if (!in_array($role_ID, $validRolesForDepartment[$department_ID])) {
 
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-// $sql = "INSERT INTO employees (first_name, last_name, phone_number, department_ID, role_ID, email, password) 
-//         VALUES ('$first_name', '$last_name', '$phone_number', '$department_ID', '$role_ID', '$email', '$hashed_password')";
+$sql = "INSERT INTO employees (first_name, last_name, phone_number, department_ID, role_ID, email, password) 
+        VALUES ('$first_name', '$last_name', '$phone_number', '$department_ID', '$role_ID', '$email', '$hashed_password')";
 
 // if ($conn->query($sql) === TRUE) {
 //     header("Location: ../logins/login_view.php");
