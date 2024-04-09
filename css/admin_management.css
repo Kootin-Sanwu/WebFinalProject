@@ -175,7 +175,7 @@ body {
 
 .styled-table tbody tr {
     transition: background-color 0.5s ease;
-    height: 20%;
+    height: 100%;
 }
 
 .styled-table tbody tr:hover {
