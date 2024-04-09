@@ -9,6 +9,14 @@ $role_ID = $_POST['role_ID'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
+echo $first_name;
+echo $last_name;
+echo $phone_number;
+echo $department;
+echo $role;
+echo $email;
+echo $password;
+
 $validRolesForDepartment = [
     1 => [1],
     2 => [2, 9],
@@ -20,12 +28,12 @@ $validRolesForDepartment = [
     8 => [8, 9]
 ];
 
-// if (!in_array($role_ID, $validRolesForDepartment[$department_ID])) {
-//     header("Location: ../logins/register_view.php?msg=wrong_combination");
-//     exit();
-// }
+if (!in_array($role_ID, $validRolesForDepartment[$department_ID])) {
+    header("Location: ../logins/register_view.php?msg=wrong_combination");
+    exit();
+}
 
-// $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 // $sql = "INSERT INTO employees (first_name, last_name, phone_number, department_ID, role_ID, email, password) 
 //         VALUES ('$first_name', '$last_name', '$phone_number', '$department_ID', '$role_ID', '$email', '$hashed_password')";
