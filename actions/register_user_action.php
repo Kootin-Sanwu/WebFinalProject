@@ -78,7 +78,6 @@ if (!in_array($role_ID, $validRolesForDepartment[$department_ID])) {
 
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-// Using prepared statements to prevent SQL injection
 $stmt = $conn->prepare("INSERT INTO employees (first_name, last_name, phone_number, department_ID, role_ID, email, password) 
                         VALUES (?, ?, ?, ?, ?, ?, ?)");
 
@@ -87,8 +86,8 @@ $stmt->bind_param("sssiiss", $first_name, $last_name, $phone_number, $department
 echo $first_name . "<br>";
 echo $last_name . "<br>";
 echo $phone_number . "<br>";
-echo $department_ID . "<br>"; // Added for debugging
-echo $role_ID . "<br>"; // Added for debugging
+echo $department_ID . "<br>";
+echo $role_ID . "<br>";
 echo $email . "<br>";
 echo $password . "<br>";
 echo $hashed_password . "<br>";
