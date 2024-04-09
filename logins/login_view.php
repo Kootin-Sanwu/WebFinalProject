@@ -31,9 +31,9 @@ include "../actions/login_user_action.php";
             </div>
             <div class="container">
                 <div class="logIn-form">
-                    <button class="Google-button"><img src="../pixels/Logos/Google Logo.png" width="25" align="center"> Continue
+                    <button class="Google-button" name="google-button"><img src="../pixels/Logos/Google Logo.png" width="25" align="center"> Continue
                         with Google</button>
-                    <button class="Microsoft-button"><img src="../pixels/Logos/Microsoft Logo.png" width="25" align="center">
+                    <button class="Microsoft-button" name="microsoft-button"><img src="../pixels/Logos/Microsoft Logo.png" width="25" align="center">
                         Continue with Microsoft</button>
                 </div>
             </div>
