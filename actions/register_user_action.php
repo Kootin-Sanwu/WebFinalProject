@@ -16,8 +16,8 @@ if (isset($_POST['submit'])) {
     echo $first_name;
     echo $last_name;
     echo $phone_number;
-    echo $department;
-    echo $role;
+    echo $department_ID;
+    echo $role_ID;
     echo $email;
     echo $password;
 
@@ -43,8 +43,8 @@ if (isset($_POST['submit'])) {
             VALUES ('$first_name', '$last_name', '$phone_number', '$department_ID', '$role_ID', '$email', '$hashed_password')";
 
 
-    echo "Something";
-    exit();
+    // echo "Something";
+    // exit();
 
     if ($conn->query($sql)) {
         echo "No issues";
