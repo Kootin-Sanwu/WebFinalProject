@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var logInButton = document.querySelector(".log-In-button button[name=login]");
+    var logInButton = document.querySelector(".container button[name=login]");
     var usernameInput = document.querySelector(".logIn-form input[name=email]");
     var passwordInput = document.querySelector(".logIn-form input[name=password]");
-    var googleButton = document.querySelector(".Google-button button[name=google-button]");
-    var microsoftButton = document.querySelector(".Microsoft-button button[name=microsoft-button]");
+    var googleButton = document.querySelector(".logIn-form button[name=google-button]");
+    var microsoftButton = document.querySelector(".logIn-form button[name=microsoft-button]");
 
     function resetStyles() {
         logInButton.style.backgroundColor = '#1f4a94';
