@@ -91,6 +91,7 @@ echo $department_ID . "<br>"; // Added for debugging
 echo $role_ID . "<br>"; // Added for debugging
 echo $email . "<br>";
 echo $password . "<br>";
+echo $hashed_password . "<br>";
 
 echo $stmt;
 echo $conn;
