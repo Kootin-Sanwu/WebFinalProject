@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
     $role_ID = $_POST['role_ID'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    
+
     echo $first_name;
     echo $last_name;
     echo $phone_number;
@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     echo $role;
     echo $email;
     echo $password;
-    
+
     $validRolesForDepartment = [
         1 => [1],
         2 => [2, 9],
@@ -28,21 +28,23 @@ if (isset($_POST['submit'])) {
         7 => [7, 9],
         8 => [8, 9]
     ];
-    
+
     if (!in_array($role_ID, $validRolesForDepartment[$department_ID])) {
         header("Location: ../logins/register_view.php?msg=wrong_combination");
         exit();
     }
-    
+
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    
+
     $sql = "INSERT INTO employees (first_name, last_name, phone_number, department_ID, role_ID, email, password) 
             VALUES ('$first_name', '$last_name', '$phone_number', '$department_ID', '$role_ID', '$email', '$hashed_password')";
 
-if ($conn->query($sql) == TRUE) {
+            
     echo "Something";
     exit();
-    echo "No issues";
+
+    if ($conn->query($sql) == TRUE) {
+        echo "No issues";
         // header("Location: ../logins/login_view.php");
     } else {
         echo "There is an issue";
