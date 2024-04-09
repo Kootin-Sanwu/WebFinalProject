@@ -26,7 +26,7 @@ include "../actions/login_user_action.php";
                 </div>
             </div>
             <div class="container">
-                <button class="log-In-button" type="submit">Log In</button>
+                <button class="log-In-button" type="submit" name="login">Log In</button>
                 <a href="URL" class="link">Forgotten password?</a>
             </div>
             <div class="container">

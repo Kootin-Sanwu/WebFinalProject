@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var logInButton = document.querySelector(".log-In-button");
+    var logInButton = document.querySelector(".log-In-button button[type=submit]");
     var usernameInput = document.querySelector(".logIn-form input[type=text]");
     var passwordInput = document.querySelector(".logIn-form input[type=password]");
     var googleButton = document.querySelector(".Google-button");
