@@ -1,5 +1,5 @@
 <?php
-include "../settings/connection.php";
+// include "../settings/connection.php";
 
 $first_name = $_POST['firstName'];
 $last_name = $_POST['lastName'];
