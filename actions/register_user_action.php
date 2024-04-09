@@ -91,8 +91,7 @@ echo $department_ID . "<br>"; // Added for debugging
 echo $role_ID . "<br>"; // Added for debugging
 echo $email . "<br>";
 echo $password . "<br>";
-echo $stmt;
-echo $conn;
+
 // Execute the statement
 
 if ($stmt->execute() === TRUE) {
