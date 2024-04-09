@@ -167,14 +167,13 @@ body {
 
 .styled-table th,
 .styled-table td {
-    /* padding: 15px; */
+    padding: 15px;
     border-bottom: 5px solid #ddd;
     text-align: center;
 }
 
 .styled-table tbody tr {
     transition: background-color 0.5s ease;
-    height: 10px;
 }
 
 .styled-table tbody tr:hover {
