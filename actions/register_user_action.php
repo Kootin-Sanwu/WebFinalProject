@@ -9,13 +9,13 @@ $role_ID = $_POST['role_ID'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-echo $first_name;
-echo $last_name;
-echo $phone_number;
-echo $department;
-echo $role;
-echo $email;
-echo $password;
+// echo $first_name;
+// echo $last_name;
+// echo $phone_number;
+// echo $department;
+// echo $role;
+// echo $email;
+// echo $password;
 
 $validRolesForDepartment = [
     1 => [1],
