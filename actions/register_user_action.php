@@ -9,13 +9,6 @@ $role_ID = $_POST['role_ID'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-echo $first_name;
-echo $last_name;
-echo $phone_number;
-echo $department;
-echo $role;
-echo $email;
-echo $password;
 
 $validRolesForDepartment = [
     1 => [1],
@@ -33,6 +26,13 @@ if (!in_array($role_ID, $validRolesForDepartment[$department_ID])) {
     exit();
 }
 
+echo $first_name;
+echo $last_name;
+echo $phone_number;
+echo $department;
+echo $role;
+echo $email;
+echo $password;
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 $sql = "INSERT INTO employees (first_name, last_name, phone_number, department_ID, role_ID, email, password) 
