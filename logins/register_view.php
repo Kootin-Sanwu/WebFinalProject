@@ -46,7 +46,7 @@ include "../functions/select_department_func.php";
             </div>
         </div>
         <div class="container-four">
-            <button class="register-button" type="submit">Join Now</button>
+            <button class="register-button" type="submit" name="submit">Join Now</button>
         </div>
         <div class="container-five">
             <h3>OR</h3>
