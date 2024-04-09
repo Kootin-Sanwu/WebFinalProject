@@ -38,10 +38,11 @@ $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 $sql = "INSERT INTO employees (first_name, last_name, phone_number, department_ID, role_ID, email, password) 
         VALUES ('$first_name', '$last_name', '$phone_number', '$department_ID', '$role_ID', '$email', '$hashed_password')";
 
-// if ($conn->query($sql) === TRUE) {
-//     header("Location: ../logins/login_view.php");
-// } else {
-//     echo "Error: " . $sql . "<br>" . $conn->error;
-// }
+if ($conn->query($sql) === TRUE) {
+    echo "No issues";
+    // header("Location: ../logins/login_view.php");
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
 
 // $conn->close();
