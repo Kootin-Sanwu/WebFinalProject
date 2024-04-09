@@ -46,5 +46,7 @@ $_SESSION['check'] = 0;
 ?>
 
 <script>
-    var userId = <?php echo $_SESSION['user_ID']; ?>;
+    var userId = <?php 
+    echo $_SESSION['user_ID']; 
+    ?>;
 </script>
