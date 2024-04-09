@@ -171,11 +171,11 @@ body {
     padding: 15px;
     border-bottom: 5px solid #ddd;
     text-align: center;
-    height: 20px;
 }
 
 .styled-table tbody tr {
     transition: background-color 0.5s ease;
+    height: 20px;
 }
 
 .styled-table tbody tr:hover {
