@@ -1,13 +1,13 @@
 <?php
 include "../settings/connection.php";
 
-// $first_name = $_POST['firstName'];
-// $last_name = $_POST['lastName'];
-// $phone_number = $_POST['phoneNumber'];
-// $department_ID = $_POST['department_ID'];
-// $role_ID = $_POST['role_ID'];
-// $email = $_POST['email'];
-// $password = $_POST['password'];
+$first_name = $_POST['firstName'];
+$last_name = $_POST['lastName'];
+$phone_number = $_POST['phoneNumber'];
+$department_ID = $_POST['department_ID'];
+$role_ID = $_POST['role_ID'];
+$email = $_POST['email'];
+$password = $_POST['password'];
 
 // $validRolesForDepartment = [
 //     1 => [1],
