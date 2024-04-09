@@ -9,16 +9,16 @@ $role_ID = $_POST['role_ID'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-// $validRolesForDepartment = [
-//     1 => [1],
-//     2 => [2, 9],
-//     3 => [3, 9],
-//     4 => [4, 9],
-//     5 => [5, 9],
-//     6 => [6, 9],
-//     7 => [7, 9],
-//     8 => [8, 9]
-// ];
+$validRolesForDepartment = [
+    1 => [1],
+    2 => [2, 9],
+    3 => [3, 9],
+    4 => [4, 9],
+    5 => [5, 9],
+    6 => [6, 9],
+    7 => [7, 9],
+    8 => [8, 9]
+];
 
 // if (!in_array($role_ID, $validRolesForDepartment[$department_ID])) {
 //     header("Location: ../logins/register_view.php?msg=wrong_combination");
