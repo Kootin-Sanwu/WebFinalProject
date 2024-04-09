@@ -59,13 +59,6 @@ $role_ID = $_POST['role_ID'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-echo $first_name . "<br>";
-echo $last_name . "<br>";
-echo $phone_number . "<br>";
-echo $department_ID . "<br>"; // Added for debugging
-echo $role_ID . "<br>"; // Added for debugging
-echo $email . "<br>";
-echo $password . "<br>";
 
 $validRolesForDepartment = [
     1 => [1],
@@ -91,6 +84,13 @@ $stmt = $conn->prepare("INSERT INTO employees (first_name, last_name, phone_numb
 
 $stmt->bind_param("sssiiss", $first_name, $last_name, $phone_number, $department_ID, $role_ID, $email, $hashed_password);
 
+echo $first_name . "<br>";
+echo $last_name . "<br>";
+echo $phone_number . "<br>";
+echo $department_ID . "<br>"; // Added for debugging
+echo $role_ID . "<br>"; // Added for debugging
+echo $email . "<br>";
+echo $password . "<br>";
 echo $stmt;
 echo $conn;
 
