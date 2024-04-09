@@ -168,7 +168,7 @@ body {
 
 .styled-table th,
 .styled-table td {
-    padding: 15px;
+    padding: 10px;
     border-bottom: 5px solid #ddd;
     text-align: center;
 }
