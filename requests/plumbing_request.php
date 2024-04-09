@@ -1,9 +1,6 @@
 <?php
 include "../functions/request_project_func.php";
 include "../settings/core.php";
-// if (session_status() == PHP_SESSION_NONE) {
-// session_start();
-// }
 
 // Check if request_ID is set
 if (isset($_GET['request_ID']) && !isset($_GET['msg'])) {

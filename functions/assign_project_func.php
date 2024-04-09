@@ -132,7 +132,7 @@ function displayAssignmentDetails()
     $conn->close();
 }
 
-
+// In use
 function displayDepartmentAssignmentDetails()
 {
     include "../settings/connection.php";

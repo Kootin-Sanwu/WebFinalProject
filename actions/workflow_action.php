@@ -6,6 +6,7 @@ include "../settings/connection.php";  // Include your database connection file
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $workflow = $_POST["workflow"];
     $project_ID = $_POST["project_ID"];
+    $employee_ID = $_POST["employee_ID"];
 
     // Update the project's workflow based on the received workflow value
     if ($workflow == 'In Progress') {
@@ -19,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the update query
     if ($conn->query($updateSql) === TRUE) {
-        header ("Location: ../requests/update_workflow_redirect.php?msg=update&");
+        header ("Location: ../requests/update_workflow_redirect.php?msg=update&employee_ID={$employee_ID}");
         // echo "Workflow updated successfully.";
     } else {
         echo "Error updating workflow: " . $conn->error;

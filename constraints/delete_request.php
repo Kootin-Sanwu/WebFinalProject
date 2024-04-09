@@ -16,7 +16,7 @@
 <body>
     <form class="container-15" id="myModal" method="POST" action="../requests/delete_constraint_redirect.php">
         <div class="container-16">
-            CANNOT DELETE THIS ASSIGNMENT. THIS ASSIGNMENT IS CURRENTLY IN PROGRESS.
+            CANNOT DELETE THIS ASSIGNMENT. THIS ASSIGNMENT IS CURRENTLY ASSIGNED TO A DEPARTMENT.
             <div class="submit">
             <input type="hidden" name="employee_ID" value="<?php echo $_SESSION['user_ID']; ?>">
                 <div>
