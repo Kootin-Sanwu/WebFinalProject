@@ -163,6 +163,7 @@ body {
 .styled-table th {
     background-color: #6f006d;
     color: white;
+    height: 100px;
 }
 
 .styled-table th,
@@ -174,7 +175,6 @@ body {
 
 .styled-table tbody tr {
     transition: background-color 0.5s ease;
-    height: 100px;
 }
 
 .styled-table tbody tr:hover {
