@@ -1,6 +1,5 @@
 <?php
 
-// Function to fetch projects of the current employee
 function displayDepartmentProjectDetails()
 {
     include "../settings/connection.php";
@@ -10,10 +9,8 @@ function displayDepartmentProjectDetails()
         session_start();
     }
 
-    // Get the current user_ID from the session
     $currentDepartmentID = $_SESSION['department_ID'];
 
-    // SQL query to fetch projects of the current employee
     $sql = "SELECT projects.project_ID, projects.project_name, CONCAT(employees.first_name, ' ', employees.last_name) AS assigned_by, projects.status
             FROM projects
             JOIN employees ON projects.employee_ID = employees.employee_ID
@@ -21,7 +18,6 @@ function displayDepartmentProjectDetails()
 
     $result = $conn->query($sql);
 
-    // Check if any rows are returned
     if ($result->num_rows > 0) {
 
         while ($row = $result->fetch_assoc()) {
@@ -44,22 +40,17 @@ function displayDepartmentProjectDetails()
 
             echo "</tr>";
         }
-
-        echo "</table>";
-    } else {
-        echo "0 results";
     }
 
-    // Close connection
     $conn->close();
 }
 
-// Function to fetch project details
+
 function displayProjectDetails()
 {
 
     include "../settings/connection.php";
-    // SQL query to fetch project details
+
     $sql = "SELECT projects.project_ID, projects.project_name, CONCAT(employees.first_name, ' ', employees.last_name) AS assigned_by, projects.status
     FROM projects
     JOIN employees ON projects.employee_ID = employees.employee_ID";
@@ -80,7 +71,6 @@ function displayProjectDetails()
             echo "<td>{$assignedBy}</td>";
             echo "<td>{$projectName}</td>";
             echo "<td>{$projectName}</td>";
-            // echo "<td>{$status}</td>";
 
             echo "<td><form class='action-container' action='../actions/delete_project_action.php' method='post'>";
             echo "<input type='hidden' name='project_ID' value='{$projectID}'>";
@@ -94,13 +84,8 @@ function displayProjectDetails()
 
             echo "</tr>";
         }
-
-        // echo "</table>";
-    } else {
-        echo "0 results";
     }
 
-    // Close connection
     $conn->close();
 }
 
@@ -126,14 +111,14 @@ function displayAssignmentDetails()
             $assignedBy = $row["assigned_by"];
             $departmentName = $row["department_name"];
             $beginDate = $row["begin_date"];
-            $endDate = $row["end_date"];  // Added the end_date variable
+            $endDate = $row["end_date"];
 
             echo "<tr>";
             echo "<td>{$projectName}</td>";
             echo "<td>{$assignedBy}</td>";
             echo "<td>{$departmentName}</td>";
             echo "<td>{$beginDate}</td>";
-            echo "<td>{$endDate}</td>";  // Displaying the end_date
+            echo "<td>{$endDate}</td>";
 
             echo "<td><form class='action-container' action='../actions/delete_assignment_action.php' method='post'>";
             echo "<input type='hidden' name='assignment_ID' value='{$assignmentID}'>";
@@ -142,11 +127,8 @@ function displayAssignmentDetails()
 
             echo "</tr>";
         }
-    } else {
-        echo "0 results";
     }
 
-    // Close connection
     $conn->close();
 }
 
@@ -175,11 +157,9 @@ function displayDepartmentAssignmentDetails()
     // Check if any rows are returned
     if ($result->num_rows > 0) {
 
-        // echo "<table>";  // Open the table here
-
         while ($row = $result->fetch_assoc()) {
             $assignment_ID = $row["assignment_ID"];
-            $project_ID = $row["project_ID"];  // Retrieve project_ID from the row
+            $project_ID = $row["project_ID"];
             $projectName = $row["project_name"];
             $assignedBy = $row["assigned_by"];
             $beginDate = $row["begin_date"];
@@ -199,11 +179,7 @@ function displayDepartmentAssignmentDetails()
 
             echo "</tr>";
         }
-
-    } else {
-        echo "0 results";
     }
 
-    // Close connection
     $conn->close();
 }
