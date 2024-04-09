@@ -2,6 +2,8 @@
 include "../settings/connection.php";
 
 if (isset($_POST['submit'])) {
+    echo "Something";
+    exit();
     $first_name = $_POST['firstName'];
     $last_name = $_POST['lastName'];
     $phone_number = $_POST['phoneNumber'];
