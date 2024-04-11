@@ -171,12 +171,6 @@ function displayDepartmentAssignmentDetails()
             echo "<td>{$beginDate}</td>";
             echo "<td>{$endDate}</td>";
 
-            // echo "<td><form class='action-container' action='../actions/edit_assignment_action.php' method='post'>";
-            // echo "<input type='hidden' name='assignment_ID' value='{$assignment_ID}'>";
-            // echo "<input type='hidden' name='project_ID' value='{$project_ID}'>";
-            // echo "<button type='submit' value='Edit'>Edit</button>";
-            // echo "</form></td>";
-
             echo "</tr>";
         }
     }
@@ -217,32 +211,12 @@ function displayRecentAssignmentDetails()
             $beginDate = $row["begin_date"];
             $endDate = $row["end_date"];
 
-            // echo "<tr>";
-            // echo "<td>{$projectName}</td>";
-            // echo "<td>{$assignedBy}</td>";
-            // echo "<td>{$beginDate}</td>";
-            // echo "<td>{$endDate}</td>";
-
-
-            // echo '<div class="assigned-container">';
-            // echo "<h3>$projectName</h3>";
-            // echo '<button name="generalChoreButton">PROJECTS ASSIGNED</button>';
-            // echo '<button name="generalChoreButton">PROJECTS COMPLETED</button>';
-            // echo '<button name="generalChoreButton">PROJECTS DETAILS</button>';
-            // echo '</div>';
-
             echo '<div class="assigned-container">';
             echo "<p>ASSIGNMENT: {$projectName}</p>";
             echo "<p>ASSIGNED BY: {$assigned}</p>";
             echo "<p>START DATE:  {$beginDate}</p>";
             echo '<a href="../admin/allocation.php"><button name="generalAssignmentButton">VIEW DETAILS</button></a>';
             echo '</div>';
-
-            // echo "<td><form class='action-container' action='../actions/edit_assignment_action.php' method='post'>";
-            // echo "<input type='hidden' name='assignment_ID' value='{$assignment_ID}'>";
-            // echo "<input type='hidden' name='project_ID' value='{$project_ID}'>";
-            // echo "<button type='submit' value='Edit'>Edit</button>";
-            // echo "</form></td>";
 
             echo "</tr>";
         }
