@@ -20,7 +20,7 @@ $requestID = $_GET['request_ID'];
                 <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button>
             </div>
             <input type="hidden" name="request_ID" value="<?php
-                                                            $request_ID = $_POST['request_ID'];
+                                                            $request_ID = $_GET['request_ID'];
                                                             echo $request_ID;
                                                             ?>">
 
