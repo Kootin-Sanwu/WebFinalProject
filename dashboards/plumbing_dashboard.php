@@ -90,8 +90,8 @@ redirectUser();
                     </button>
                 </div>
             </div>
+            <h4>RECENT PROJECTS</h4>
             <div class="inner-container-three">
-                <h4>RECENT PROJECTS</h4>
                 <!-- <div class="assigned-container">
                     <h3>LAUNDRY</h3>
                     <button name="generalChoreButton">PROJECTS ASSIGNED</button>
