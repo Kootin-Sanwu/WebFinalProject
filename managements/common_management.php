@@ -8,7 +8,7 @@ include "../functions/manage_project_func.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,
             initial-scale=1.0">
-    <link rel="stylesheet" href="../css/admin_management.css">
+    <link rel="stylesheet" href="../css/common_management.css">
     <title>Manage Project</title>
 </head>
 
