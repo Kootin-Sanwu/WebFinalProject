@@ -1,6 +1,6 @@
 <?php
 $requestID = $_GET['request_ID'];
-echo $requestID;
+// echo $requestID;
 ?>
 
 <!DOCTYPE html>
