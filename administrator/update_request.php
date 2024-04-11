@@ -1,3 +1,8 @@
+<?php
+$requestID = $_POST['request_ID'];
+echo $requestID;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +20,7 @@
                 <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button>
             </div>
             <input type="hidden" name="request_ID" value="<?php
-                                                            $request_ID = $_POST['actionValue'];
+                                                            $request_ID = $_POST['request_ID'];
                                                             echo $request_ID;
                                                             ?>">
 
