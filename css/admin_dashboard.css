@@ -103,6 +103,11 @@ body {
     width: 90%;
 }
 
+.center-text {
+    text-align: center;
+    margin-top: 20px; /* Adjust as needed */
+    margin-bottom: 20px; /* Adjust as needed */
+}
 
 .inner-container {
     /* background-color: blue; */

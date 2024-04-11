@@ -90,32 +90,8 @@ redirectUser();
                     </button>
                 </div>
             </div>
-            <h4>RECENT PROJECTS</h4>
+            <h4 class="center-text">RECENT PROJECTS</h4>
             <div class="inner-container-three">
-                <!-- <div class="assigned-container">
-                    <h3>LAUNDRY</h3>
-                    <button name="generalChoreButton">PROJECTS ASSIGNED</button>
-                    <button name="generalChoreButton">PROJECTS COMPLETED</button>
-                    <button name="generalChoreButton">PROJECTS DETAILS</button>
-                </div>
-                <div class="assigned-container">
-                    <h3>MOWING</h3>
-                    <button name="generalChoreButton">PROJECTS ASSIGNED</button>
-                    <button name="generalChoreButton">PROJECTS COMPLETED</button>
-                    <button name="generalChoreButton">PROJECTS DETAILS</button>
-                </div>
-                <div class="assigned-container">
-                    <h3>CLEANING</h3>
-                    <button name="generalChoreButton">PROJECTS ASSIGNED</button>
-                    <button name="generalChoreButton">PROJECTS COMPLETED</button>
-                    <button name="generalChoreButton">PROJECTS DETAILS</button>
-                </div>
-                <div class="assigned-container">
-                    <h3>ERRANDS</h3>
-                    <button name="generalChoreButton">PROJECTS ASSIGNED</button>
-                    <button name="generalChoreButton">PROJECTS COMPLETED</button>
-                    <button name="generalChoreButton">PROJECTS DETAILS</button>
-                </div> -->
                 <?php
                 displayRecentAssignmentDetails();
                 ?>
