@@ -23,10 +23,6 @@ body {
 }
 
 .container-two {
-    justify-content: center;
-    align-content: center;
-    justify-self: center;
-    align-items: center;
     background-color: rgb(200, 198, 198);
     border-radius: 5px;
     width: 20%;
@@ -85,7 +81,7 @@ body {
     align-items: center;
     display: flex;
     margin: auto;
-    margin-top: 490px;
+    margin-top: 120%;
     height: 10%;
     width: 100%;
 }
@@ -107,7 +103,6 @@ body {
     width: 90%;
 }
 
-
 .topcontainer-1 {
     /* background-color: blue; */
     display: flex;
@@ -122,9 +117,9 @@ body {
     align-items: center;
     text-align: center;
     display: flex;
-    height: 10%;
     width: 20%;
 }
+
 
 .addchore-container {
     justify-content: center;
@@ -155,7 +150,7 @@ body {
 .table-container {
     /* background-color: bisque; */
     margin-bottom: 100%;
-    margin-top: 80px;
+    margin-top: 65px;
     width: 70%;
 }
 
@@ -163,7 +158,6 @@ body {
     border-collapse: collapse;
     margin: auto;
     width: 100%;
-    margin-top: -45px;
 }
 
 .styled-table th {
@@ -190,4 +184,47 @@ body {
     display: none;
     position: fixed;
     background-color: red;
+}
+
+.action-container button {
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, height 0.5s ease-in-out;
+    font-family: 'Times New Roman';
+    box-shadow: 5px 5px 5px grey;
+    cursor: pointer;
+    color: white;
+    border: none;
+    background-color: rgb(155, 155, 155);
+    margin-bottom: 15px;
+    border-radius: 5px;
+    line-height: 1;
+    height: 30px;
+    width: 50%;
+}
+
+.action-container button:hover {
+    background-color: #6f006d;
+    color: #ffffff;
+    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.5);
+    transform: scale(1.15);
+}
+
+.addchore-popup {
+    position: fixed;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.addchore-container {
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 75%;
+    /* z-index: 1001; */
+    width: 20%;
 }
