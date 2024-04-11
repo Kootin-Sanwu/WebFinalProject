@@ -17,7 +17,7 @@ body {
     /* background-color: orange; */
     justify-content: center;
     /* flex-wrap: wrap; */
-    display: flex;
+    /* display: flex; */
     height: 100%;
     width: 100%;
 }
