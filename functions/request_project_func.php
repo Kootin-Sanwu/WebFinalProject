@@ -106,11 +106,11 @@ function displayRequests()
         // $output .= "<button type='submit' name='actionValue' id='checkBoxReject' value='{$requestID}'>REJECT</button>";
         // $output .= "</form>";
 
-        $output .= "<form class='status-container' id='approveForm' action='../actions/update_request.php?msg=approve' method='post'>";
+        $output .= "<form class='status-container' id='approveForm' action='../actions/update_request_action.php?msg=approve' method='post'>";
         $output .= "<button type='submit' name='actionValue' id='checkBoxApprove' value='{$requestID}'>APPROVE</button>";
         $output .= "</form>";
 
-        $output .= "<form class='status-container' id='rejectForm' action='../actions/update_request.php?msg=reject' method='post'>";
+        $output .= "<form class='status-container' id='rejectForm' action='../actions/update_request_action.php?msg=reject' method='post'>";
         $output .= "<button type='submit' name='actionValue' id='checkBoxReject' value='{$requestID}'>REJECT</button>";
         $output .= "</form>";
 
