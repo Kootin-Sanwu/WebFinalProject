@@ -1,3 +1,6 @@
+<?php
+include "../functions/assign_project_func.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +54,7 @@
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        // displayUserChoresTable();
+                        displayDepartmentManagementDetails();
                         ?>
                     </tbody>
                 </table>
