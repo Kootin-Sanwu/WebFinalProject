@@ -90,7 +90,7 @@ redirectUser();
                 </div>
             </div>
             <div class="inner-container-three">
-                <div class="assigned-container">
+                <!-- <div class="assigned-container">
                     <h3>LAUNDRY</h3>
                     <button name="generalChoreButton">PROJECTS ASSIGNED</button>
                     <button name="generalChoreButton">PROJECTS COMPLETED</button>
@@ -113,7 +113,10 @@ redirectUser();
                     <button name="generalChoreButton">PROJECTS ASSIGNED</button>
                     <button name="generalChoreButton">PROJECTS COMPLETED</button>
                     <button name="generalChoreButton">PROJECTS DETAILS</button>
-                </div>
+                </div> -->
+                <?php
+                displayRecentAssignmentDetails();
+                ?>
             </div>
         </div>
     </div>
