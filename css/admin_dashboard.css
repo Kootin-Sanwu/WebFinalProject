@@ -105,10 +105,6 @@ body {
 
 .center-text {
     justify-content: center;
-    align-items: center;
-    align-self: center;
-    align-self: center;
-    text-align: center;
     flex-wrap: wrap;
     display: flex;
     margin-bottom: 20px; /* Adjust as needed */
