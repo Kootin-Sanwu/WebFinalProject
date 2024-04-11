@@ -22,6 +22,7 @@ $requestID = $_GET['request_ID'];
             <input type="hidden" name="request_ID" value="<?php
                                                             $request_ID = $_GET['request_ID'];
                                                             echo $request_ID;
+                                                            echo "something";
                                                             ?>">
 
             <div class="text">
