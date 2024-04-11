@@ -232,7 +232,7 @@ function displayRecentAssignmentDetails()
             // echo '</div>';
 
             echo '<div class="assigned-container">';
-            echo "<h3>ASSIGNMENT: {$projectName}</h3>";
+            echo "<p>ASSIGNMENT: {$projectName}</p>";
             echo "<p>ASSIGNED BY: {$assigned}</p>";
             echo "<p>START DATE:  {$beginDate}</p>";
             echo '<a href="../admin/allocation.php"><button name="generalAssignmentButton">VIEW DETAILS</button></a>';
