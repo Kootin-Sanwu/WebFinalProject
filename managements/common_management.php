@@ -9,7 +9,7 @@ include "../functions/manage_project_func.php";
     <meta name="viewport" content="width=device-width,
             initial-scale=1.0">
     <link rel="stylesheet" href="../css/common_management.css">
-    <title>Manage Chores</title>
+    <title>Manage Project</title>
 </head>
 
 <body>
@@ -28,7 +28,7 @@ include "../functions/manage_project_func.php";
             <a href="../managements/common_management.php">
                 <div class="container-three">
                     <button name="manageButton">
-                        <h3>MANAGE CHORES</h3>
+                        <h3>MANAGE PROJECTS</h3>
                     </button>
                 </div>
             </a>
@@ -42,14 +42,14 @@ include "../functions/manage_project_func.php";
         </div>
         <div class="container-one">
             <div class="maintitle-container">
-                <h3>CHORES LIST</h3>
+                <h3>PROJECT LIST</h3>
             </div>
             <div class="table-container">
                 <table class="styled-table">
                     <thead>
                         <tr>
-                            <th>CHORE NAME</th>
-                            <th>ACTION</th>
+                            <th>PROJECT NAME</th>
+                            <th>WORKFLOW</th>
                         </tr>
                     </thead>
                     <tbody id="createdChoresTable">

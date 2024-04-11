@@ -122,7 +122,6 @@ body {
     width: 20%;
 }
 
-
 .addchore-container {
     justify-content: center;
     align-items: center;
@@ -153,15 +152,8 @@ body {
     /* background-color: bisque; */
     margin-bottom: 100%;
     margin-top: 80px;
-    width: 90%;
+    width: 70%;
 }
-
-
-
-
-
-
-
 
 .styled-table {
     border-collapse: collapse;
