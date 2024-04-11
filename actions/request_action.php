@@ -40,7 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
                     if ($result_check->num_rows > 0) {
                         $row_check = $result_check->fetch_assoc();
                         $projectId = $row_check["project_ID"];
-                        header ("Location: ../requests/admin_request.php?msg=update&request_ID={$request_ID}");
+                        echo $request_ID;
+                        // header ("Location: ../requests/admin_request.php?msg=update&request_ID={$request_ID}");
                         // echo "Project already exists in projects table with project_ID: $projectId";
                     } else {
                         // Insert the project into projects table with department_ID and request_ID

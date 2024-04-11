@@ -1,17 +1,18 @@
 <?php
 include "../functions/request_project_func.php";
 
+if (isset($_GET['msg']) && $_GET['msg'] == 'update') {
+    if ($_GET['request_ID']) {
+        include "../administrator/update_request.php";
+    }
+}
+
 if (isset($_GET['msg']) && $_GET['msg'] == 'approve') {
     include "../administrator/approve_project.php";
 } else if (isset($_GET['msg']) && $_GET['msg'] == 'reject') {
     include "../administrator/reject_project.php";
 }
 
-if (isset($_GET['msg']) && $_GET['msg'] == 'update') {
-    if ($_GET['request_ID']) {
-        include "../administrator/update_request.php";
-    }
-}
 ?>
 
 <!DOCTYPE html>
