@@ -81,6 +81,9 @@ include "../functions/manage_project_func.php";
 </head>
 
 <body>
+    <?php
+    displayCommonManagementDetails();
+    ?>
     <div class="concept-container">
         <div class="container-two">
             <div class="title-container">
@@ -139,8 +142,7 @@ include "../functions/manage_project_func.php";
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        displayCommonManagementDetails();
-                        echo "Something";
+                        // displayCommonManagementDetails();
                         ?>
                     </tbody>
                 </table>
