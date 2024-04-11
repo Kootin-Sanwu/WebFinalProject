@@ -19,7 +19,7 @@ $requestID = $_GET['request_ID'];
             <div class="close-form-group">
                 <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button>
             </div>
-            <input type="hidden" name="request_ID" value="<?php
+            <input type="" name="request_ID" value="<?php
                                                             $request_ID = $_GET['request_ID'];
                                                             echo $request_ID;
                                                             echo "something";
