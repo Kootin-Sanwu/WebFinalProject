@@ -81,6 +81,10 @@ include "../functions/manage_project_func.php";
 </head>
 
 <body>
+<?php
+                        displayCommonManagementDetails();
+                        echo "Something";
+                        ?>
     <div class="concept-container">
         <div class="container-two">
             <div class="title-container">
@@ -143,10 +147,6 @@ include "../functions/manage_project_func.php";
                         echo "Something";
                         ?>
                     </tbody>
-                    <?php
-                        displayCommonManagementDetails();
-                        echo "Something";
-                        ?>
                 </table>
             </div>
         </div>
