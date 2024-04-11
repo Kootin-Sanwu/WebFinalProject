@@ -157,7 +157,7 @@ body {
 .styled-table {
     border-collapse: collapse;
     margin: auto;
-    width: 70%;
+    width: 100%;
 }
 
 .styled-table th {
