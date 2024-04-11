@@ -224,19 +224,19 @@ function displayRecentAssignmentDetails()
             // echo "<td>{$endDate}</td>";
 
 
-            // echo '<div class="assigned-container">';
-            // echo "<h3>$projectName</h3>";
-            // echo '<button name="generalChoreButton">PROJECTS ASSIGNED</button>';
-            // echo '<button name="generalChoreButton">PROJECTS COMPLETED</button>';
-            // echo '<button name="generalChoreButton">PROJECTS DETAILS</button>';
-            // echo '</div>';
-
             echo '<div class="assigned-container">';
-            echo "<h3>Assignment: {$projectName}</h3>";
-            echo "<p>Assigned By: {$assigned}</p>";
-            echo "<p>Start Due:  {$beginDate}</p>";
-            echo '<a href="../admin/allocatechores.php"><button name="generalAssignmentButton">VIEW DETAILS</button></a>';
+            echo "<h3>$projectName</h3>";
+            echo '<button name="generalChoreButton">PROJECTS ASSIGNED</button>';
+            echo '<button name="generalChoreButton">PROJECTS COMPLETED</button>';
+            echo '<button name="generalChoreButton">PROJECTS DETAILS</button>';
             echo '</div>';
+
+            // echo '<div class="assigned-container">';
+            // echo "<h3>Assignment: {$projectName}</h3>";
+            // echo "<p>Assigned By: {$assigned}</p>";
+            // echo "<p>Start Due:  {$beginDate}</p>";
+            // echo '<a href="../admin/allocatechores.php"><button name="generalAssignmentButton">VIEW DETAILS</button></a>';
+            // echo '</div>';
 
             // echo "<td><form class='action-container' action='../actions/edit_assignment_action.php' method='post'>";
             // echo "<input type='hidden' name='assignment_ID' value='{$assignment_ID}'>";
