@@ -111,8 +111,8 @@ body {
     text-align: center;
     flex-wrap: wrap;
     display: flex;
-    /* margin-bottom: 5px; */
-    /* margin-top: 15px; */
+    margin-bottom: 20px;
+    margin-top: 20px;
     width: 100%;
 }
 
