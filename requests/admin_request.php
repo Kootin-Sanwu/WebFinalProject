@@ -6,6 +6,12 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'approve') {
 } else if (isset($_GET['msg']) && $_GET['msg'] == 'reject') {
     include "../administrator/reject_project.php";
 }
+
+if (isset($_GET['msg']) && $_GET['msg'] == 'update') {
+    if ($_GET['request_ID']) {
+        include "../administrator/update_request.php";
+    }
+}
 ?>
 
 <!DOCTYPE html>
