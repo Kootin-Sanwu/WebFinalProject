@@ -181,7 +181,7 @@ body {
     width: 100%;
 }
 
-.assigned-container button {
+/* .assigned-container button {
     font-family: 'Times New Roman';
     box-shadow: 2px 2px grey;
     align-self: center;
@@ -191,7 +191,21 @@ body {
     border-radius: 5px;
     padding: 10px 20px;
     height: 90%;
-    width: 15%;
+    width: 85%;
+} */
+
+.assigned-container button {
+    font-family: 'Times New Roman';
+    background-color: rgb(110, 110, 110);
+    box-shadow: 2px 2px rgb(65, 65, 65);
+    align-self: center;
+    cursor: pointer;
+    border: none;
+    transition-duration: 0.7s;
+    border-radius: 5px;
+    padding: 10px 20px;
+    height: 95%;
+    width: 85%;
 }
 
 .addchore-container {
