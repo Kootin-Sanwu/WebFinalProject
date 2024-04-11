@@ -121,7 +121,7 @@ body {
 }
 
 
-.assignchore-container {
+.addchore-container {
     justify-content: center;
     align-items: center;
     display: flex;
@@ -129,7 +129,7 @@ body {
     width: 20%;
 }
 
-.assignchore-container button {
+.addchore-container button {
     font-family: 'Times New Roman';
     background-color: #6f006d;
     box-shadow: 2px 2px grey;
@@ -150,8 +150,8 @@ body {
 .table-container {
     /* background-color: bisque; */
     margin-bottom: 100%;
-    margin-top: 80px;
-    width: 90%;
+    margin-top: 65px;
+    width: 70%;
 }
 
 .styled-table {
@@ -198,7 +198,7 @@ body {
     border-radius: 5px;
     line-height: 1;
     height: 30px;
-    width: 100%;
+    width: 50%;
 }
 
 .action-container button:hover {
@@ -208,10 +208,10 @@ body {
     transform: scale(1.15);
 }
 
-.assignchore-popup {
+.addchore-popup {
     position: fixed;
     display: none;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1001;
     height: 100%;
     width: 100%;
@@ -219,12 +219,12 @@ body {
     top: 0;
 }
 
-/* .assignchore-container { */
-    /* background-color: #ffffff;
+.addchore-container {
+    background-color: #ffffff;
     justify-content: center;
     align-items: center;
     display: flex;
     margin-left: 75%;
-    z-index: 1001;
-    width: 20%; */
-/* } */
+    /* z-index: 1001; */
+    width: 20%;
+}
