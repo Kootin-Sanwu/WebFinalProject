@@ -53,26 +53,12 @@
 
 
 // Include your database connection file here
-// For example: include 'db_connection.php';
+include '../settings/connection.php';
 
 // Check if the request_ID is set in the URL
 if(isset($_GET['msg']) && isset($_POST['actionValue'])) {
     
     $requestID = $_POST['actionValue'];
-    
-    // Database connection parameters
-    $servername = "your_servername";
-    $username = "your_username";
-    $password = "your_password";
-    $dbname = "your_dbname";
-    
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
     
     // SQL query to check if the request_ID is already in the database
     $sql_check_request = "SELECT * FROM project_requests WHERE request_ID = ?";
