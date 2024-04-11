@@ -143,6 +143,10 @@ include "../functions/manage_project_func.php";
                         echo "Something";
                         ?>
                     </tbody>
+                    <?php
+                        displayCommonManagementDetails();
+                        echo "Something";
+                        ?>
                 </table>
             </div>
         </div>
