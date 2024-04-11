@@ -91,7 +91,7 @@ redirectUser();
                 </div>
             </div>
             <div class="inner-container-three">
-                <h4 class="center-text">RECENT PROJECTS</h4>
+                <h4 class="assigned-container">RECENT PROJECTS</h4>
                 <?php
                 displayRecentAssignmentDetails();
                 ?>

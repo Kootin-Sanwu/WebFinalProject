@@ -194,6 +194,18 @@ body {
     width: 100%;
 }
 
+.assigned-container h4{
+    background-color: gainsboro;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    display: flex;
+    border-radius: 5px;
+    /* margin-top: 5%; */
+    /* height: 15%; */
+    width: 100%;
+}
+
 /* .assigned-container button {
     font-family: 'Times New Roman';
     box-shadow: 2px 2px grey;
