@@ -3,24 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,
-            initial-scale=1.0">
-    <link rel="stylesheet" href="../css/logout_view.css">
-    <title>Logout Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/update_status.css">
+    <title>Request Project</title>
 </head>
 
 <body>
-    <form class="container-15" id="myModal" method="POST" action="../actions/workflow.php">
+    <form class="container-15" id="myModal" method="POST" action="../actions/request_action.php?msg=approve">
         <div class="container-16">
-            THIS REQUEST IS TO UPDATE THE PROJECT
+            <div class="close-form-group">
+                <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button>
+            </div>
+            <input type="hidden" name="request_ID" value="<?php
+                                                            $request_ID = $_POST['actionValue'];
+                                                            echo $request_ID;
+                                                            ?>">
+
+            <div class="text">
+                THIS IS AN UPDATE TO A PREVIOUS REQUEST
+            </div>
             <div class="submit">
-                <div>
-                    <button class="log-Out-button" name="logoutButton">OKAY</button>
-                </div>
+                <button name="submitButton">Approve</button>
             </div>
         </div>
     </form>
-    <script src="../javascript/logout_view.js" defer></script>
+    <script src="../javascript/update_status.js" defer></script>
 </body>
 
 </html>
