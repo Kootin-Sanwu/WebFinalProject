@@ -20,7 +20,7 @@
                                                             ?>">
 
             <div class="text">
-                THIS IS AN UPDATE TO A PREVIOUS REQUEST
+                THIS IS AN UPDATE TO AN EXISTING REQUEST
             </div>
             <div class="submit">
                 <button name="submitButton">Approve</button>

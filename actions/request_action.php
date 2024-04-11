@@ -36,12 +36,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
                     // Check if the project already exists in projects table
                     $sql_check = "SELECT project_ID FROM projects WHERE request_ID = $request_ID";
                     $result_check = $conn->query($sql_check);
-                
+
                     if ($result_check->num_rows > 0) {
                         $row_check = $result_check->fetch_assoc();
                         $projectId = $row_check["project_ID"];
                         // echo $request_ID;
-                        header ("Location: ../requests/admin_request.php?msg=update&request_ID={$request_ID}");
+                        // header ("Location: ../requests/admin_request.php?msg=update&request_ID={$request_ID}");
+                        header ("Location: ../requests/admin_request.php");
                         // echo "Project already exists in projects table with project_ID: $projectId";
                     } else {
                         // Insert the project into projects table with department_ID and request_ID
