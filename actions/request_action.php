@@ -9,9 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
     if ($message == "approve") {
         // Update the request_status to approved in project_requests table
         $sql = "UPDATE project_requests SET request_status = 'approved' WHERE request_ID = $request_ID";
-        echo $message;
-
+        
         if ($conn->query($sql) === TRUE) {
+            echo $message;
             echo "Request status updated successfully to approved.";
 
             // Retrieve project_name, employee_ID from project_requests table
