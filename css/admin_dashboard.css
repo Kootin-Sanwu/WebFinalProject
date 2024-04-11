@@ -104,15 +104,14 @@ body {
 }
 
 .center-text {
-    /* justify-content: center;
+    justify-content: center;
     align-items: center;
     align-self: center;
     align-self: center;
     text-align: center;
     flex-wrap: wrap;
     display: flex;
-    margin-bottom: 20px;
-    width: 100%; */
+    width: 100%;
 }
 
 .inner-container {
