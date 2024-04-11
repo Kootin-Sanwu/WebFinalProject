@@ -1,5 +1,6 @@
 <?php
 include "../settings/core.php";
+include "../functions/assign_project_func.php";
 checkLogin();
 redirectUser();
 ?>
