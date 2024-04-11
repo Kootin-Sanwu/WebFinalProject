@@ -1,6 +1,12 @@
 <?php
-include "../functions/manage_project_func.php";
+include "../functions/assign_project_func.php";
+
+if (isset($_GET['msg']) && $_GET['msg'] == 'edit') {
+    include '../administrator/edit_request.php';
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,8 +14,8 @@ include "../functions/manage_project_func.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,
             initial-scale=1.0">
-    <link rel="stylesheet" href="../css/admin_management.css">
-    <title>Manage Project</title>
+    <link rel="stylesheet" href="../css/admin_allocation.css">
+    <title>Manage Projects</title>
 </head>
 
 <body>
@@ -52,25 +58,37 @@ include "../functions/manage_project_func.php";
                 <div class="maintitle-container">
                     <h3>PROJECTS LIST</h3>
                 </div>
+                <div class="assignchore-container">
+                    <button onclick="openPopup()" name="assignButton">ASSIGN A PROJECT</button>
+                </div>
             </div>
             <div class="table-container">
                 <table class="styled-table">
                     <thead>
                         <tr>
-                            <th>PROJECT NAME</th>
-                            <th>WORKFLOW</th>
+                            <th>Project Name</th>
+                            <th>Assigned By</th>
+                            <th>Start Date</th>
+                            <th>Due Date</th>
+                            <!-- <th>Action</th> -->
                         </tr>
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        displayCommonManagementDetails();
+                        displayDepartmentAssignmentDetails();
                         ?>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    <script src="../javascript/admin_dashboard.js" defer></script>
+    <div id="overlay"></div>
+    <div id="popup">
+        <?php
+        include "../admin/assignproject.php";
+        ?>
+    </div>
+    <script src="../javascript/admin_allocation.js" defer></script>
 </body>
 
 </html>
