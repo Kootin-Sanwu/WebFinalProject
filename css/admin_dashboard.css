@@ -194,7 +194,7 @@ body {
     width: 100%;
 }
 
-.assigned-container h4{
+/* .assigned-container h4{
     background-color: gainsboro;
     justify-content: space-around;
     align-items: center;
@@ -203,7 +203,7 @@ body {
     border-radius: 5px;
     height: 40%;
     width: 30%;
-}
+} */
 
 /* .assigned-container button {
     font-family: 'Times New Roman';
