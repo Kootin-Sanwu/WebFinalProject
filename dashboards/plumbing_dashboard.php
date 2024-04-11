@@ -90,7 +90,7 @@ redirectUser();
                     </button>
                 </div>
             </div>
-            <h4>RECENT PROJECTS</h4>
+            <h4 class="center-text">RECENT PROJECTS</h4>
             <div class="inner-container-three">
                 <?php
                 displayRecentAssignmentDetails();

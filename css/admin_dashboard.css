@@ -103,6 +103,15 @@ body {
     width: 90%;
 }
 
+.center-text {
+    text-align: center;
+    flex-wrap: wrap;
+    display: flex;
+    margin-bottom: 20px; /* Adjust as needed */
+    margin-top: 20px; /* Adjust as needed */
+    width: 100%;
+}
+
 .inner-container {
     /* background-color: blue; */
     text-align: center;
