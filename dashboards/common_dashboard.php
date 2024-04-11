@@ -29,6 +29,13 @@
                     </button>
                 </div>
             </a>
+            <a href="../allocations/common_allocation.php">
+                <div class="container-three">
+                    <button name="choreButton">
+                        <h3>PROJECT ASSIGNMENTS</h3>
+                    </button>
+                </div>
+            </a>
             <a href="../logins/logout_view.php">
                 <div class="container-four">
                     <button name="settingsButton" id="settingsButton">
