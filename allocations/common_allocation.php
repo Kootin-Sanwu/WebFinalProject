@@ -58,9 +58,6 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'edit') {
                 <div class="maintitle-container">
                     <h3>PROJECTS LIST</h3>
                 </div>
-                <div class="assignchore-container">
-                    <button onclick="openPopup()" name="assignButton">ASSIGN A PROJECT</button>
-                </div>
             </div>
             <div class="table-container">
                 <table class="styled-table">
