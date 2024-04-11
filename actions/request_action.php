@@ -47,18 +47,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
                         
                         // Update the existing project in projects table
                         $sql_project_update = "UPDATE projects SET project_name = '$projectName', department_ID = $departmentId, employee_ID = $employee_ID, begin_date = '$beginDate', end_date = '$endDate', workflow = 'Assigned', status = 'approved' WHERE project_ID = $projectId";
-
-                        // Update the existing assignment in assignment table
-                        // $sql_project_update = "UPDATE assigment SET project_name = '$projectName', department_ID = $departmentId, employee_ID = $employee_ID, begin_date = '$beginDate', end_date = '$endDate', workflow = 'Assigned', status = 'approved' WHERE project_ID = $projectId";
                         
                         if ($conn->query($sql_project_update) === TRUE) {
-                            // Update assignment table if necessary
-                            // $sql_assignment_update = "UPDATE assignment SET department_ID = $departmentId, begin_date = '$beginDate', end_date = '$endDate' WHERE project_ID = $projectId";
-                            // if ($conn->query($sql_assignment_update) === TRUE) {
-                            header("Location: ../requests/admin_request.php");
-                            // } else {
-                            //     echo "Error updating assignment: " . $conn->error;
-                            // }
+                            
+                            // Update assignment table using the updated project_ID
+                            $sql_assignment_update = "UPDATE assignment SET department_ID = $departmentId, begin_date = '$beginDate', end_date = '$endDate' WHERE project_ID = $projectId";
+                            
+                            if ($conn->query($sql_assignment_update) === TRUE) {
+                                header("Location: ../requests/admin_request.php");
+                            } else {
+                                echo "Error updating assignment: " . $conn->error;
+                            }
                         } else {
                             echo "Error updating project: " . $conn->error;
                         }
