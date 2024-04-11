@@ -44,10 +44,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
                     if ($result_check->num_rows > 0) {
                         $row_check = $result_check->fetch_assoc();
                         $projectId = $row_check["project_ID"];
-                        // echo $request_ID;
-                        // header ("Location: ../requests/admin_request.php?msg=update&request_ID={$request_ID}");
-                        header ("Location: ../requests/admin_request.php");
-                        // echo "Project already exists in projects table with project_ID: $projectId";
+                        
+                        // Update the existing project in projects table
+                        $sql_project_update = "UPDATE projects SET project_name = '$projectName', department_ID = $departmentId, employee_ID = $employee_ID, begin_date = '$beginDate', end_date = '$endDate', workflow = 'Assigned', status = 'approved' WHERE project_ID = $projectId";
+
+                        // Update the existing assignment in assignment table
+                        // $sql_project_update = "UPDATE assigment SET project_name = '$projectName', department_ID = $departmentId, employee_ID = $employee_ID, begin_date = '$beginDate', end_date = '$endDate', workflow = 'Assigned', status = 'approved' WHERE project_ID = $projectId";
+                        
+                        if ($conn->query($sql_project_update) === TRUE) {
+                            // Update assignment table if necessary
+                            // $sql_assignment_update = "UPDATE assignment SET department_ID = $departmentId, begin_date = '$beginDate', end_date = '$endDate' WHERE project_ID = $projectId";
+                            // if ($conn->query($sql_assignment_update) === TRUE) {
+                            header("Location: ../requests/admin_request.php");
+                            // } else {
+                            //     echo "Error updating assignment: " . $conn->error;
+                            // }
+                        } else {
+                            echo "Error updating project: " . $conn->error;
+                        }
                     } else {
                         // Insert the project into projects table with department_ID and request_ID
                         $sql_project_insert = "INSERT INTO projects (request_ID, project_name, department_ID, employee_ID, begin_date, end_date, workflow, status) 
