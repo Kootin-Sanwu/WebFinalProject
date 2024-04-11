@@ -39,13 +39,6 @@ include "../functions/manage_project_func.php";
                     </button>
                 </div>
             </a>
-            <a href="../requests/plumbing_request.php">
-                <div class="container-three">
-                    <button name="requestButton">
-                        <h3>REQUESTED PROJECTS</h3>
-                    </button>
-                </div>
-            </a>
             <a href="../logins/logout_view.php">
                 <div class="container-four">
                     <button name="settingsButton">
@@ -66,7 +59,6 @@ include "../functions/manage_project_func.php";
                         <tr>
                             <th>PROJECT NAME</th>
                             <th>WORKFLOW</th>
-                            <th>ACTION</th>
                         </tr>
                     </thead>
                     <tbody id="createdChoresTable">
