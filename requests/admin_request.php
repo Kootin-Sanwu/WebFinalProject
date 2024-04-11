@@ -3,7 +3,7 @@ include "../functions/request_project_func.php";
 
 if (isset($_GET['msg']) && isset($_GET['request_ID'])) {
     // echo $_GET['msg'];
-    echo $_GET['request_ID'];
+    // echo $_GET['request_ID'];
 
     if ($_GET['request_ID'] && $_GET['msg'] == 'update') {
         include "../administrator/update_request.php";

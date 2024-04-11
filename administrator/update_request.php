@@ -1,5 +1,5 @@
 <?php
-$requestID = $_POST['request_ID'];
+$requestID = $_GET['request_ID'];
 echo $requestID;
 ?>
 
