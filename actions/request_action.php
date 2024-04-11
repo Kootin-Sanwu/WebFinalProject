@@ -1,12 +1,13 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 include "../settings/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
     $message = $_GET["msg"];
     $request_ID = $_POST["request_ID"];
+    echo $request_ID;
 
     
     if ($message == "approve") {
