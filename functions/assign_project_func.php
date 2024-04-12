@@ -224,3 +224,47 @@ function displayRecentAssignmentDetails()
 
     $conn->close();
 }
+
+function displayAdminRecentAssignmentDetails()
+{
+    include "../settings/connection.php";
+
+    // Start the session
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    // Get the current department_ID from the session
+    $currentDepartmentID = $_SESSION['department_ID'];
+
+    // SQL query to fetch assignments of the current department
+    $sql = "SELECT * FROM assignment WHERE department_ID = '$currentDepartmentID' ORDER BY assignment_ID DESC LIMIT 4";
+    
+    // Execute the query
+
+    $result = $conn->query($sql);
+
+    // Check if any rows are returned
+    if ($result->num_rows > 0) {
+
+        while ($row = $result->fetch_assoc()) {
+            $assignment_ID = $row["assignment_ID"];
+            $project_ID = $row["project_ID"];
+            $projectName = $row["project_name"];
+            $assignedBy = $row["assigned_by"];
+            $beginDate = $row["begin_date"];
+            $endDate = $row["end_date"];
+
+            echo '<div class="assigned-container">';
+            echo "<p>ASSIGNMENT: {$projectName}</p>";
+            echo "<p>ASSIGNED BY: {$assignedBy}</p>";
+            echo "<p>START DATE:  {$beginDate}</p>";
+            echo '<a href="../admin/allocation.php"><button name="generalAssignmentButton">VIEW DETAILS</button></a>';
+            echo '</div>';
+
+            echo "</tr>";
+        }
+    }
+
+    $conn->close();
+}
