@@ -28,4 +28,36 @@ if (isset($_GET['user_ID'])) {
             echo "Current User ID is not set correctly.";
             exit();
     }
+} elseif (isset($_GET['msg']) && isset($_GET['employee_ID']) && isset($_GET['request_ID'])) {
+    // if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
+    $message = $_GET["msg"];
+    $request_ID = $_POST["request_ID"];
+    $employee_ID = $_POST["employee_ID"];
+
+    switch ($employee_ID) {
+        case 2:
+            header("Location: ../requests/plumbing_request.php?msg={$message}&request_ID={$request_ID}");
+            break;
+        case 3:
+            header("Location: ../requests/electrical_request.php?msg={$message}&request_ID={$request_ID}");
+            break;
+        case 4:
+            header("Location: ../requests/.php?msg={$message}&request_ID={$request_ID}");
+            break;
+        case 5:
+            header("Location: ../requests/.php?msg={$message}&request_ID={$request_ID}");
+            break;
+        case 6:
+            header("Location: ../requests/.php?msg={$message}&request_ID={$request_ID}");
+            break;
+        case 7:
+            header("Location: ../requests/.php?msg={$message}&request_ID={$request_ID}");
+            break;
+        case 8:
+            header("Location: ../requests/.php?msg={$message}&request_ID={$request_ID}");
+            break;
+        default:
+            header("Location: admin_request.php");
+            break;
+    }
 }

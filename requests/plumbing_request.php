@@ -31,6 +31,16 @@ if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['employee_I
         include "../administrator/edit_request.php";
     }
 }
+
+if (isset($_GET['msg']) && isset($_GET['request_ID']) && !isset($_GET['employee_ID'])) {
+    $msg = $_GET['msg'];
+    $request_ID = $_GET['request_ID'];
+    $employee_ID = $_GET['employee_ID'];
+
+    if ($msg == 'delete') {
+        include "../administrator/edit_request.php";
+    }
+}
 ?>
 
 <!DOCTYPE html>
