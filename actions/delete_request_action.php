@@ -22,7 +22,7 @@ if (isset($_POST['request_ID'])) {
         $sql = "DELETE FROM project_requests WHERE request_ID = {$request_ID}";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Request deleted successfully.";
+            header("Location: {$_SERVER['HTTP_REFERER']}?msg=deleted&user_ID={$user_ID}");
         } else {
             echo "Error deleting request: " . $conn->error;
         }
