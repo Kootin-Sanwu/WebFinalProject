@@ -238,7 +238,7 @@ function displayAdminRecentAssignmentDetails()
     $currentDepartmentID = $_SESSION['department_ID'];
 
     // SQL query to fetch assignments of the current department
-    $sql = "SELECT * FROM assignment WHERE department_ID = '$currentDepartmentID' ORDER BY assignment_ID DESC LIMIT 4";
+    $sql = "SELECT * FROM assignment ORDER BY assignment_ID DESC LIMIT 4";
     
     // Execute the query
 
