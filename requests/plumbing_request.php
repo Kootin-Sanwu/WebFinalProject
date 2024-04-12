@@ -8,8 +8,6 @@ if (isset($_GET['request_ID']) && !isset($_GET['msg'])) {
 
     // Set session variable
     $_SESSION['request_ID'] = $requestID;
-    echo $_SESSION['request_ID'];
-
     include '../administrator/delete_request.php';
 }
 
@@ -28,16 +26,6 @@ if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['employee_I
     $employee_ID = $_GET['employee_ID'];
 
     if ($msg == 'edit') {
-        include "../administrator/edit_request.php";
-    }
-}
-
-if (isset($_GET['msg']) && isset($_GET['request_ID']) && !isset($_GET['employee_ID'])) {
-    $msg = $_GET['msg'];
-    $request_ID = $_GET['request_ID'];
-    $employee_ID = $_GET['employee_ID'];
-
-    if ($msg == 'delete') {
         include "../administrator/edit_request.php";
     }
 }
