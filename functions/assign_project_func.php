@@ -238,8 +238,15 @@ function displayAdminRecentAssignmentDetails()
     $currentDepartmentID = $_SESSION['department_ID'];
 
     // SQL query to fetch assignments of the current department
-    $sql = "SELECT * FROM assignment ORDER BY assignment_ID DESC LIMIT 4";
+    // $sql = "SELECT * FROM assignment ORDER BY assignment_ID DESC LIMIT 4";
     
+    $sql = "SELECT assignment.assignment_ID, projects.project_ID, projects.project_name, CONCAT(employees.first_name, ' ', employees.last_name) AS assigned_by, assignment.begin_date, assignment.end_date
+    FROM assignment
+    JOIN projects ON assignment.project_ID = projects.project_ID
+    JOIN employees ON projects.employee_ID = employees.employee_ID
+    ORDER BY assignment.assignment_ID DESC
+    LIMIT 4";
+
     // Execute the query
 
     $result = $conn->query($sql);
