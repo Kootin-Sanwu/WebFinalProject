@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         button.style.transform = 'translateY(-2px)';
         button.style.backgroundColor = '#ef17eb';
         button.style.boxShadow = '5px 5px rgb(65, 65, 65)';
-    }
+    };
 
     function resetStyles() {
         homeButton.style.transform = 'translateY(0px)';
@@ -28,17 +28,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         settingsButton.style.transform = 'translateY(0px)';
         settingsButton.style.backgroundColor = '#6f006d';
+        settingsButton.style.boxShadow = '1px 1px rgb(65, 65, 65)';
 
         requestButton.style.transform = 'translateY(0px)';
         requestButton.style.backgroundColor = '#6f006d';
         requestButton.style.boxShadow = '1px 1px rgb(65, 65, 65)';
-    }
+    };
 
     function applyAddPressedEffect(button) {
         button.style.transform = 'translateY(4px)';
         button.style.backgroundColor = "black";
         button.style.boxShadow = 'none';
-    }
+    };
 
     homeButton.addEventListener('mouseover', function () {
         submitHover(this);
