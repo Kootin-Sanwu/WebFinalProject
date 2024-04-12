@@ -13,37 +13,37 @@ redirectUser();
     <meta name="viewport" content="width=device-width,
             initial-scale=1.0">
     <link rel="stylesheet" href="../css/admin_dashboard.css">
-    <title>Manage Chores</title>
+    <title>Construction Dashboard</title>
 </head>
 
 <body>
     <div class="concept-container">
         <div class="container-two">
             <div class="title-container">
-                <h3>PLUMBING PROJECT</h3>
+                <h3>CONSTRUCTION PROJECT</h3>
             </div>
-            <a href="../dashboards/plumbing_dashboard.php">
+            <a href="../dashboards/admin_dashboard.php">
                 <div class="container-three">
                     <button name="homeButton">
                         <h3>DASHBORAD</h3>
                     </button>
                 </div>
             </a>
-            <a href="../managements/plumbing_management.php">
+            <a href="../managements/admin_management.php">
                 <div class="container-three">
                     <button name="manageButton">
                         <h3>PROJECT MANAGEMENT</h3>
                     </button>
                 </div>
             </a>
-            <a href="../allocations/plumbing_allocation.php">
+            <a href="../allocations/admin_allocation.php">
                 <div class="container-three">
                     <button name="choreButton">
                         <h3>PROJECT ASSIGNMENTS</h3>
                     </button>
                 </div>
             </a>
-            <a href="../requests/plumbing_request.php">
+            <a href="../requests/admin_request.php">
                 <div class="container-three">
                     <button name="requestButton">
                         <h3>REQUESTED PROJECTS</h3>
@@ -66,7 +66,7 @@ redirectUser();
             </div>
             <div class="inner-container-two">
                 <div class="statistic-container">
-                    <button name="allChoresButton">PLUMBING PROJECTS</button>
+                    <button name="allChoresButton">ALL PROJECTS</button>
                 </div>
                 <div class="statistic-container">
                     <button id="inProgressButton" name="inProgressButton">
