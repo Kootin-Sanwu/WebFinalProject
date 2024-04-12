@@ -1,14 +1,33 @@
 <?php
 include "../functions/request_project_func.php";
+include "../settings/core.php";
 
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
-if(isset($_GET['request_ID'])) {
+// Check if request_ID is set
+if (isset($_GET['request_ID']) && !isset($_GET['msg'])) {
     $requestID = $_GET['request_ID'];
+
+    // Set session variable
     $_SESSION['request_ID'] = $requestID;
     include '../administrator/delete_request.php';
+}
+
+if (isset($_GET['msg']) && isset($_GET['user_ID'])) {
+    $msg = $_GET['msg'];
+    $user_ID = $_GET['user_ID'];
+
+    if ($msg == 'cannot delete') {
+        include "../constraints/delete_request.php";
+    }
+}
+
+if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['employee_ID'])) {
+    $msg = $_GET['msg'];
+    $request_ID = $_GET['request_ID'];
+    $employee_ID = $_GET['employee_ID'];
+
+    if ($msg == 'edit') {
+        include "../administrator/edit_request.php";
+    }
 }
 ?>
 

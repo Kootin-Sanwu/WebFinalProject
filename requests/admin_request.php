@@ -2,9 +2,6 @@
 include "../functions/request_project_func.php";
 
 if (isset($_GET['msg']) && isset($_GET['request_ID'])) {
-    // echo $_GET['msg'];
-    // echo $_GET['request_ID'];
-
     if ($_GET['request_ID'] && $_GET['msg'] == 'update') {
         include "../administrator/update_request.php";
     } else if ($_GET['request_ID'] && $_GET['msg'] == 'approve') {
@@ -13,13 +10,6 @@ if (isset($_GET['msg']) && isset($_GET['request_ID'])) {
         include "../administrator/reject_project.php";
     }
 }
-
-// if (isset($_GET['msg']) && $_GET['msg'] == 'approve') {
-//     include "../administrator/approve_project.php";
-// } else if (isset($_GET['msg']) && $_GET['msg'] == 'reject') {
-//     include "../administrator/reject_project.php";
-// }
-
 ?>
 
 <!DOCTYPE html>

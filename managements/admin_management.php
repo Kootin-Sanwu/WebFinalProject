@@ -1,31 +1,18 @@
 <?php
 include "../functions/create_project_func.php";
 
-// Check if the URL has a 'msg' parameter with the value 'assigned'
 if (isset($_GET['msg']) && $_GET['msg'] == 'cannot delete') {
     include '../constraints/delete_project.php';
 }
-
-// if (isset($_GET['msg']) && $_GET['msg'] == 'edit') {
-//     include '../administrator/edit_request.php';
-// }
 
 if (isset($_GET['msg']) && isset($_POST['project_ID']) && isset($_POST['employee_ID'])) {
     $msg = $_GET['msg'];
     $project_ID = $_POST['project_ID'];
     $employee_ID = $_POST['employee_ID'];
 
-    // Now you can use $msg and $project_ID in your code
-    // echo "Message: " . $msg . "<br>";
-    // echo "Project ID: " . $project_ID;
-
     include '../administrator/edit_project.php';
-    // Continue with your code...
 }
 
-
-
-// include "../settings/core.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +22,7 @@ if (isset($_GET['msg']) && isset($_POST['project_ID']) && isset($_POST['employee
     <meta name="viewport" content="width=device-width,
             initial-scale=1.0">
     <link rel="stylesheet" href="../css/admin_management.css">
-    <title>Manage Chores</title>
+    <title>Manage Projects</title>
 </head>
 
 <body>
@@ -81,14 +68,6 @@ if (isset($_GET['msg']) && isset($_POST['project_ID']) && isset($_POST['employee
             </a>
         </div>
         <div class="container-one">
-            <!-- <div class="topcontainer-1">
-                <div class="maintitle-container">
-                    <h3>PROJECT LIST</h3>
-                </div>
-                <div class="addchore-container">
-                    <button onclick="openPopup()" name="addButton">CREATE PROJECT</button>
-                </div>
-            </div> -->
             <div class="topcontainer-1">
                 <div class="maintitle-container">
                     <h3>PROJECTS LIST</h3>
@@ -117,7 +96,6 @@ if (isset($_GET['msg']) && isset($_POST['project_ID']) && isset($_POST['employee
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        // displayChoresTable($var_data);
                         displayProjects();
                         ?>
                     </tbody>

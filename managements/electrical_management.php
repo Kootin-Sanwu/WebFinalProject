@@ -1,6 +1,7 @@
 <?php
 include "../functions/manage_project_func.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

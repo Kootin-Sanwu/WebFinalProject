@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,
             initial-scale=1.0">
     <link rel="stylesheet" href="../css/common_dashboard.css">
-    <title>Manage Chores</title>
+    <title>Manage Projects</title>
 </head>
 
 <body>
@@ -76,35 +76,10 @@
                 </div>
             </div>
             <div class="inner-container-three">
-                <div class="assigned-container">
-                    <h3>LAUNDRY</h3>
-                    <button name="generalChoreButton">PROJECTS ASSIGNED</button>
-                    <button name="generalChoreButton">PROJECTS COMPLETED</button>
-                    <button name="generalChoreButton">PROJECTS DETAILS</button>
-                </div>
-                <div class="assigned-container">
-                    <h3>MOWING</h3>
-                    <button name="generalChoreButton">PROJECTS ASSIGNED</button>
-                    <button name="generalChoreButton">PROJECTS COMPLETED</button>
-                    <button name="generalChoreButton">PROJECTS DETAILS</button>
-                </div>
-                <div class="assigned-container">
-                    <h3>CLEANING</h3>
-                    <button name="generalChoreButton">PROJECTS ASSIGNED</button>
-                    <button name="generalChoreButton">PROJECTS COMPLETED</button>
-                    <button name="generalChoreButton">PROJECTS DETAILS</button>
-                </div>
-                <div class="assigned-container">
-                    <h3>ERRANDS</h3>
-                    <button name="generalChoreButton">PROJECTS ASSIGNED</button>
-                    <button name="generalChoreButton">PROJECTS COMPLETED</button>
-                    <button name="generalChoreButton">PROJECTS DETAILS</button>
-                </div>
+                <?php
+                displayRecentAssignmentDetails();
+                ?>
             </div>
-
-            <?php
-            // displayStandardRecentAssignments();
-            ?>
         </div>
         <script src="../javascript/common_dashboard.js" defer></script>
 </body>

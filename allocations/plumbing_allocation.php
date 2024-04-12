@@ -77,7 +77,6 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'edit') {
                             <th>Assigned By</th>
                             <th>Start Date</th>
                             <th>Due Date</th>
-                            <!-- <th>Action</th> -->
                         </tr>
                     </thead>
                     <tbody id="createdChoresTable">

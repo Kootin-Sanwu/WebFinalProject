@@ -1,6 +1,12 @@
 <?php
 include "../functions/assign_project_func.php";
+
+if (isset($_GET['msg']) && $_GET['msg'] == 'edit') {
+    include '../administrator/edit_request.php';
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,16 +75,13 @@ include "../functions/assign_project_func.php";
                         <tr>
                             <th>Project Name</th>
                             <th>Assigned By</th>
-                            <th>Date Assigned</th>
+                            <th>Start Date</th>
                             <th>Due Date</th>
-                            <th>Project Status</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        displayDepartmentProjectDetails();
-                        // displayDepartmentAssignmentDetails();
+                        displayDepartmentAssignmentDetails();
                         ?>
                     </tbody>
                 </table>

@@ -1,3 +1,7 @@
+<?php
+include "../functions/manage_project_func.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,12 +66,13 @@
                     <thead>
                         <tr>
                             <th>PROJECT NAME</th>
+                            <th>WORKFLOW</th>
                             <th>ACTION</th>
                         </tr>
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        // displayChoresTable($var_data);
+                        displayDepartmentManagementDetails();
                         ?>
                     </tbody>
                 </table>
