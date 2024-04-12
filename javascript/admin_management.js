@@ -3,9 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var homeButton = document.querySelector(".container-three button[name=homeButton]");
     var manageButton = document.querySelector(".container-three button[name=manageButton]");
     var choreButton = document.querySelector(".container-three button[name=choreButton]");
-    var settingsButton = document.querySelector(".container-four button[name=settingsButton]");
     var requestButton = document.querySelector(".container-three button[name=requestButton]");
-
+    var settingsButton = document.querySelector(".container-four button[name=settingsButton]");
 
     function submitHover(button) {
         button.style.transform = 'translateY(-2px)';
