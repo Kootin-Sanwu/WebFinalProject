@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['employee_ID'])) {
         $user_ID = $_POST['employee_ID'];
 
-        // Now you have the user_ID from the form
         echo "User ID from form: " . $user_ID;
 
         switch ($user_ID) {

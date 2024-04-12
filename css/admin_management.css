@@ -201,6 +201,21 @@ body {
     width: 40%;
 }
 
+.action-container-two button {
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, height 0.5s ease-in-out;
+    font-family: 'Times New Roman';
+    box-shadow: 5px 5px 5px grey;
+    cursor: pointer;
+    color: white;
+    border: none;
+    background-color: rgb(155, 155, 155);
+    margin-bottom: 15px;
+    border-radius: 5px;
+    line-height: 1;
+    height: 30px;
+    width: 100%;
+}
+
 .action-container button:hover {
     background-color: #6f006d;
     color: #ffffff;

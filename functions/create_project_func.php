@@ -37,12 +37,12 @@ function displayProjects()
             echo "<td>{$endDate}</td>";
             echo "<td>{$workState}</td>";
 
-            echo "<td><form class='action-container' action='../actions/delete_project_action.php' method='post'>";
+            echo "<td><form class='action-container-two' action='../actions/delete_project_action.php' method='post'>";
             echo "<input type='hidden' name='project_ID' value='{$project_ID}'>";
             echo "<button type='submit' value='Delete'>Delete</button>";
             echo "</form>";
 
-            echo "<form class='action-container' action='../managements/admin_management.php?msg=edit' method='post'>";
+            echo "<form class='action-container-two' action='../managements/admin_management.php?msg=edit' method='post'>";
             echo "<input type='hidden' name='project_ID' value='{$project_ID}'>";
             echo "<input type='hidden' name='employee_ID' value='{$employee_ID}'>";
             echo "<button type='submit' value='Edit'>Edit</button>";

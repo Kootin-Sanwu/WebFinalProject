@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_GET['user_ID'])) {
     $user_ID = $_GET['user_ID'];
 
@@ -29,7 +30,6 @@ if (isset($_GET['user_ID'])) {
             exit();
     }
 } elseif (isset($_GET['msg']) && isset($_GET['employee_ID']) && isset($_GET['request_ID'])) {
-    // if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
     $message = $_GET["msg"];
     $request_ID = $_POST["request_ID"];
     $employee_ID = $_POST["employee_ID"];

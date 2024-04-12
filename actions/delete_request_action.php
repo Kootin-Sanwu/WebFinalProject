@@ -6,19 +6,14 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Check if request_ID is set in POST request
 if (isset($_POST['request_ID'])) {
     $request_ID = $_POST['request_ID'];
     $user_ID = $_SESSION['user_ID'];
 
-    
-    // SQL query to check if request is associated with any project
     $checkSql = "SELECT * FROM projects WHERE request_ID = {$request_ID}";
     $checkResult = $conn->query($checkSql);
     
-    if ($checkResult->num_rows == 0) { // If request is not associated with any project
-        echo $user_ID;
-        // SQL query to delete request from project_requests table
+    if ($checkResult->num_rows == 0) {
         $sql = "DELETE FROM project_requests WHERE request_ID = {$request_ID}";
 
         if ($conn->query($sql) === TRUE) {
@@ -35,5 +30,4 @@ if (isset($_POST['request_ID'])) {
     echo "No request ID specified.";
 }
 
-// Close connection
 $conn->close();
