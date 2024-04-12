@@ -60,4 +60,31 @@ if (isset($_GET['user_ID'])) {
             header("Location: admin_request.php");
             break;
     }
+} else {
+    switch ($employee_ID) {
+        case 2:
+            header("Location: ../requests/plumbing_request.php");
+            break;
+        case 3:
+            header("Location: ../requests/electrical_request.php");
+            break;
+        case 4:
+            header("Location: ../requests/.php");
+            break;
+        case 5:
+            header("Location: ../requests/.php");
+            break;
+        case 6:
+            header("Location: ../requests/.php");
+            break;
+        case 7:
+            header("Location: ../requests/.php");
+            break;
+        case 8:
+            header("Location: ../requests/.php");
+            break;
+        default:
+            header("Location: admin_request.php");
+            break;
+    }
 }
