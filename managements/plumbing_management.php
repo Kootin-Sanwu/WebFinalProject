@@ -78,7 +78,7 @@ include "../functions/manage_project_func.php";
             </div>
         </div>
     </div>
-    <script src="../javascript/admin_dashboard.js" defer></script>
+    <script src="../javascript/admin_management.js" defer></script>
 </body>
 
 </html>
