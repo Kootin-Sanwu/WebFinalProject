@@ -9,12 +9,19 @@ document.addEventListener('DOMContentLoaded', function () {
     var progressButton = document.querySelector(".statistic-container button[name=inProgressButton]");
     var completeButton = document.querySelector(".statistic-container button[name=completeButton]");
     var incompleteButton = document.querySelector(".statistic-container button[name=incompleteButton]");
+    var generalAssignmentButton = document.querySelector(".assigned-container button[name=generalAssignmentButton]");
 
     function submitHover(button) {
         button.style.transform = 'translateY(-2px)';
         button.style.backgroundColor = '#ef17eb';
         button.style.boxShadow = '5px 5px rgb(65, 65, 65)';
-    }
+    };
+
+    function submitHoverGeneralAssignmentButton(button) {
+        button.style.transform = 'translateY(-2px)';
+        button.style.backgroundColor = 'rgb(110, 110, 110)';
+        button.style.boxShadow = '5px 5px rgb(65, 65, 65)';
+    };
 
     function resetStyles() {
         homeButton.style.transform = 'translateY(0px)';
@@ -52,6 +59,10 @@ document.addEventListener('DOMContentLoaded', function () {
         requestButton.style.transform = 'translateY(0px)';
         requestButton.style.backgroundColor = '#6f006d';
         requestButton.style.boxShadow = '1px 1px rgb(65, 65, 65)';
+
+        generalAssignmentButton.style.transform = 'translateY(0px)';
+        generalAssignmentButton.style.backgroundColor = 'rgb(110, 110, 110)';
+        generalAssignmentButton.style.boxShadow = '1px 1px rgb(65, 65, 65)';
     }
 
     function applyAddPressedEffect(button) {
@@ -202,5 +213,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     requestButton.addEventListener('mouseup', function () {
         submitHover(this);
+    });
+
+    generalAssignmentButton.addEventListener('mouseover', function () {
+        submitHoverGeneralAssignmentButton(this);
+    });
+
+    generalAssignmentButton.addEventListener('mouseout', function () {
+        resetStyles();
+    });
+
+    generalAssignmentButton.addEventListener('mousedown', function () {
+        applyAddPressedEffect(this);
+    });
+
+    generalAssignmentButton.addEventListener('mouseup', function () {
+        submitHoverGeneralAssignmentButton(this);
     });
 });
