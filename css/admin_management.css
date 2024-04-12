@@ -223,6 +223,13 @@ body {
     transform: scale(1.15);
 }
 
+.action-container-two button:hover {
+    background-color: #6f006d;
+    color: #ffffff;
+    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.5);
+    transform: scale(1.15);
+}
+
 .addchore-popup {
     position: fixed;
     display: none;
