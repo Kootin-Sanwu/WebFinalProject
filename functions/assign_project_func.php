@@ -215,7 +215,7 @@ function displayRecentAssignmentDetails()
             echo "<p>ASSIGNMENT: {$projectName}</p>";
             echo "<p>ASSIGNED BY: {$assignedBy}</p>";
             echo "<p>START DATE:  {$beginDate}</p>";
-            echo '<a href="../admin/allocation.php"><button name="generalAssignmentButton">VIEW DETAILS</button></a>';
+            echo '<a href="../request/allocation_redirect.php?msg=allocate&department_ID=' . $currentDepartmentID . '"><button name="generalAssignmentButton">VIEW DETAILS</button></a>';
             echo '</div>';
 
             echo "</tr>";
