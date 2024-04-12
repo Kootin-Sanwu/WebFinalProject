@@ -266,7 +266,7 @@ function displayAdminRecentAssignmentDetails()
             echo "<p>ASSIGNMENT: {$projectName}</p>";
             echo "<p>ASSIGNED BY: {$assignedBy}</p>";
             echo "<p>START DATE:  {$beginDate}</p>";
-            echo '<a href="../admin/allocation.php"><button name="generalAssignmentButton">VIEW DETAILS</button></a>';
+            echo '<a href="../admin/admin_allocation.php"><button name="generalAssignmentButton">VIEW DETAILS</button></a>';
             echo '</div>';
 
             echo "</tr>";
