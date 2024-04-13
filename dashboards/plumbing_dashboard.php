@@ -1,6 +1,6 @@
 <?php
 include "../settings/core.php";
-// include "../functions/assign_project_func.php";
+include "../functions/assign_project_func.php";
 checkLogin();
 redirectUser();
 ?>
@@ -95,7 +95,7 @@ redirectUser();
             </div>
             <div class="inner-container-three">
                 <?php
-                // displayRecentAssignmentDetails();
+                displayRecentAssignmentDetails();
                 ?>
             </div>
         </div>
