@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt) {
             $stmt->bind_param("sssss", $project_Name, $employee_ID, $begin_Date, $end_Date, $request_Status);
             if ($stmt->execute()) {
-                header("Location: ../requests/close_request.php");
+                header("Location: ../requests/close_request.php?employye_ID={$employee_ID}");
                 exit();
             } else {
                 echo "Error: " . $stmt->error;
