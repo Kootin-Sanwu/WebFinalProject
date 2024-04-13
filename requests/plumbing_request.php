@@ -96,7 +96,7 @@ if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['department
                 <div class="maintitle-container">
                     <h3>PROJECTS LIST</h3>
                 </div>
-                <div class="addchore-container">
+                <div class="assignchore-container">
                     <button onclick="togglePopup()" name="requestButton">REQUEST PROJECT</button>
                 </div>
             </div>
