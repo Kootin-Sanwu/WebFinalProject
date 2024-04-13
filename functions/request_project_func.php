@@ -8,6 +8,8 @@ function displayEmployeeRequests()
 
     include "../settings/connection.php";
 
+    echo "Issue";
+
     $employee_ID = $_SESSION['employee_ID'];
 
     $sql = "SELECT r.request_ID, r.project_name, r.begin_date, r.end_date, r.request_status, e.department_ID 
