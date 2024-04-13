@@ -15,7 +15,7 @@ function displayEmployeeRequests()
     $employee_ID = $_SESSION['employee_ID'];
     
     $sql = "SELECT r.request_ID, r.project_name, r.begin_date, r.end_date, r.request_status, e.department_ID 
-            FROM requests pr
+            FROM requests r
             JOIN employees e ON r.employee_ID = e.employee_ID
             WHERE e.employee_ID = ?";
             
