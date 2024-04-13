@@ -15,47 +15,47 @@ function displayEmployeeRequests()
             JOIN employees e ON r.employee_ID = e.employee_ID
             WHERE e.employee_ID = ?";
             
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $employee_ID);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    // $stmt = $conn->prepare($sql);
+    // $stmt->bind_param("i", $employee_ID);
+    // $stmt->execute();
+    // $result = $stmt->get_result();
 
-    $requests = [];
-    while ($row = $result->fetch_assoc()) {
-        $requests[] = $row;
-    }
+    // $requests = [];
+    // while ($row = $result->fetch_assoc()) {
+    //     $requests[] = $row;
+    // }
 
-    $stmt->close();
-    $conn->close();
+    // $stmt->close();
+    // $conn->close();
 
-    foreach ($requests as $request) {
-        $department_ID = $request['department_ID'];
-        $projectName = $request['project_name'];
-        $request_ID = $request['request_ID'];
-        $status = $request['request_status'];
-        $beginDate = $request['begin_date'];
-        $endDate = $request['end_date'];
+    // foreach ($requests as $request) {
+    //     $department_ID = $request['department_ID'];
+    //     $projectName = $request['project_name'];
+    //     $request_ID = $request['request_ID'];
+    //     $status = $request['request_status'];
+    //     $beginDate = $request['begin_date'];
+    //     $endDate = $request['end_date'];
 
-        echo '<tr>';
-        echo "<td>{$projectName}</td>";
-        echo "<td>{$beginDate}</td>";
-        echo "<td>{$endDate}</td>";
-        echo "<td>{$status}</td>";
+    //     echo '<tr>';
+    //     echo "<td>{$projectName}</td>";
+    //     echo "<td>{$beginDate}</td>";
+    //     echo "<td>{$endDate}</td>";
+    //     echo "<td>{$status}</td>";
         
-        echo "<td><form class='status-container' action='../requests/request_redirect.php?msg=delete' method='post'>";
-        echo "<input type='hidden' name='employee_ID' value='{$department_ID}'>";
-        echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
-        echo "<button type='submit' name='deleteButton' value='Delete'>Delete</button>";
-        echo "</form>";
+    //     echo "<td><form class='status-container' action='../requests/request_redirect.php?msg=delete' method='post'>";
+    //     echo "<input type='hidden' name='employee_ID' value='{$department_ID}'>";
+    //     echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
+    //     echo "<button type='submit' name='deleteButton' value='Delete'>Delete</button>";
+    //     echo "</form>";
 
-        echo "<form class='status-container' action='../requests/edit_request_redirect.php?msg=edit' method='post'>";
-        echo "<input type='hidden' name='employee_ID' value='{$department_ID}'>";
-        echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
-        echo "<button type='submit' name='editButton' value='Edit'>Edit</button>";
-        echo "</form></td>";
+    //     echo "<form class='status-container' action='../requests/edit_request_redirect.php?msg=edit' method='post'>";
+    //     echo "<input type='hidden' name='employee_ID' value='{$department_ID}'>";
+    //     echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
+    //     echo "<button type='submit' name='editButton' value='Edit'>Edit</button>";
+    //     echo "</form></td>";
 
-        echo '</tr>';
-    }
+    //     echo '</tr>';
+    // }
 }
 
 function displayRequests()
