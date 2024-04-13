@@ -234,3 +234,24 @@ body {
     box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.5);
     transform: scale(1.15);
 }
+
+.assignchore-popup {
+    position: fixed;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.assignchore-container {
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 75%;
+    /* z-index: 1001; */
+    width: 20%;
+}

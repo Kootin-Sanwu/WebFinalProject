@@ -100,7 +100,7 @@ if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['department
                     <button onclick="togglePopup()" name="requestButton">REQUEST PROJECT</button>
                 </div>
             </div>
-            <div class="addchore-popup" id="addchore-container" style="display: none;">
+            <div class="assignchore-popup" id="assignchore-container" style="display: none;">
                 <?php
                 include "../administrator/project_request.php";
                 ?>

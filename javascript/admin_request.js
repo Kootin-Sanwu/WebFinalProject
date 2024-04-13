@@ -147,7 +147,7 @@ function closePopup() {
 }
 
 function togglePopup() {
-    var popup = document.getElementById("addchore-container");
+    var popup = document.getElementById("assignchore-container");
     if (popup.style.display === "none" || popup.style.display === "") {
         popup.style.display = "block";
     } else {
