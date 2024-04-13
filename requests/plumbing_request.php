@@ -138,7 +138,7 @@ include "../settings/core.php";
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        // displayEmployeeRequests();
+                        displayEmployeeRequests();
                         ?>
                     </tbody>
                 </table>
