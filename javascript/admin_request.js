@@ -39,14 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
         requestButton.style.transform = 'translateY(0px)';
         requestButton.style.backgroundColor = '#6f006d';
         requestButton.style.boxShadow = '1px 1px rgb(65, 65, 65)';
-
-        // deleteButton.style.transform = 'translateY(0px)';
-        // deleteButton.style.backgroundColor = '#6f006d';
-        // deleteButton.style.boxShadow = '1px 1px rgb(65, 65, 65)';
-
-        // editButton.style.transform = 'translateY(0px)';
-        // editButton.style.backgroundColor = '#6f006d';
-        // editButton.style.boxShadow = '1px 1px rgb(65, 65, 65)';
     }
 
     function applyAddPressedEffect(button) {
@@ -135,37 +127,21 @@ document.addEventListener('DOMContentLoaded', function () {
         submitHover(this);
     });
 
-    // deleteButton.addEventListener('mouseover', function () {
-    //     submitHover(this);
-    // });
+    requestButton.addEventListener('mouseover', function () {
+        submitHover(this);
+    });
 
-    // deleteButton.addEventListener('mouseout', function () {
-    //     resetStyles();
-    // });
+    requestButton.addEventListener('mouseout', function () {
+        resetStyles();
+    });
 
-    // deleteButton.addEventListener('mousedown', function () {
-    //     applyAddPressedEffect(this);
-    // });
+    requestButton.addEventListener('mousedown', function () {
+        applyAddPressedEffect(this);
+    });
 
-    // deleteButton.addEventListener('mouseup', function () {
-    //     submitHover(this);
-    // });
-
-    // editButton.addEventListener('mouseover', function () {
-    //     submitHover(this);
-    // });
-
-    // editButton.addEventListener('mouseout', function () {
-    //     resetStyles();
-    // });
-
-    // editButton.addEventListener('mousedown', function () {
-    //     applyAddPressedEffect(this);
-    // });
-
-    // editButton.addEventListener('mouseup', function () {
-    //     submitHover(this);
-    // });
+    requestButton.addEventListener('mouseup', function () {
+        submitHover(this);
+    });
 });
 
 function closePopup() {
