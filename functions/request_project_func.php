@@ -45,13 +45,13 @@ function displayEmployeeRequests()
         echo "<td><form class='status-container' action='../requests/request_redirect.php?msg=delete' method='post'>";
         echo "<input type='hidden' name='employee_ID' value='{$department_ID}'>";
         echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
-        echo "<button type='submit' value='Delete'>Delete</button>";
+        echo "<button type='submit' name='deleteButton' value='Delete'>Delete</button>";
         echo "</form>";
 
         echo "<form class='status-container' action='../requests/edit_request_redirect.php?msg=edit' method='post'>";
         echo "<input type='hidden' name='employee_ID' value='{$department_ID}'>";
         echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
-        echo "<button type='submit' value='Edit'>Edit</button>";
+        echo "<button type='submit' name='editButton' value='Edit'>Edit</button>";
         echo "</form></td>";
 
         echo '</tr>';

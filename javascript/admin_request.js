@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var requestPageButton = document.querySelector(".container-three button[name=requestPageButton]");
     var settingsButton = document.querySelector(".container-four button[name=settingsButton]");
     var requestButton = document.querySelector(".assignchore-container button[name=requestButton]");
+    var deleteButton = document.querySelector(".status-container button[name=deleteButton]");
+    var editButton = document.querySelector(".status-container button[name=editButton]");
 
     function submitHover(button) {
         button.style.transform = 'translateY(-2px)';
@@ -37,6 +39,14 @@ document.addEventListener('DOMContentLoaded', function () {
         requestButton.style.transform = 'translateY(0px)';
         requestButton.style.backgroundColor = '#6f006d';
         requestButton.style.boxShadow = '1px 1px rgb(65, 65, 65)';
+
+        deleteButton.style.transform = 'translateY(0px)';
+        deleteButton.style.backgroundColor = '#6f006d';
+        deleteButton.style.boxShadow = '1px 1px rgb(65, 65, 65)';
+
+        editButton.style.transform = 'translateY(0px)';
+        editButton.style.backgroundColor = '#6f006d';
+        editButton.style.boxShadow = '1px 1px rgb(65, 65, 65)';
     }
 
     function applyAddPressedEffect(button) {
@@ -125,19 +135,35 @@ document.addEventListener('DOMContentLoaded', function () {
         submitHover(this);
     });
 
-    requestButton.addEventListener('mouseover', function () {
+    deleteButton.addEventListener('mouseover', function () {
         submitHover(this);
     });
 
-    requestButton.addEventListener('mouseout', function () {
+    deleteButton.addEventListener('mouseout', function () {
         resetStyles();
     });
 
-    requestButton.addEventListener('mousedown', function () {
+    deleteButton.addEventListener('mousedown', function () {
         applyAddPressedEffect(this);
     });
 
-    requestButton.addEventListener('mouseup', function () {
+    deleteButton.addEventListener('mouseup', function () {
+        submitHover(this);
+    });
+
+    editButton.addEventListener('mouseover', function () {
+        submitHover(this);
+    });
+
+    editButton.addEventListener('mouseout', function () {
+        resetStyles();
+    });
+
+    editButton.addEventListener('mousedown', function () {
+        applyAddPressedEffect(this);
+    });
+
+    editButton.addEventListener('mouseup', function () {
         submitHover(this);
     });
 });

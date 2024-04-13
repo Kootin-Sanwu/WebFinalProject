@@ -85,6 +85,37 @@ include "../settings/core.php";
             </a>
         </div>
         <div class="container-one">
+            <!-- <div class="topcontainer-1">
+                <div class="maintitle-container">
+                    <h3>PROJECTS LIST</h3>
+                </div>
+                <div class="assignchore-container">
+                    <button onclick="togglePopup()" name="requestButton">REQUEST PROJECT</button>
+                </div>
+            </div>
+            <div class="assignchore-popup" id="assignchore-container" style="display: none;">
+                <?php
+                // include "../administrator/project_request.php";
+                ?>
+            </div>
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Project Name</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="createdChoresTable">
+                        <?php
+                        // displayEmployeeRequests();
+                        ?>
+                    </tbody>
+                </table>
+            </div> -->
             <div class="topcontainer-1">
                 <div class="maintitle-container">
                     <h3>PROJECTS LIST</h3>
