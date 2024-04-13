@@ -150,6 +150,9 @@ CREATE TABLE requests (
     FOREIGN KEY (employee_ID) REFERENCES employees(employee_ID)
 );
 
+INSERT INTO requests (project_name, employee_ID, begin_date, end_date, request_status)
+VALUES ('Plumbing Project', 1, '2024-04-13', '2024-05-13', 'pending');
+
 CREATE TABLE projects (
     project_ID INT PRIMARY KEY AUTO_INCREMENT,
     request_ID INT,
