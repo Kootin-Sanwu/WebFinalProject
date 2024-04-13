@@ -87,7 +87,7 @@ include "../administrator/project_request.php";
             </a>
         </div>
         <div class="container-one">
-            <div class="topcontainer-1">
+            <!-- <div class="topcontainer-1">
                 <div class="maintitle-container">
                     <h3>PROJECTS LIST</h3>
                 </div>
@@ -113,12 +113,12 @@ include "../administrator/project_request.php";
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        displayEmployeeRequests();
+                        // displayEmployeeRequests();
                         ?>
                     </tbody>
                 </table>
-            </div>
-            <!-- <div class="topcontainer-1">
+            </div> -->
+            <div class="topcontainer-1">
                 <div class="maintitle-container">
                     <h3>PROJECTS LIST</h3>
                 </div>
@@ -140,11 +140,11 @@ include "../administrator/project_request.php";
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        // displayEmployeeRequests();
+                        displayEmployeeRequests();
                         ?>
                     </tbody>
                 </table>
-            </div> -->
+            </div>
         </div>
     </div>
     <div id="overlay"></div>
