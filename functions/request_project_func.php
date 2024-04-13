@@ -10,10 +10,10 @@ function displayEmployeeRequests()
 
     $employee_ID = $_SESSION['employee_ID'];
 
-    // $sql = "SELECT pr.request_ID, pr.project_name, pr.begin_date, pr.end_date, pr.request_status, e.department_ID 
-    //         FROM project_requests pr
-    //         JOIN employees e ON pr.employee_ID = e.employee_ID
-    //         WHERE e.employee_ID = ?";
+    $sql = "SELECT pr.request_ID, pr.project_name, pr.begin_date, pr.end_date, pr.request_status, e.department_ID 
+            FROM project_requests pr
+            JOIN employees e ON pr.employee_ID = e.employee_ID
+            WHERE e.employee_ID = ?";
             
     // $stmt = $conn->prepare($sql);
     // $stmt->bind_param("i", $employee_ID);
