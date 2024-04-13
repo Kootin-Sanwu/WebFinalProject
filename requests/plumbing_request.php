@@ -147,9 +147,6 @@ include "../settings/core.php";
     </div>
     <div id="overlay"></div>
     <div id="popup">
-        <?php
-        include "../administrator/project_request.php";
-        ?>
     </div>
     <script src="../javascript/admin_request.js" defer></script>
 </body>
