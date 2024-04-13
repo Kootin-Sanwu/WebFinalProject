@@ -24,7 +24,6 @@ function displayEmployeeRequests()
             $stmt->execute();
             $result = $stmt->get_result();
             
-    echo "Issue";
     $requests = [];
     while ($row = $result->fetch_assoc()) {
         $requests[] = $row;
