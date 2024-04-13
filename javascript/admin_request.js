@@ -145,3 +145,12 @@ document.addEventListener('DOMContentLoaded', function () {
 function closePopup() {
     window.location.href = "../requests/close_request.php";
 }
+
+function togglePopup() {
+    var popup = document.getElementById("addchore-container");
+    if (popup.style.display === "none" || popup.style.display === "") {
+        popup.style.display = "block";
+    } else {
+        popup.style.display = "none";
+    }
+}
