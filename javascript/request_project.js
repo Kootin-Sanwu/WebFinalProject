@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function closePopup() {
-    window.location.href = "../requests/close_request.php";
+    window.location.href = "../directions/close_direction.php";
 }
 
 function openPopup() {

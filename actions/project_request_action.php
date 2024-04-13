@@ -66,7 +66,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $end_Date = $_POST['end_date'];
         $request_Status = $_POST['request_status'];
 
-        // Fetching the department_ID of the employee
         $sql_fetch_department = "SELECT department_ID FROM employees WHERE employee_ID = ?";
         $stmt_fetch = $conn->prepare($sql_fetch_department);
         

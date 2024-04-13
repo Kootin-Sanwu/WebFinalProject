@@ -17,8 +17,8 @@ checkLogin();
     <form class="container-15" id="myModal" method="POST" action="../actions/project_request_action.php">
         <div class="container-16">
             <div class="close-form-group">
-                <button name="closeButton" id="closePopup" onclick="closePopup(event)">Close</button>
-                <!-- <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button> -->
+                <!-- <button name="closeButton" id="closePopup" onclick="closePopup(event)">Close</button> -->
+                <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button>
             </div>
             <input type="hidden" name="employee_ID" value="<?php echo $_SESSION['employee_ID']; ?>">
 
