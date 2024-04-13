@@ -118,7 +118,7 @@ if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['department
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        displayEmployeeRequests();
+                        // displayEmployeeRequests();
                         ?>
                     </tbody>
                 </table>
