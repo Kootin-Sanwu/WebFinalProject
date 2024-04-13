@@ -118,10 +118,10 @@ include "../settings/core.php";
             </div> -->
             <div class="topcontainer-1">
                 <div class="maintitle-container">
-                    <h3>CHORES LIST</h3>
+                    <h3>PROJECTS LIST</h3>
                 </div>
                 <div class="assignchore-container">
-                    <button onclick="openPopup()" name="assignButton">ASSIGN CHORE</button>
+                    <button onclick="openPopup()" name="assignButton">ASSIGN PROJECT</button>
                 </div>
             </div>
             <div class="table-container">
