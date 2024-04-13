@@ -152,8 +152,8 @@ CREATE TABLE requests (
 
 -- Employees Table
 INSERT INTO employees (first_name, last_name, phone_number, department_ID, role_ID, email, password) VALUES
-('John', 'Doe', '1234567890', 2, 2, 'john.doe@example.com', 'hashed_password_here'),
-('Jane', 'Doe', '0987654321', 3, 3, 'jane.doe@example.com', 'hashed_password_here');
+('John', 'Doe', '1234567890', 2, 2, 'john.doe@example.com', 'Pa$$w0rd!'),
+('Jane', 'Doe', '0987654321', 3, 3, 'jane.doe@example.com', 'Pa$$w0rd!');
 
 -- Requests Table
 INSERT INTO requests (project_name, employee_ID, begin_date, end_date) VALUES
