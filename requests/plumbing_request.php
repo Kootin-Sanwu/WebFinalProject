@@ -95,7 +95,7 @@ include "../settings/core.php";
             </div>
             <div class="assignchore-popup" id="assignchore-container" style="display: none;">
                 <?php
-                // include "../administrator/project_request.php";
+                include "../administrator/project_request.php";
                 ?>
             </div>
             <div class="table-container">
