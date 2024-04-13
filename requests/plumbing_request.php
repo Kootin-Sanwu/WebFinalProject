@@ -2,33 +2,33 @@
 include "../functions/request_project_func.php";
 include "../settings/core.php";
 
-// Check if request_ID is set
-if (isset($_GET['request_ID']) && !isset($_GET['msg'])) {
-    $requestID = $_GET['request_ID'];
+// // Check if request_ID is set
+// if (isset($_GET['request_ID']) && !isset($_GET['msg'])) {
+//     $requestID = $_GET['request_ID'];
 
-    // Set session variable
-    $_SESSION['request_ID'] = $requestID;
-    include '../administrator/delete_request.php';
-}
+//     // Set session variable
+//     $_SESSION['request_ID'] = $requestID;
+//     include '../administrator/delete_request.php';
+// }
 
-if (isset($_GET['msg']) && isset($_GET['user_ID'])) {
-    $msg = $_GET['msg'];
-    $user_ID = $_GET['user_ID'];
+// if (isset($_GET['msg']) && isset($_GET['user_ID'])) {
+//     $msg = $_GET['msg'];
+//     $user_ID = $_GET['user_ID'];
 
-    if ($msg == 'cannot delete') {
-        include "../constraints/delete_request.php";
-    }
-}
+//     if ($msg == 'cannot delete') {
+//         include "../constraints/delete_request.php";
+//     }
+// }
 
-if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['department_ID'])) {
-    $msg = $_GET['msg'];
-    $request_ID = $_GET['request_ID'];
-    $department_ID = $_GET['department_ID'];
+// if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['department_ID'])) {
+//     $msg = $_GET['msg'];
+//     $request_ID = $_GET['request_ID'];
+//     $department_ID = $_GET['department_ID'];
 
-    if ($msg == 'edit') {
-        include "../administrator/edit_request.php";
-    }
-}
+//     if ($msg == 'edit') {
+//         include "../administrator/edit_request.php";
+//     }
+// }
 ?>
 
 <!DOCTYPE html>
@@ -120,9 +120,6 @@ if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['department
     </div>
     <div id="overlay"></div>
     <div id="popup">
-        <?php
-        // include "../administrator/project_request.php";
-        ?>
     </div>
     <script src="../javascript/admin_request.js" defer></script>
 </body>
