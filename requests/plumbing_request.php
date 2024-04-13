@@ -93,10 +93,15 @@ include "../settings/core.php";
                     <button onclick="togglePopup()" name="requestButton">REQUEST PROJECT</button>
                 </div>
             </div>
-            <div class="assignchore-popup" id="assignchore-container" style="display: none;">
+            <!-- <div class="assignchore-popup" id="assignchore-container" style="display: none;">
                 <?php
-                include "../administrator/project_request.php";
+                // include "../administrator/project_request.php";
                 ?>
+            </div> -->
+            <div class="assignchore-popup" id="assignchore-container" style="display: none;">
+                <div id="employee-requests">
+                    <!-- AJAX will insert the content here -->
+                </div>
             </div>
             <div class="table-container">
                 <table class="styled-table">
