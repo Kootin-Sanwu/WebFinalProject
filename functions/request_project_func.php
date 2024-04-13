@@ -15,10 +15,10 @@ function displayEmployeeRequests()
             JOIN employees e ON pr.employee_ID = e.employee_ID
             WHERE e.employee_ID = ?";
             
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $employee_ID);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    // $stmt = $conn->prepare($sql);
+    // $stmt->bind_param("i", $employee_ID);
+    // $stmt->execute();
+    // $result = $stmt->get_result();
 
     // $requests = [];
     // while ($row = $result->fetch_assoc()) {
