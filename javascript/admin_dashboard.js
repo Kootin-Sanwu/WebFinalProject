@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var progressButton = document.querySelector(".statistic-container button[name=inProgressButton]");
     var completeButton = document.querySelector(".statistic-container button[name=completeButton]");
     var incompleteButton = document.querySelector(".statistic-container button[name=incompleteButton]");
-    // var generalAssignmentButton = document.querySelector(".assigned-container button[name=generalAssignmentButton]");
+    var generalAssignmentButton = document.querySelector(".assigned-container button[name=generalAssignmentButton]");
 
     function submitHover(button) {
         button.style.transform = 'translateY(-2px)';
@@ -60,9 +60,9 @@ document.addEventListener('DOMContentLoaded', function () {
         requestButton.style.backgroundColor = '#6f006d';
         requestButton.style.boxShadow = '1px 1px rgb(65, 65, 65)';
 
-        // generalAssignmentButton.style.transform = 'translateY(0px)';
-        // generalAssignmentButton.style.backgroundColor = 'rgb(110, 110, 110)';
-        // generalAssignmentButton.style.boxShadow = '1px 1px rgb(65, 65, 65)';
+        generalAssignmentButton.style.transform = 'translateY(0px)';
+        generalAssignmentButton.style.backgroundColor = 'rgb(110, 110, 110)';
+        generalAssignmentButton.style.boxShadow = '1px 1px rgb(65, 65, 65)';
     }
 
     function applyAddPressedEffect(button) {
@@ -215,19 +215,19 @@ document.addEventListener('DOMContentLoaded', function () {
         submitHover(this);
     });
 
-    // generalAssignmentButton.addEventListener('mouseover', function () {
-        // submitHoverGeneralAssignmentButton(this);
-    // });
-// 
-    // generalAssignmentButton.addEventListener('mouseout', function () {
-        // resetStyles();
-    // });
-// 
-    // generalAssignmentButton.addEventListener('mousedown', function () {
-        // applyAddPressedEffect(this);
-    // });
-// 
-    // generalAssignmentButton.addEventListener('mouseup', function () {
-        // submitHoverGeneralAssignmentButton(this);
-    // });
+    generalAssignmentButton.addEventListener('mouseover', function () {
+        submitHoverGeneralAssignmentButton(this);
+    });
+
+    generalAssignmentButton.addEventListener('mouseout', function () {
+        resetStyles();
+    });
+
+    generalAssignmentButton.addEventListener('mousedown', function () {
+        applyAddPressedEffect(this);
+    });
+
+    generalAssignmentButton.addEventListener('mouseup', function () {
+        submitHoverGeneralAssignmentButton(this);
+    });
 });
