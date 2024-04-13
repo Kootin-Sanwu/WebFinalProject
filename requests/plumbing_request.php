@@ -86,12 +86,24 @@ if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['department
         </div>
         <div class="container-one">
             <div class="topcontainer-1">
-                <div class="maintitle-container">
+                <!-- <div class="maintitle-container">
                     <h3>PROJECTS LIST</h3>
                 </div>
                 <div class="assignchore-container">
                     <button onclick="openPopup()" name="requestButton">REQUEST PROJECT</button>
+                </div> -->
+
+                <div class="maintitle-container">
+                    <h3>PROJECTS LIST</h3>
                 </div>
+                <div class="addchore-container">
+                    <button onclick="togglePopup()" name="requestButton">REQUEST PROJECT</button>
+                </div>
+            </div>
+            <div class="addchore-popup" id="addchore-container" style="display: none;">
+                <?php
+                include "../administrator/project_request.php";
+                ?>
             </div>
             <div class="table-container">
                 <table class="styled-table">
@@ -116,7 +128,7 @@ if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['department
     <div id="overlay"></div>
     <div id="popup">
         <?php
-        include "../administrator/project_request.php";
+        // include "../administrator/project_request.php";
         ?>
     </div>
     <script src="../javascript/admin_request.js" defer></script>
