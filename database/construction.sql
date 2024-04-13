@@ -72,7 +72,7 @@ CREATE TABLE projects (
     workflow ENUM('In Progress', 'Incomplete', 'Complete', 'Unassigned', 'Assigned') DEFAULT 'Unassigned',
     status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
     FOREIGN KEY (department_ID) REFERENCES departments(department_ID),
-    FOREIGN KEY (request_ID) REFERENCES project_requests(request_ID),
+    FOREIGN KEY (request_ID) REFERENCES requests(request_ID),
     FOREIGN KEY (employee_ID) REFERENCES employees(employee_ID)
 );
 
