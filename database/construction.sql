@@ -127,6 +127,16 @@ INSERT INTO departments (department_ID, department_name) VALUES
 (8, 'Welding Department');
 
 -- Employees Table
+INSERT INTO employees (first_name, last_name, phone_number, department_ID, role_ID, email, password) VALUES
+('John', 'Doe', '1234567890', 2, 2, 'john.doe@example.com', 'hashed_password_here'),
+('Jane', 'Doe', '0987654321', 3, 3, 'jane.doe@example.com', 'hashed_password_here');
+
+-- Requests Table
+INSERT INTO requests (project_name, employee_ID, begin_date, end_date) VALUES
+('Plumbing Project', 1, '2024-04-13', '2024-05-13'),
+('Electrical Project', 2, '2024-04-15', '2024-05-15');
+
+-- Employees Table
 CREATE TABLE employees (
     employee_ID INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(20) NOT NULL,
@@ -149,9 +159,6 @@ CREATE TABLE requests (
     request_status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
     FOREIGN KEY (employee_ID) REFERENCES employees(employee_ID)
 );
-
-INSERT INTO requests (project_name, employee_ID, begin_date, end_date, request_status)
-VALUES ('Plumbing Project', 1, '2024-04-13', '2024-05-13', 'pending');
 
 CREATE TABLE projects (
     project_ID INT PRIMARY KEY AUTO_INCREMENT,
