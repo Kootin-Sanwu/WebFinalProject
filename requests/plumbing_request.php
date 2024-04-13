@@ -116,33 +116,6 @@ include "../settings/core.php";
                     </tbody>
                 </table>
             </div>
-            <!-- <div class="topcontainer-1">
-                <div class="maintitle-container">
-                    <h3>PROJECTS LIST</h3>
-                </div>
-                <div class="assignchore-container">
-                    <button onclick="openPopup()" name="assignButton">ASSIGN PROJECT</button>
-                </div>
-            </div>
-            <div class="table-container">
-                <table class="styled-table">
-                    <thead>
-                        <tr>
-                            <th>Chore Name</th>
-                            <th>Assigned By</th>
-                            <th>Date Assigned</th>
-                            <th>Due Date</th>
-                            <th>Chore Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="createdChoresTable">
-                        <?php
-                        // displayEmployeeRequests();
-                        ?>
-                    </tbody>
-                </table>
-            </div> -->
         </div>
     </div>
     <div id="overlay"></div>
