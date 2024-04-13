@@ -6,7 +6,7 @@ include "../settings/connection.php";  // Assuming this file contains your datab
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Get the values from the form
-    $employee_ID = $_POST['employee_ID'];
+    $department_ID = $_POST['department_ID'];
     $request_ID = $_POST['request_ID'];
     $project_name = $_POST['project_name'];
     $begin_date = $_POST['begin_date'];
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         echo "Record updated successfully";
-        header("Location: ../requests/edit_request_redirect.php?msg=edit&employee_ID={$employee_ID}");
+        header("Location: ../requests/edit_request_redirect.php?msg=edit&department_ID={$department_ID}");
     } else {
         echo "Error updating record: " . $conn->error;
     }

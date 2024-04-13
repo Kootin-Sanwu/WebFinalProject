@@ -114,19 +114,19 @@
 //     $msg = $_GET['msg'];
 
 //     if ($msg == 'edit') {
-//         $employee_ID = $_POST['employee_ID'];
-//         if (isset($_POST['employee_ID']) && isset($_POST['request_ID'])) {
-//             $employee_ID = $_POST['employee_ID'];
+//         $department_ID = $_POST['department_ID'];
+//         if (isset($_POST['department_ID']) && isset($_POST['request_ID'])) {
+//             $department_ID = $_POST['department_ID'];
 //             $request_ID = $_POST['request_ID'];
 
-//             // Now you have the employee_ID and request_ID from the form
-//             echo "Employee ID: " . $employee_ID . "<br>";
+//             // Now you have the department_ID and request_ID from the form
+//             echo "department ID: " . $department_ID . "<br>";
 //             echo "Request ID: " . $request_ID;
 
 
-//             switch ($employee_ID) {
+//             switch ($department_ID) {
 //                 case 2:
-//                     header("Location: ../requests/plumbing_request.php?msg=edit&request_ID={$request_ID}&employee_ID={$employee_ID}");
+//                     header("Location: ../requests/plumbing_request.php?msg=edit&request_ID={$request_ID}&department_ID={$department_ID}");
 //                     exit();
 //                 case 3:
 //                     header("Location: ../requests/electrical_request.php?msg=edit&request_ID={$request_ID}");
@@ -150,8 +150,8 @@
 //                     echo "Invalid user ID.";
 //                     exit();
 //             }
-//         }  elseif (isset($_GET['msg']) && isset($_GET['employee_ID'])) {
-//                 switch ($employee_ID) {
+//         }  elseif (isset($_GET['msg']) && isset($_GET['department_ID'])) {
+//                 switch ($department_ID) {
 //                 case 2:
 //                     header("Location: ../requests/plumbing_request.php");
 //                     exit();
@@ -191,44 +191,44 @@ if (isset($_GET['msg'])) {
 
     if ($msg == 'edit') {
 
-        if (isset($_POST['employee_ID']) && isset($_POST['request_ID'])) {
-            $employee_ID = $_POST['employee_ID'];
+        if (isset($_POST['department_ID']) && isset($_POST['request_ID'])) {
+            $department_ID = $_POST['department_ID'];
             $request_ID = $_POST['request_ID'];
 
-            // Now you have the employee_ID and request_ID from the form
-            echo "Employee ID: " . $employee_ID . "<br>";
+            // Now you have the department_ID and request_ID from the form
+            echo "department ID: " . $department_ID . "<br>";
             echo "Request ID: " . $request_ID;
 
-            switch ($employee_ID) {
+            switch ($department_ID) {
                 case 2:
-                    header("Location: ../requests/plumbing_request.php?msg=edit&request_ID={$request_ID}&employee_ID={$employee_ID}");
+                    header("Location: ../requests/plumbing_request.php?msg=edit&request_ID={$request_ID}&department_ID={$department_ID}");
                     exit();
                 case 3:
-                    header("Location: ../requests/electrical_request.php?msg=edit&request_ID={$request_ID}&employee_ID={$employee_ID}");
+                    header("Location: ../requests/electrical_request.php?msg=edit&request_ID={$request_ID}&department_ID={$department_ID}");
                     exit();
                 case 4:
-                    header("Location: ../requests/concretery_request.php?msg=edit&request_ID={$request_ID}&employee_ID={$employee_ID}");
+                    header("Location: ../requests/concretery_request.php?msg=edit&request_ID={$request_ID}&department_ID={$department_ID}");
                     exit();
                 case 5:
-                    header("Location: ../requests/carpentry_request.php?msg=edit&request_ID={$request_ID}&employee_ID={$employee_ID}");
+                    header("Location: ../requests/carpentry_request.php?msg=edit&request_ID={$request_ID}&department_ID={$department_ID}");
                     exit();
                 case 6:
-                    header("Location: ../requests/roofing_request.php?msg=edit&request_ID={$request_ID}&employee_ID={$employee_ID}");
+                    header("Location: ../requests/roofing_request.php?msg=edit&request_ID={$request_ID}&department_ID={$department_ID}");
                     exit();
                 case 7:
-                    header("Location: ../requests/surveying_request.php?msg=edit&request_ID={$request_ID}&employee_ID={$employee_ID}");
+                    header("Location: ../requests/surveying_request.php?msg=edit&request_ID={$request_ID}&department_ID={$department_ID}");
                     exit();
                 case 8:
-                    header("Location: ../requests/welding_request.php?msg=edit&request_ID={$request_ID}&employee_ID={$employee_ID}");
+                    header("Location: ../requests/welding_request.php?msg=edit&request_ID={$request_ID}&department_ID={$department_ID}");
                     exit();
                 default:
                     echo "Invalid user ID.";
                     exit();
             }
-        } elseif (isset($_GET['employee_ID']) && !isset($_GET['request_ID'])) {
-            $employee_ID = $_GET['employee_ID'];
+        } elseif (isset($_GET['department_ID']) && !isset($_GET['request_ID'])) {
+            $department_ID = $_GET['department_ID'];
             
-            switch ($employee_ID) {
+            switch ($department_ID) {
                 case 2:
                     header("Location: ../requests/plumbing_request.php");
                     exit();

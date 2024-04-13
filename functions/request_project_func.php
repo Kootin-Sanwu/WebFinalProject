@@ -8,10 +8,13 @@ function displayEmployeeRequests()
 
     include "../settings/connection.php";
 
-    // Get the current user's ID
-    $employee_ID = $_SESSION['user_ID'];
+    $employee_ID = $_SESSION['employee_ID'];
 
-    $sql = "SELECT * FROM project_requests WHERE employee_ID = ?";
+    $sql = "SELECT pr.request_ID, pr.project_name, pr.begin_date, pr.end_date, pr.request_status, e.department_ID 
+            FROM project_requests pr
+            JOIN employees e ON pr.employee_ID = e.employee_ID
+            WHERE e.employee_ID = ?";
+            
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $employee_ID);
     $stmt->execute();
@@ -26,31 +29,27 @@ function displayEmployeeRequests()
     $conn->close();
 
     foreach ($requests as $request) {
-        $request_ID = $request['request_ID'];
+        $department_ID = $request['department_ID'];
         $projectName = $request['project_name'];
+        $request_ID = $request['request_ID'];
+        $status = $request['request_status'];
         $beginDate = $request['begin_date'];
         $endDate = $request['end_date'];
-        $status = $request['request_status'];
 
         echo '<tr>';
         echo "<td>{$projectName}</td>";
         echo "<td>{$beginDate}</td>";
         echo "<td>{$endDate}</td>";
         echo "<td>{$status}</td>";
-
-        // echo "<td><form class='status-container' action='../actions/delete_request_action.php' method='post'>";
-        // echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
-        // echo "<button type='submit' value='Delete'>Delete</button>";
-        // echo "</form>";
         
         echo "<td><form class='status-container' action='../requests/request_redirect.php?msg=delete' method='post'>";
+        echo "<input type='hidden' name='employee_ID' value='{$department_ID}'>";
         echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
-        echo "<input type='hidden' name='employee_ID' value='{$employee_ID}'>";
         echo "<button type='submit' value='Delete'>Delete</button>";
         echo "</form>";
 
         echo "<form class='status-container' action='../requests/edit_request_redirect.php?msg=edit' method='post'>";
-        echo "<input type='hidden' name='employee_ID' value='{$employee_ID}'>";
+        echo "<input type='hidden' name='employee_ID' value='{$department_ID}'>";
         echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
         echo "<button type='submit' value='Edit'>Edit</button>";
         echo "</form></td>";
@@ -58,6 +57,7 @@ function displayEmployeeRequests()
         echo '</tr>';
     }
 }
+
 
 
 function displayRequests()

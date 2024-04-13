@@ -20,10 +20,10 @@ if (isset($_GET['msg']) && isset($_GET['user_ID'])) {
     }
 }
 
-if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['employee_ID'])) {
+if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['department_ID'])) {
     $msg = $_GET['msg'];
     $request_ID = $_GET['request_ID'];
-    $employee_ID = $_GET['employee_ID'];
+    $department_ID = $_GET['department_ID'];
 
     if ($msg == 'edit') {
         include "../administrator/edit_request.php";

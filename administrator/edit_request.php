@@ -22,7 +22,7 @@ checkLogin();
                 <button name="closeButton" id="closePopup" onclick="closePopup(event)">Close</button>
                 <!-- <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button> -->
             </div>
-            <input type="hidden" name="employee_ID" value="<?php echo $employee_ID; ?>">
+            <input type="hidden" name="department_ID" value="<?php echo $department_ID; ?>">
             <input type="hidden" name="request_ID" value="<?php echo $request_ID; ?>">
 
             <div class="form-group">

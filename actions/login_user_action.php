@@ -20,10 +20,10 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
         if (password_verify($password, $hashed_password)) {
             session_start();
-            $_SESSION['user_ID'] = $current_user['employee_ID'];
+            $_SESSION['employee_ID'] = $current_user['employee_ID'];
             $_SESSION['department_ID'] = $current_user['department_ID'];
-
             $_SESSION['role_ID'] = $current_user['role_ID'];
+
             header("Location: ../../WebFinalProject/index.php");
             exit();
         } else {
@@ -42,11 +42,10 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
 $_SESSION['inProgressCount'] = 0;
 $_SESSION['completeCount'] = 0;
-$_SESSION['check'] = 0;
 ?>
 
 <script>
     var userId = <?php 
-    echo $_SESSION['user_ID']; 
+    echo $_SESSION['employee_ID']; 
     ?>;
 </script>
