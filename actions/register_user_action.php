@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO employees (first_name, last_name, phone_number, department_ID, role_ID, email, password) 
-            VALUES ('$first_name', '$last_name', '$phone_number', '$department_ID', '$role_ID', '$email', '$password')";
+            VALUES ('$first_name', '$last_name', '$phone_number', '$department_ID', '$role_ID', '$email', '$hashed_password')";
 
     if ($conn->query($sql)) {
         header("Location: ../logins/login_view.php");
