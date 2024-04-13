@@ -90,7 +90,7 @@ if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['department
                     <h3>PROJECTS LIST</h3>
                 </div>
                 <div class="assignchore-container">
-                    <button name="requestButton">REQUEST PROJECT</button>
+                    <button onclick="openPopup()" name="requestButton">REQUEST PROJECT</button>
                 </div>
             </div>
             <div class="table-container">
