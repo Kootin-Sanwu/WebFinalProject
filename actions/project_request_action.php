@@ -20,29 +20,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $end_Date = $_POST['end_date'];
         $request_Status = $_POST['request_status'];
 
-        echo $employee_ID . "<br>";
-        echo $project_Name . "<br>";
-        echo $begin_Date . "<br>";
-        echo $end_Date . "<br>";
-        echo $request_Status . "<br>";
+        $sql = "INSERT INTO requests (project_name, employee_ID, begin_date, end_date, request_status) 
+                VALUES (?, ?, ? ,? ,?)";
 
-        // $sql = "INSERT INTO requests (project_name, employee_ID, begin_date, end_date, request_status) 
-        //         VALUES (?, ?, ? ,? ,?)";
+        $stmt = $conn->prepare($sql);
 
-        // $stmt = $conn->prepare($sql);
-
-        // if ($stmt) {
-        //     $stmt->bind_param("sssss", $project_Name, $employee_ID, $begin_Date, $end_Date, $request_Status);
-        //     if ($stmt->execute()) {
-        //         header("Location: ../requests/close_request.php?employye_ID={$employee_ID}");
-        //         exit();
-        //     } else {
-        //         echo "Error: " . $stmt->error;
-        //     }
-        //     $stmt->close();
-        // } else {
-        //     echo "Error preparing statement: " . $conn->error;
-        // }
+        if ($stmt) {
+            $stmt->bind_param("sssss", $project_Name, $employee_ID, $begin_Date, $end_Date, $request_Status);
+            if ($stmt->execute()) {
+                header("Location: ../requests/close_request.php?employye_ID={$employee_ID}");
+                exit();
+            } else {
+                echo "Error: " . $stmt->error;
+            }
+            $stmt->close();
+        } else {
+            echo "Error preparing statement: " . $conn->error;
+        }
     } else {
         echo "All fields are required.";
     }
