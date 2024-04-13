@@ -14,7 +14,7 @@ if (isset($_POST['request_ID'])) {
     $checkResult = $conn->query($checkSql);
     
     if ($checkResult->num_rows == 0) {
-        $sql = "DELETE FROM project_requests WHERE request_ID = {$request_ID}";
+        $sql = "DELETE FROM requests WHERE request_ID = {$request_ID}";
 
         if ($conn->query($sql) === TRUE) {
             header("Location: ../requests/delete_request_redirect.php");

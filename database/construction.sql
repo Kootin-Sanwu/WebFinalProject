@@ -51,7 +51,7 @@ CREATE TABLE employees (
     FOREIGN KEY (role_ID) REFERENCES roles(role_ID)
 );
 
-CREATE TABLE project_requests (
+CREATE TABLE requests (
     request_ID INT PRIMARY KEY AUTO_INCREMENT,
     project_name VARCHAR(100) NOT NULL,
     employee_ID INT,

@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $end_Date = $_POST['end_date'];
         $request_Status = $_POST['request_status'];
 
-        $sql = "INSERT INTO project_requests (project_name, employee_ID, begin_date, end_date, request_status) 
+        $sql = "INSERT INTO requests (project_name, employee_ID, begin_date, end_date, request_status) 
                 VALUES (?, ?, ? ,? ,?)";
 
         $stmt = $conn->prepare($sql);

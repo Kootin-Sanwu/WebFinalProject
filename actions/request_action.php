@@ -11,15 +11,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
 
     
     if ($message == "approve") {
-        // Update the request_status to approved in project_requests table
-        $sql = "UPDATE project_requests SET request_status = 'approved' WHERE request_ID = $request_ID";
+        // Update the request_status to approved in requests table
+        $sql = "UPDATE requests SET request_status = 'approved' WHERE request_ID = $request_ID";
         
         if ($conn->query($sql) === TRUE) {
             echo $message;
             echo "Request status updated successfully to approved.";
 
-            // Retrieve project_name, employee_ID from project_requests table
-            $sql_select = "SELECT project_name, employee_ID, begin_date, end_date FROM project_requests WHERE request_ID = $request_ID";
+            // Retrieve project_name, employee_ID from requests table
+            $sql_select = "SELECT project_name, employee_ID, begin_date, end_date FROM requests WHERE request_ID = $request_ID";
             $result = $conn->query($sql_select);
 
             if ($result->num_rows > 0) {
@@ -91,19 +91,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
             echo "Error updating request status: " . $conn->error;
         }
     } elseif ($message == "reject") {
-        // Update the request_status to rejected in project_requests table
-        $sql = "UPDATE project_requests SET request_status = 'rejected' WHERE request_ID = $request_ID";
+        // Update the request_status to rejected in requests table
+        $sql = "UPDATE requests SET request_status = 'rejected' WHERE request_ID = $request_ID";
 
         if ($conn->query($sql) === TRUE) {
             echo "Request status updated successfully to rejected.";
 
-            // Remove the request from project_requests table
-            // $sql_remove = "DELETE FROM project_requests WHERE request_ID = $request_ID";
+            // Remove the request from requests table
+            // $sql_remove = "DELETE FROM requests WHERE request_ID = $request_ID";
             // if ($conn->query($sql_remove) === TRUE) {
-            // echo "Request removed from project_requests table.";
+            // echo "Request removed from requests table.";
             header("Location: ../requests/admin_request.php");
             // } else {
-            // echo "Error removing request from project_requests table: " . $conn->error;
+            // echo "Error removing request from requests table: " . $conn->error;
             // }
         } else {
             echo "Error updating request status: " . $conn->error;

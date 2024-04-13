@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $end_date = $_POST['end_date'];
 
     // SQL query to update the project request
-    $sql = "UPDATE project_requests SET 
+    $sql = "UPDATE requests SET 
             project_name = '$project_name', 
             begin_date = '$begin_date', 
             end_date = '$end_date',
