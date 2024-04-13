@@ -85,7 +85,7 @@ include "../settings/core.php";
             </a>
         </div>
         <div class="container-one">
-            <div class="topcontainer-1">
+            <!-- <div class="topcontainer-1">
                 <div class="maintitle-container">
                     <h3>PROJECTS LIST</h3>
                 </div>
@@ -95,7 +95,7 @@ include "../settings/core.php";
             </div>
             <div class="assignchore-popup" id="assignchore-container" style="display: none;">
                 <?php
-                include "../administrator/project_request.php";
+                // include "../administrator/project_request.php";
                 ?>
             </div>
             <div class="table-container">
@@ -111,6 +111,33 @@ include "../settings/core.php";
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
+                        // displayEmployeeRequests();
+                        ?>
+                    </tbody>
+                </table>
+            </div> -->
+            <div class="topcontainer-1">
+                <div class="maintitle-container">
+                    <h3>CHORES LIST</h3>
+                </div>
+                <div class="assignchore-container">
+                    <button onclick="openPopup()" name="assignButton">ASSIGN CHORE</button>
+                </div>
+            </div>
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Chore Name</th>
+                            <th>Assigned By</th>
+                            <th>Date Assigned</th>
+                            <th>Due Date</th>
+                            <th>Chore Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="createdChoresTable">
+                        <?php
                         displayEmployeeRequests();
                         ?>
                     </tbody>
@@ -120,6 +147,9 @@ include "../settings/core.php";
     </div>
     <div id="overlay"></div>
     <div id="popup">
+        <?php
+        include "../administrator/project_request.php";
+        ?>
     </div>
     <script src="../javascript/admin_request.js" defer></script>
 </body>
