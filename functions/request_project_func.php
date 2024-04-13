@@ -8,7 +8,7 @@ function displayEmployeeRequests()
 
     include "../settings/connection.php";
 
-    // $employee_ID = $_SESSION['employee_ID'];
+    $employee_ID = $_SESSION['employee_ID'];
 
     // $sql = "SELECT pr.request_ID, pr.project_name, pr.begin_date, pr.end_date, pr.request_status, e.department_ID 
     //         FROM project_requests pr
