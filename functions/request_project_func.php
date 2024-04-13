@@ -1,4 +1,13 @@
 <?php
+$sql = "SELECT r.request_ID, r.project_name, r.begin_date, r.end_date, r.request_status, e.department_ID 
+FROM requests pr
+JOIN employees e ON r.employee_ID = e.employee_ID
+WHERE e.employee_ID = ?";
+    
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $employee_ID);
+$stmt->execute();
+$result = $stmt->get_result();
 
 function displayEmployeeRequests()
 {
@@ -10,15 +19,15 @@ function displayEmployeeRequests()
 
     $employee_ID = $_SESSION['employee_ID'];
 
-    $sql = "SELECT r.request_ID, r.project_name, r.begin_date, r.end_date, r.request_status, e.department_ID 
-            FROM requests pr
-            JOIN employees e ON r.employee_ID = e.employee_ID
-            WHERE e.employee_ID = ?";
+    // $sql = "SELECT r.request_ID, r.project_name, r.begin_date, r.end_date, r.request_status, e.department_ID 
+    //         FROM requests pr
+    //         JOIN employees e ON r.employee_ID = e.employee_ID
+    //         WHERE e.employee_ID = ?";
             
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $employee_ID);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    // $stmt = $conn->prepare($sql);
+    // $stmt->bind_param("i", $employee_ID);
+    // $stmt->execute();
+    // $result = $stmt->get_result();
 
     // $requests = [];
     // while ($row = $result->fetch_assoc()) {
