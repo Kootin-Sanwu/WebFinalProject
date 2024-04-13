@@ -6,7 +6,7 @@ function displayEmployeeRequests()
         session_start();
     }
 
-    // include "../settings/connection.php";
+    include "../settings/connection.php";
 
     // $employee_ID = $_SESSION['employee_ID'];
 
