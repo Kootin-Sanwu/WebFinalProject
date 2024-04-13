@@ -1,15 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    function loadEmployeeRequests() {
-        fetch('../administrator/project_request.php')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('employee-requests').innerHTML = data;
-            });
-    }
-
-    loadEmployeeRequests();
-
     var homeButton = document.querySelector(".container-three button[name=homeButton]");
     var manageButton = document.querySelector(".container-three button[name=manageButton]");
     var choreButton = document.querySelector(".container-three button[name=choreButton]");
