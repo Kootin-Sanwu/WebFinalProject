@@ -1,6 +1,10 @@
 <?php
 include "../settings/connection.php";
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
     $message = $_GET["msg"];
 
@@ -33,8 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
                 $stmt_assignment_insert->bind_param("iiss", $project_ID, $department_ID, $begin_Date, $end_Date);
 
                 if ($stmt_assignment_insert->execute()) {
-                    // header("Location: {$_SERVER['HTTP_REFERER']}");
-                    header("Location: ../requests/admin_request.php");
+                    header("Location: {$_SERVER['HTTP_REFERER']}");
                 } else {
                     echo "Error creating assignment: " . $conn->error;
                 }
