@@ -7,10 +7,6 @@ if(isset($_SESSION['request_ID']) && isset($_SESSION['department_ID']) && isset(
     $department_ID = $_SESSION['department_ID'];
     $employee_ID = $_SESSION['employee_ID'];
     $requestID = $_SESSION['request_ID'];
-
-    echo $department_ID;
-    echo $employee_ID;
-    echo $request_ID;
 }
 ?>
 
@@ -34,9 +30,9 @@ if(isset($_SESSION['request_ID']) && isset($_SESSION['department_ID']) && isset(
                 <button name="closeButton" value="close">Close</button>
             </div>
 
-            <input type="hidden" name="department_ID" value="<?php echo $department_ID; ?>">
-            <input type="hidden" name="employee_ID" value="<?php echo $employee_ID; ?>">
-            <input type="hidden" name="request_ID" value="<?php echo $requestID; ?>">
+            <input type="" name="department_ID" value="<?php echo $department_ID; ?>">
+            <input type="" name="employee_ID" value="<?php echo $employee_ID; ?>">
+            <input type="" name="request_ID" value="<?php echo $requestID; ?>">
 
             <div class="text">
                 CONFIRM DELETION
