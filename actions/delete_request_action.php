@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo $close_Value;
         
         if ($close_Value == "close") {
-            header("Location: ../directions/close_delete_direction.php");
+            header("Location: ../directions/close_delete_direction.php?department_ID={$department_ID}");
             exit();
         }    
         // } else {
