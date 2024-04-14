@@ -151,6 +151,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
+    z-index: 1; /* Ensure the close button appears above the modal */
 }
 
 .close-form-group button {
