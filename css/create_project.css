@@ -1,4 +1,4 @@
-.container-15 {
+/* .container-15 {
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     overflow: hidden;
@@ -90,7 +90,7 @@
 .text {
     text-align: center;
     width: 100%;
-}
+} */
 
 
 
@@ -101,7 +101,7 @@
 
 
 
-/* 
+
 .container-15 {
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
@@ -197,4 +197,4 @@
 .text {
     text-align: center;
     width: 100%;
-} */
+}

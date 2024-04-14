@@ -66,18 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // closeButton.addEventListener('mouseup', function () {
     //     closeHover(this);
     // });
-
-    // function closePopup(event) {
-    //     event.preventDefault();
-    //     window.location.href = "../directions/close_request_direction.php?msg=close";
-    // };
-
-    const closeButton = document.getElementById("closePopup");
-
-    closeButton.addEventListener("click", function(event) {
-        event.preventDefault();
-        window.location.href = "../directions/close_request_direction.php?msg=close";
-    });
 });
 
 function openPopup() {
