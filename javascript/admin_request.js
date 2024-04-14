@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function closePopup() {
-    window.location.href = "../directions/close_direction.php";
+    // window.location.href = "../directions/close_direction.php";
 }
 
 function togglePopup() {
