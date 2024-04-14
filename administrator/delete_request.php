@@ -30,15 +30,15 @@ if(isset($_SESSION['request_ID']) && isset($_SESSION['department_ID']) && isset(
             <input type="hidden" name="employee_ID" value="<?php echo $employee_ID; ?>">
             <input type="hidden" name="request_ID" value="<?php echo $requestID; ?>">
 
-            <div class="form-group">
+            <div class="text">
                 CONFIRM DELETION
             </div>
             <div class="submit">
-                <button name="submitButton">Delete</button>
+                <button name="deleteButton">Delete</button>
             </div>
         </div>
     </form>
-    <script src="../javascript/delete_project.js" defer></script>
+    <script src="../javascript/delete_request.js" defer></script>
 </body>
 
 </html>

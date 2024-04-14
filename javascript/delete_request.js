@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    var logoutButton = document.querySelector(".submit button[name=logoutButton]");
+    var deleteButton = document.querySelector(".submit button[name=deleteButton]");
 
     function submitHover(button) {
         button.style.transform = 'translateY(-2px)';
@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function resetStyles() {
-        logoutButton.style.transform = 'translateY(2px)';
-        logoutButton.style.backgroundColor = '#1f4a94';
-        logoutButton.style.boxShadow = '1px 1px grey';
+        deleteButton.style.transform = 'translateY(2px)';
+        deleteButton.style.backgroundColor = '#1f4a94';
+        deleteButton.style.boxShadow = '1px 1px grey';
     }
 
     function closeResetStyles() {
@@ -36,19 +36,19 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = "../admin/managechores.php";
     }
 
-    logoutButton.addEventListener('mouseover', function () {
+    deleteButton.addEventListener('mouseover', function () {
         submitHover(this);
     });
 
-    logoutButton.addEventListener('mouseout', function () {
+    deleteButton.addEventListener('mouseout', function () {
         resetStyles();
     });
 
-    logoutButton.addEventListener('mousedown', function () {
+    deleteButton.addEventListener('mousedown', function () {
         applyAddPressedEffect(this);
     });
 
-    logoutButton.addEventListener('mouseup', function () {
+    deleteButton.addEventListener('mouseup', function () {
         submitHover(this);
         addChore(this);
     });

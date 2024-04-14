@@ -12,7 +12,7 @@ if (isset($_POST['request_ID']) && isset($_POST['employee_ID']) && isset($_POST[
     $stmt_delete_request->bind_param("i", $request_ID);
 
     if ($stmt_delete_request->execute()) {
-        header("Location: ../directions/close_direction.php?department_ID={$department_ID}");
+        header("Location: ../directions/close_request_direction.php?department_ID={$department_ID}");
     } else {
         echo "Error deleting request: " . $stmt_delete_request->error;
     }
