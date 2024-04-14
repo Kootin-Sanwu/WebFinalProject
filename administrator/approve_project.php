@@ -23,9 +23,11 @@ $end_date = $_SESSION["end_date"];
 <body>
     <form class="container-15" id="myModal" method="POST" action="../actions/request_action.php?msg=approve">
         <div class="container-16">
+
             <div class="close-form-group">
-                <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button>
+                <button name="closeButton" value="close">Close</button>
             </div>
+
             <input type="hidden" name="department_ID" value="<?php echo $department_ID; ?>">
             <input type="hidden" name="project_name" value="<?php echo $project_name; ?>">
             <input type="hidden" name="request_ID" value="<?php echo $request_ID; ?>">
