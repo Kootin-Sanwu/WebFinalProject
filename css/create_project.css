@@ -158,9 +158,11 @@
 
 .close-form-group {
     position: absolute;
-    top: 20%;
-    right: 20%;
+    top: 10%;
+    right: 10%;
     z-index: 1;
+    height: 20px;
+    width: 35px;
 }
 
 .close-form-group button {
