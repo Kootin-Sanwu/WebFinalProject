@@ -31,11 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
         button.style.backgroundColor = "black";
         button.style.boxShadow = 'none';
     }
-    
-    function toggleRequired() {
-        projectName.required = !projectName.required;
-        beginDate.required = !beginDate.required;
-        endDate.required = !endDate.required;
+
+    function closePopup() {
+        window.location.href = "../admin/managechores.php";
     }
 
     deleteButton.addEventListener('mouseover', function () {
@@ -63,17 +61,14 @@ document.addEventListener('DOMContentLoaded', function () {
         closeResetStyles();
     });
 
-    closeButton.addEventListener('mousedown', function (event) {
-        closePressEffect(this);
+    closeButton.addEventListener('mousedown', function () {
+        applyAddPressedEffect(this);
+        closePopup(this);
     });
-
-    closeButton.addEventListener('mouseup', function () {
-        closeHover(this);
-    });
-
-    closeButton.addEventListener('click', function () {
-        toggleRequired();
-    });
+    
+    function closePopup() {
+        window.location.href = "../directions/close_request_direction.php?msg=close";
+    };
 });
 
 function openPopup() {
