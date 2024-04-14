@@ -11,6 +11,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $begin_date = $_POST['begin_date'];
     $end_date = $_POST['end_date'];
 
+    // Check request status
+    $sql_check_status = "SELECT request_status FROM requests WHERE request_ID = ?";
+    $stmt_check_status = $conn->prepare($sql_check_status);
+    $stmt_check_status->bind_param("i", $request_ID);
+    $stmt_check_status->execute();
+    $stmt_check_status->bind_result($status);
+    $stmt_check_status->fetch();
+    $stmt_check_status->close();
+
+    if ($status == 'approved') {
+        header("Location: ../directions/close_edit_direction.php?department_ID={$department_ID}");
+        exit();
+    }
+
     if ($close_Value == "close") {
         header("Location: ../directions/close_edit_direction.php?department_ID={$department_ID}");
         exit();
