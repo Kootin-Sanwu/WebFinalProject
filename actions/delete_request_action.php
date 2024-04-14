@@ -19,8 +19,7 @@ if (isset($_POST['request_ID']) && isset($_POST['employee_ID'])) {
     $stmt->bind_param("i", $request_ID);
 
     if ($stmt->execute()) {
-        echo "Request deleted successfully.";
-        // header("Location: {$_SERVER['HTTP_REFERER']}");
+        header("Location: {$_SERVER['HTTP_REFERER']}");
     } else {
         echo "Error deleting request: " . $stmt->error;
     }
