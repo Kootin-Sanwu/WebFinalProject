@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
         closeResetStyles();
     });
 
-    closeButton.addEventListener('mousedown', function () {
-        applyAddPressedEffect(this);
+    closeButton.addEventListener('mousedown', function (event) {
+        event.preventDefault();
         window.location.href = "../directions/close_request_direction.php?msg=close";
     });
     
