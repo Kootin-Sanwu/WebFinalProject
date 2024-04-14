@@ -1,7 +1,7 @@
 <?php
 include "../settings/connection.php";
 
-if (isset($_POST['request_ID']) && isset($_POST['employee_ID']) && isset($_POST['department_ID'])) {
+if (isset($_POST['request_ID']) && isset($_POST['employee_ID']) && isset($_POST['department_ID']) && isset($_POST['close_value'])) {
     $department_ID = $_POST['department_ID'];
     $employee_ID = $_POST['employee_ID'];
     $request_ID = $_POST['request_ID'];
@@ -26,7 +26,7 @@ if (isset($_POST['request_ID']) && isset($_POST['employee_ID']) && isset($_POST[
     }
 
 } else {
-    echo "No request ID or employee ID or department ID specified.";
+    echo "No request ID, employee ID, department ID, or close value specified.";
 }
 
 $conn->close();
