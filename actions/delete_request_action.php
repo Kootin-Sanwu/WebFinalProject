@@ -14,9 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         echo $close_Value;
         
-        // if ($close_Value == "close") {
-        //     header("Location: ../directions/close_request_direction.php?msg=close");
-        //     exit();
+        if ($close_Value == "close") {
+            header("Location: ../directions/close_request_direction.php?msg=close");
+            exit();
+        }    
         // } else {
         //     $sql_delete_request = "DELETE FROM requests WHERE request_ID = ?";
             
