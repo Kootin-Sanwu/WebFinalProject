@@ -81,7 +81,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     var addButton = document.querySelector(".submit button[name=addButton]");
-    var closeButton = document.querySelector("button[name=closeButton]");
+    var closeButton = document.querySelector("close-form-group button[name=closeButton]");
 
     function submitHover(button) {
         button.style.transform = 'translateY(-2px)';
