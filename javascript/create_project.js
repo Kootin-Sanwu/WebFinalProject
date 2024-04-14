@@ -121,9 +121,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-function closePopup() {
-    window.location.href = "../directions/close_direction.php";
-}
+// function closePopup() {
+    // window.location.href = "../directions/close_direction.php";
+// }
 
 function openPopup() {
     document.getElementById('overlay').style.display = 'block';
