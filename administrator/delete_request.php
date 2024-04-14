@@ -23,9 +23,13 @@ if(isset($_SESSION['request_ID']) && isset($_SESSION['department_ID']) && isset(
 <body>
     <form class="container-15" id="myModal" method="POST" action="../actions/delete_request_action.php">
         <div class="container-16">
-            <div class="close-form-group">
+            <!-- <div class="close-form-group">
                 <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button>
+            </div> -->
+            <div class="close-form-group">
+                <button name="closeButton" value="close">Close</button>
             </div>
+            
             <input type="hidden" name="department_ID" value="<?php echo $department_ID; ?>">
             <input type="hidden" name="employee_ID" value="<?php echo $employee_ID; ?>">
             <input type="hidden" name="request_ID" value="<?php echo $requestID; ?>">

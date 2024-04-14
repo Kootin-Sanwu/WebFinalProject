@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', function () {
         button.style.boxShadow = 'none';
     }
 
-    function closePopup() {
-        window.location.href = "../admin/managechores.php";
-    }
+    // function closePopup() {
+    //     window.location.href = "../admin/managechores.php";
+    // }
 
     deleteButton.addEventListener('mouseover', function () {
         submitHover(this);
@@ -63,12 +63,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     closeButton.addEventListener('mousedown', function () {
         applyAddPressedEffect(this);
-        closePopup(this);
+        // closePopup(this);
+    });
+
+    closeButton.addEventListener('mouseup', function () {
+        closeHover(this);
     });
     
-    function closePopup() {
-        window.location.href = "../directions/close_request_direction.php?msg=close";
-    };
+    // function closePopup() {
+    //     window.location.href = "../directions/close_request_direction.php?msg=close";
+    // };
 });
 
 function openPopup() {
