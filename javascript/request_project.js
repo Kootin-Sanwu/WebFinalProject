@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     closeButton.addEventListener('mousedown', function (event) {
         closePressEffect(this);
+        event.stopPropagation();
     });
 
     closeButton.addEventListener('mouseup', function () {
