@@ -10,7 +10,7 @@ checkLogin();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/create_project.css">
-    <title>Request Project</title>
+    <title>Edit Request</title>
 </head>
 
 <body>
@@ -42,11 +42,11 @@ checkLogin();
             <input type="hidden" name="request_status" value="pending">
 
             <div class="submit">
-                <button name="addButton">Submit Request</button>
+                <button name="addButton">Edit</button>
             </div>
         </div>
     </form>
-    <script src="../javascript/request_project.js" defer></script>
+    <script src="../javascript/edit_project.js" defer></script>
 </body>
 
 </html>
