@@ -105,7 +105,7 @@ function displayAllRequests()
 
         $output .= '<td>';
 
-        $output .= "<form class='status-container' action='../actions/request_action.php?msg=approve' method='POST'>";
+        $output .= "<form class='status-container' action='../requests/admin_request.php?msg=approve' method='POST'>";
         $output .= "<input type='hidden' name='department_ID' value='{$department_ID}'>";
         $output .= "<input type='hidden' name='project_name' value='{$project_Name}'>";
         $output .= "<input type='hidden' name='request_ID' value='{$request_ID}'>";
@@ -114,7 +114,7 @@ function displayAllRequests()
         $output .= "<button type='submit' name='approveButton' value='Approve'>APPROVE</button>";
         $output .= "</form>";
 
-        $output .= "<form class='status-container' action='../actions/request_action.php?msg=reject' method='POST'>";
+        $output .= "<form class='status-container' action='../requests/admin_request.php?msg=reject' method='POST'>";
         $output .= "<input type='hidden' name='department_ID' value='{$department_ID}'>";
         $output .= "<input type='hidden' name='project_name' value='{$project_Name}'>";
         $output .= "<input type='hidden' name='request_ID' value='{$request_ID}'>";

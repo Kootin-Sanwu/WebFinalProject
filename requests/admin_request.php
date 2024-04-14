@@ -1,14 +1,25 @@
 <?php
-include "../functions/request_project_func.php";
+include "../settings/connection.php";
+include "../settings/core.php";
 
-if (isset($_GET['msg']) && isset($_GET['request_ID'])) {
-    if ($_GET['request_ID'] && $_GET['msg'] == 'update') {
-        include "../administrator/update_request.php";
-    } else if ($_GET['request_ID'] && $_GET['msg'] == 'approve') {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
+    $message = $_GET["msg"];
+    
+    $_SESSION["department_ID"] = $_POST["department_ID"];
+    $_SESSION["project_name"] = $_POST["project_name"];
+    $_SESSION["request_ID"] = $_POST["request_ID"];
+    $_SESSION["begin_date"] = $_POST["begin_date"];
+    $_SESSION["end_date"] = $_POST["end_date"];
+
+    if ($message == "approve") {
         include "../administrator/approve_project.php";
-    } else if ($_GET['request_ID'] && $_GET['msg'] == 'reject') {
+    } elseif ($message == "reject") {
         include "../administrator/reject_project.php";
+    } else {
+        echo "Unknown message.";
     }
+} else {
+    echo "Message not received or form not submitted";
 }
 ?>
 

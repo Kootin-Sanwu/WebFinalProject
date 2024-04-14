@@ -2,14 +2,15 @@
 include "../settings/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
-    $department_ID = $_POST["department_ID"];
-    $project_Name = $_POST["project_name"];
-    $request_ID = $_POST["request_ID"];
-    $begin_Date = $_POST["begin_date"];
-    $end_Date = $_POST["end_date"];
     $message = $_GET["msg"];
 
     if ($message == "approve") {
+        $department_ID = $_SESSION["department_ID"];
+        $project_Name = $_SESSION["project_name"];
+        $request_ID = $_SESSION["request_ID"];
+        $begin_Date = $_SESSION["begin_date"];
+        $end_Date = $_SESSION["end_date"];
+        
         $sql_request_update = "UPDATE requests SET request_status = 'APPROVED' WHERE request_ID = ?";
         
         $stmt = $conn->prepare($sql_request_update);
@@ -50,6 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
         $stmt->close();
 
     } elseif ($message == "reject") {
+        $request_ID = $_SESSION["request_ID"];
+        
         $sql_request_update = "UPDATE requests SET request_status = 'REJECTED' WHERE request_ID = ?";
         
         $stmt = $conn->prepare($sql_request_update);
@@ -67,7 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
         echo "Unknown error caught";
     }
 } else {
-    echo "Message not received of form not submitted";
+    echo "Message not received or form not submitted";
 }
 
 $conn->close();
+?>

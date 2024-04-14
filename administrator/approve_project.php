@@ -1,10 +1,14 @@
 <?php
-// echo "Request ID: " . $requestId;
-// echo "Anything";
-// include "../functions/request_project_func.php";
-// displayRequests();
-// $requestId = $_POST['actionValue'];
-// echo $requestId;
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+$department_ID = $_SESSION["department_ID"];
+$project_name = $_SESSION["project_name"];
+$request_ID = $_SESSION["request_ID"];
+$begin_date = $_SESSION["begin_date"];
+$end_date = $_SESSION["end_date"];
+
 ?>
 
 <!DOCTYPE html>
@@ -23,10 +27,11 @@
             <div class="close-form-group">
                 <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button>
             </div>
-            <input type="hidden" name="request_ID" value="<?php
-                                                            $requestId = $_POST['actionValue'];
-                                                            echo $requestId;
-                                                            ?>">
+            <input type="hidden" name="department_ID" value="<?php echo $department_ID; ?>">
+            <input type="hidden" name="project_name" value="<?php echo $project_name; ?>">
+            <input type="hidden" name="request_ID" value="<?php echo $request_ID; ?>">
+            <input type="hidden" name="begin_date" value="<?php echo $begin_date; ?>">
+            <input type="hidden" name="end_date" value="<?php echo $end_date; ?>">
 
             <div class="text">
                 CONFIRM APPROVAL
