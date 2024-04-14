@@ -8,13 +8,6 @@ $project_name = $_SESSION["project_name"];
 $request_ID = $_SESSION["request_ID"];
 $begin_date = $_SESSION["begin_date"];
 $end_date = $_SESSION["end_date"];
-
-echo $department_ID;
-echo $project_name;
-echo $request_ID;
-echo $begin_date;
-echo $end_date;
-
 ?>
 
 <!DOCTYPE html>
