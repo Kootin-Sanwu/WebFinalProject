@@ -1,5 +1,7 @@
 <?php
-include "../settings/core.php";
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 if(isset($_SESSION['request_ID']) && isset($_SESSION['department_ID']) && isset($_SESSION['employee_ID'])) {
     $requestID = $_SESSION['request_ID'];
