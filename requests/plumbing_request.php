@@ -4,11 +4,9 @@ include "../settings/core.php";
 
 if (isset($_GET['msg']) && $_GET['msg'] == 'delete') {
     $department_ID = $_GET['department'];
-    $employee_ID = $_GET['employee_ID'];
     $request_ID = $_GET['request_ID'];
 
     $_SESSION['department_ID'] = $department_ID;
-    $_SESSION['employee_ID'] = $employee_ID;
     $_SESSION['request_ID'] = $request_ID;
 
     include '../administrator/delete_request.php';

@@ -4,11 +4,9 @@ include "../settings/connection.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (
         isset($_POST['department_ID']) && !empty($_POST['department_ID']) &&
-        isset($_POST['employee_ID']) && !empty($_POST['employee_ID']) &&
         isset($_POST['request_ID']) && !empty($_POST['request_ID'])
     ) {   
         $department_ID = $_POST['department_ID'];
-        $employee_ID = $_POST['employee_ID'];
         $close_Value = $_POST['closeButton'];
         $request_ID = $_POST['request_ID'];
 
