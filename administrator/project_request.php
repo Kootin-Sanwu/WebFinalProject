@@ -36,7 +36,7 @@ checkLogin();
             <input type="hidden" name="request_status" value="pending">
 
             <div class="submit">
-                <button name="addButton">Submit Request</button>
+                <button name="addButton">Request</button>
             </div>
         </div>
     </form>
