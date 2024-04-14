@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function closePopup(event) {
         event.preventDefault();
         window.location.href = "../directions/close_request_direction.php?msg=close";
-    }
+    };
 });
 
 function openPopup() {

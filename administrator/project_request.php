@@ -38,12 +38,12 @@ checkLogin();
         </div>
     </form>
     <script src="../javascript/request_project.js" defer></script>
-    <script>
+    <!-- <script>
         function closePopup(event) {
             event.preventDefault();
             window.location.href = "../directions/close_request_direction.php?msg=close";
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
