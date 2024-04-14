@@ -3,7 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-if (isset($_POST['department_ID']) && isset($_POST['request_ID']) && isset($_POST['employee_ID'])) {
+if (isset($_POST['department_ID']) && isset($_POST['request_ID'])) {
     $department_ID = $_POST['department_ID'];
     $request_ID = $_POST['request_ID'];
 
