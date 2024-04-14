@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $end_date = $_POST['end_date'];
 
     if ($close_Value == "close") {
-        header("Location: {$_SERVER['HTTP_REFERER']}");
+        header("Location: ../directions/close_edit_direction.php?msg=close");
         exit();
     } else {
 
