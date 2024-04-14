@@ -1,10 +1,8 @@
 <?php
 include "../settings/connection.php";
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
+    $department_ID = $_POST["department_ID"];
     $project_Name = $_POST["project_name"];
     $request_ID = $_POST["request_ID"];
     $begin_Date = $_POST["begin_date"];
@@ -12,9 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
     $message = $_GET["msg"];
 
     if ($message == "approve") {
-        $sql_project_update = "UPDATE requests SET request_status = 'APPROVED' WHERE request_ID = ?";
+        $sql_request_update = "UPDATE requests SET request_status = 'APPROVED' WHERE request_ID = ?";
         
-        $stmt = $conn->prepare($sql_project_update);
+        $stmt = $conn->prepare($sql_request_update);
         $stmt->bind_param("i", $request_ID);
 
         if ($stmt->execute()) {
@@ -29,8 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
 
                 $sql_assignment_insert = "INSERT INTO assignments (project_ID, department_ID, begin_date, end_date, workflow) 
                 VALUES (?, ?, ?, ?, 'ASSIGNED')";
-                
-                $department_ID = $_POST["department_ID"];
                 
                 $stmt_assignment_insert = $conn->prepare($sql_assignment_insert);
                 $stmt_assignment_insert->bind_param("iiss", $project_ID, $department_ID, $begin_Date, $end_Date);
@@ -54,9 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
         $stmt->close();
 
     } elseif ($message == "reject") {
-        $sql_project_update = "UPDATE requests SET request_status = 'REJECTED' WHERE request_ID = ?";
+        $sql_request_update = "UPDATE requests SET request_status = 'REJECTED' WHERE request_ID = ?";
         
-        $stmt = $conn->prepare($sql_project_update);
+        $stmt = $conn->prepare($sql_request_update);
         $stmt->bind_param("i", $request_ID);
 
         if ($stmt->execute()) {
@@ -71,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
         echo "Unknown error caught";
     }
 } else {
-    echo "Message not received or form not submitted";
+    echo "Message not received of form not submitted";
 }
 
 $conn->close();

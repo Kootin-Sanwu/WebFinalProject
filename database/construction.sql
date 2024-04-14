@@ -249,7 +249,6 @@ INSERT INTO departments (department_ID, department_name) VALUES
 (7, "Surveying & Mapping Department"),
 (8, 'Welding Department');
 
--- Employees Table
 CREATE TABLE employees (
     employee_ID INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(20) NOT NULL,
@@ -258,7 +257,7 @@ CREATE TABLE employees (
     department_ID INT,
     role_ID INT,
     email VARCHAR(50) NOT NULL,
-    password VARCHAR(255) NOT NULL,  -- hashed password
+    password VARCHAR(255) NOT NULL,
     FOREIGN KEY (department_ID) REFERENCES departments(department_ID),
     FOREIGN KEY (role_ID) REFERENCES roles(role_ID)
 );
@@ -269,7 +268,7 @@ CREATE TABLE requests (
     employee_ID INT,
     begin_date DATE,
     end_date DATE,
-    request_status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
+    request_status ENUM('PENDING', 'APPROVED', 'REJECTED') DEFAULT 'PENDING',
     FOREIGN KEY (employee_ID) REFERENCES employees(employee_ID)
 );
 
@@ -278,8 +277,8 @@ CREATE TABLE projects (
     project_name VARCHAR(100) NOT NULL,
     begin_date DATE,
     end_date DATE,
-    workflow ENUM('In Progress', 'Incomplete', 'Complete', 'Unassigned', 'Assigned') DEFAULT 'Unassigned',
-    status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending'
+    workflow ENUM('IN PROGRESS', 'INCOMPLETE', 'COMPLETE', 'UNASSIGNED', 'ASSIGNED') DEFAULT 'UNASSIGNED',
+    status ENUM('PENDING', 'APPROVED', 'REJECTED') DEFAULT 'PENDING'
 );
 
 CREATE TABLE assignments (
@@ -288,7 +287,7 @@ CREATE TABLE assignments (
     department_ID INT,
     begin_date DATE,
     end_date DATE,
-    workflow ENUM('In Progress', 'Incomplete', 'Complete', 'Unassigned', 'Assigned') DEFAULT 'Unassigned',
+    workflow ENUM('IN PROGRESS', 'INCOMMPLETE', 'COMPLETE', 'UNASSIGNED', 'ASSIGNED') DEFAULT 'UNASSIGNED',
     FOREIGN KEY (project_ID) REFERENCES projects(project_ID),
     FOREIGN KEY (department_ID) REFERENCES departments(department_ID)
 );

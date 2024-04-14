@@ -70,7 +70,11 @@ function displayAllRequests()
 
     include "../settings/connection.php";
 
-    $sql = "SELECT * FROM requests WHERE request_status = 'pending'";
+    $sql = "SELECT r.*, e.department_ID 
+            FROM requests r
+            JOIN employees e ON r.employee_ID = e.employee_ID
+            WHERE r.request_status = 'PENDING'";
+    
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -86,12 +90,12 @@ function displayAllRequests()
     $output = "";
 
     foreach ($requests as $request) {
-        $request_Status = $request['request_status'];
-        $department_ID = $request['department_ID'];
-        $project_Name = $request['project_name'];
         $request_ID = $request['request_ID'];
+        $project_Name = $request['project_name'];
         $begin_Date = $request['begin_date'];
         $end_Date = $request['end_date'];
+        $request_Status = $request['request_status'];
+        $department_ID = $request['department_ID'];
 
         $output .= '<tr>';
         $output .= "<td>{$project_Name}</td>";
@@ -101,7 +105,7 @@ function displayAllRequests()
 
         $output .= '<td>';
 
-        $output .= "<form class='status-container' action='../actions/request_action.php?msg=approve' method='POST'>";
+        $output .= "<form class='status-container' action='../actions/update_request_action.php?msg=approve' method='POST'>";
         $output .= "<input type='hidden' name='department_ID' value='{$department_ID}'>";
         $output .= "<input type='hidden' name='project_name' value='{$project_Name}'>";
         $output .= "<input type='hidden' name='request_ID' value='{$request_ID}'>";
@@ -110,9 +114,10 @@ function displayAllRequests()
         $output .= "<button type='submit' name='approveButton' value='Approve'>APPROVE</button>";
         $output .= "</form>";
 
-        $output .= "<form class='status-container' action='../actions/request_action.php?msg=reject' method='POST'>";
-        $output .= "<input type='hidden' name='request_ID' value='{$request_ID}'>";
+        $output .= "<form class='status-container' action='../actions/update_request_action.php?msg=reject' method='POST'>";
+        $output .= "<input type='hidden' name='department_ID' value='{$department_ID}'>";
         $output .= "<input type='hidden' name='project_name' value='{$project_Name}'>";
+        $output .= "<input type='hidden' name='request_ID' value='{$request_ID}'>";
         $output .= "<input type='hidden' name='begin_date' value='{$begin_Date}'>";
         $output .= "<input type='hidden' name='end_date' value='{$end_Date}'>";
         $output .= "<button type='submit' name='rejectButton' value='Reject'>REJECT</button>";
