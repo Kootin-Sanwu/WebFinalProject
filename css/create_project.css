@@ -161,8 +161,8 @@
     top: 30%;
     right: 40%;
     z-index: 1;
-    height: 5%;
-    width: 5%;
+    height: 10px;
+    width: 10px;
 }
 
 .close-form-group button {
