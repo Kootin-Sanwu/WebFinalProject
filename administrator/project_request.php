@@ -14,24 +14,17 @@ checkLogin();
 </head>
 
 <body>
-    <!-- <div class="close-form-group">
-        <button name="closeButton" onclick="closePopup()">Close</button>
-    </div> -->
     <form class="container-15" id="myModal" method="POST" action="../actions/project_request_action.php">
         <div class="container-16">
-            <!-- <div class="close-form-group">
-                <button name="closeButton" onclick="closePopup()">Close</button>
-            </div> -->
 
             <div class="close-form-group">
-                <button name="closeButton" value="close">Close</button>
-                <input type="hidden" name="close_button_value" value="">
+                <input type="hidden" name="close_value" value="close">
+                <button name="closeButton">Close</button>
             </div>
 
-
-            <input type="hidden" name="employee_ID" value="<?php 
-            echo $_SESSION['employee_ID']; 
-            ?>">
+            <input type="hidden" name="employee_ID" value="<?php
+                                                                echo $_SESSION['employee_ID'];
+                                                            ?>">
 
             <div class="form-group">
                 <label for="project_name">Project Name:</label>

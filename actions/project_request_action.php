@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $begin_Date = $_POST['begin_date'];
         $end_Date = $_POST['end_date'];
         $request_Status = $_POST['request_status'];
-        $close_button_value = $_POST['close_button_value'];
+        $close_button_value = $_POST['close_value'];
 
         if ($close_button_value == "close") {
             header("Location: ../directions/close_request_direction.php?msg=close");
