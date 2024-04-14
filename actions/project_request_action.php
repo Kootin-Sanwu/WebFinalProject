@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $begin_Date = $_POST['begin_date'];
         $end_Date = $_POST['end_date'];
         $request_Status = $_POST['request_status'];
-        $close_Value = $_POST['close_value'];
+        $close_Value = $_POST['closeButton'];
 
         echo $close_Value;
 
