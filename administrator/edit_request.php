@@ -1,8 +1,6 @@
 <?php
 include "../settings/core.php";
 checkLogin();
-// echo $employee_ID;
-// echo $request_ID;
 ?>
 
 <!DOCTYPE html>
@@ -18,12 +16,17 @@ checkLogin();
 <body>
     <form class="container-15" id="myModal" method="POST" action="../actions/edit_request_action.php">
         <div class="container-16">
+
             <div class="close-form-group">
-                <button name="closeButton" id="closePopup" onclick="closePopup(event)">Close</button>
-                <!-- <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button> -->
+                <button name="closeButton" value="close">Close</button>
             </div>
-            <input type="hidden" name="department_ID" value="<?php echo $department_ID; ?>">
-            <input type="hidden" name="request_ID" value="<?php echo $request_ID; ?>">
+
+            <input type="hidden" name="department_ID" value="<?php 
+                                                            echo $department_ID; 
+                                                            ?>">
+            <input type="hidden" name="request_ID" value="<?php 
+                                                            echo $request_ID; 
+                                                            ?>">
 
             <div class="form-group">
                 <label for="project_name">Project Name:</label>

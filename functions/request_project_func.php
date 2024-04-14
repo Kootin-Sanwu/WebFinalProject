@@ -48,7 +48,7 @@ function displayEmployeeRequests()
         echo "<button type='submit' name='deleteButton' value='Delete'>DELETE</button>";
         echo "</form>";
 
-        echo "<form class='status-container' action='../requests/edit_request_redirect.php?msg=edit' method='POST'>";
+        echo "<form class='status-container' action='../directions/open_edit_direction.php' method='POST'>";
         echo "<input type='hidden' name='department_ID' value='{$department_ID}'>";
         echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
         echo "<button type='submit' name='editButton' value='Edit'>EDIT</button>";

@@ -12,6 +12,16 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'delete') {
     include '../administrator/delete_request.php';
 }
 
+if (isset($_GET['msg']) && $_GET['msg'] == 'edit') {
+    $department_ID = $_GET['department'];
+    $request_ID = $_GET['request_ID'];
+
+    $_SESSION['department_ID'] = $department_ID;
+    $_SESSION['request_ID'] = $request_ID;
+
+    include '../administrator/edit_request.php';
+}
+
 // if (isset($_GET['msg']) && isset($_GET['user_ID'])) {
 //     $msg = $_GET['msg'];
 //     $user_ID = $_GET['user_ID'];

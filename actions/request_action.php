@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
         echo $end_Date . "<br>";
 
         if ($close_Value == "close") {
-            // header("Location: ../directions/close_status_direction.php?department_ID={$department_ID}");
             header("Location: {$_SERVER['HTTP_REFERER']}");
             exit();
         } else {
