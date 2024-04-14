@@ -3,7 +3,7 @@ include "../settings/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (
-        isset($_POST['department_ID']) && !empty($_POST['departmentID']) &&
+        isset($_POST['department_ID']) && !empty($_POST['department_ID']) &&
         isset($_POST['employee_ID']) && !empty($_POST['employee_ID']) &&
         isset($_POST['request_ID']) && !empty($_POST['request_ID'])
     ) {   
