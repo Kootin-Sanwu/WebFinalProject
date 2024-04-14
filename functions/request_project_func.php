@@ -35,6 +35,7 @@ function displayEmployeeRequests()
     foreach ($requests as $request) {
         $department_ID = $request['department_ID'];
         $projectName = $request['project_name'];
+        $employee_ID = $request['employee_ID'];
         $request_ID = $request['request_ID'];
         $status = $request['request_status'];
         $beginDate = $request['begin_date'];
@@ -46,13 +47,15 @@ function displayEmployeeRequests()
         echo "<td>{$endDate}</td>";
         echo "<td>{$status}</td>";
         
-        echo "<td><form class='status-container' action='../requests/request_redirect.php?msg=delete' method='post'>";
-        echo "<input type='hidden' name='employee_ID' value='{$department_ID}'>";
+        echo "<td><form class='status-container' action='../actions/delete_request_action.php method='POST'>";
+        echo "<input type='hidden' name='department_ID' value='{$department_ID}'>";
+        echo "<input type='hidden' name='employee_ID' value='{$employee_ID}'>";
         echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
         echo "<button type='submit' name='deleteButton' value='Delete'>Delete</button>";
         echo "</form>";
 
-        echo "<form class='status-container' action='../requests/edit_request_redirect.php?msg=edit' method='post'>";
+        echo "<form class='status-container' action='../requests/edit_request_redirect.php?msg=edit' method='POST'>";
+        echo "<input type='hidden' name='department_ID' value='{$department_ID}'>";
         echo "<input type='hidden' name='employee_ID' value='{$department_ID}'>";
         echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
         echo "<button type='submit' name='editButton' value='Edit'>Edit</button>";
