@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $end_date = $_POST['end_date'];
 
     if ($close_Value == "close") {
-        header("Location: ../directions/close_edit_direction.php?msg=close");
+        header("Location: ../directions/close_edit_direction.php?department_ID={$department_ID}");
         exit();
     } else {
 
