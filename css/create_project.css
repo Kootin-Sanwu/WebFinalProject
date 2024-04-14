@@ -158,8 +158,8 @@
 
 .close-form-group {
     position: absolute;
-    top: 10%;
-    right: 10%;
+    top: 30%;
+    right: 30%;
     z-index: 1;
 }
 
