@@ -62,6 +62,15 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         window.location.href = "../directions/close_request_direction.php?msg=close";
     });
+
+});
+
+function openPopup() {
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('popup').style.display = 'block';
+}
+
+
     
     // function closePopup(event) {
     //     event.preventDefault();
@@ -74,9 +83,3 @@ document.addEventListener('DOMContentLoaded', function () {
     //     event.preventDefault();
     //     window.location.href = "../directions/close_request_direction.php?msg=close";
     // });
-});
-
-function openPopup() {
-    document.getElementById('overlay').style.display = 'block';
-    document.getElementById('popup').style.display = 'block';
-}
