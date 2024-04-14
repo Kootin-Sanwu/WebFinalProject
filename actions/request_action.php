@@ -33,7 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
                 $stmt_assignment_insert->bind_param("iiss", $project_ID, $department_ID, $begin_Date, $end_Date);
 
                 if ($stmt_assignment_insert->execute()) {
-                    header("Location: {$_SERVER['HTTP_REFERER']}");
+                    // header("Location: {$_SERVER['HTTP_REFERER']}");
+                    header("Location: ../requests/admin_request.php");
                 } else {
                     echo "Error creating assignment: " . $conn->error;
                 }
