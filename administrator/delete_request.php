@@ -1,6 +1,6 @@
 <?php
 include "../settings/core.php";
-checkLogin();
+// checkLogin();
 
 if(isset($_SESSION['request_ID']) && isset($_SESSION['department_ID']) && isset($_SESSION['employee_ID'])) {
     $requestID = $_SESSION['request_ID'];
