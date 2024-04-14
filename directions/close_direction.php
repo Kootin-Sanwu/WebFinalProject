@@ -35,7 +35,7 @@ if (isset($_GET['department_ID'])) {
             header("Location: default_page.php");
             exit();
     }
-} else {
-    header("Location: ../logins/login_view.php?msg=Not Logged In");
+} else if (isset($_GET['msg']) && $_GET['msg'] == 'close'){
+    header("Location: {$_SERVER['HTTP_REFERER']}");
     exit();
 }
