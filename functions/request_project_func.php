@@ -94,14 +94,14 @@ function displayAllRequests()
         $end_Date = $request['end_date'];
 
         $output .= '<tr>';
-        $output .= "<td>{$request_Status}</td>";
         $output .= "<td>{$project_Name}</td>";
         $output .= "<td>{$begin_Date}</td>";
         $output .= "<td>{$end_Date}</td>";
+        $output .= "<td>{$request_Status}</td>";
 
         $output .= '<td>';
 
-        $output .= "<form class='status-container' action='../actions/update_request_action.php?msg=approve' method='POST'>";
+        $output .= "<form class='status-container' action='../actions/request_action.php?msg=approve' method='POST'>";
         $output .= "<input type='hidden' name='department_ID' value='{$department_ID}'>";
         $output .= "<input type='hidden' name='project_name' value='{$project_Name}'>";
         $output .= "<input type='hidden' name='request_ID' value='{$request_ID}'>";
@@ -110,7 +110,7 @@ function displayAllRequests()
         $output .= "<button type='submit' name='approveButton' value='Approve'>APPROVE</button>";
         $output .= "</form>";
 
-        $output .= "<form class='status-container' action='../actions/update_request_action.php?msg=reject' method='POST'>";
+        $output .= "<form class='status-container' action='../actions/request_action.php?msg=reject' method='POST'>";
         $output .= "<input type='hidden' name='request_ID' value='{$request_ID}'>";
         $output .= "<input type='hidden' name='project_name' value='{$project_Name}'>";
         $output .= "<input type='hidden' name='begin_date' value='{$begin_Date}'>";
