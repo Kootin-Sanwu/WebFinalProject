@@ -22,7 +22,9 @@
             <div class="close-form-group">
                 <button name="closeButton" onclick="closePopup()">Close</button>
             </div>
-            <input type="hidden" name="employee_ID" value="<?php echo $_SESSION['employee_ID']; ?>">
+            <input type="hidden" name="employee_ID" value="<?php 
+            // echo $_SESSION['employee_ID']; 
+            ?>">
 
             <div class="form-group">
                 <label for="project_name">Project Name:</label>
