@@ -18,8 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
     } else {
         echo "Unknown message.";
     }
-} else {
-    echo "Message not received or form not submitted";
 }
 ?>
 
