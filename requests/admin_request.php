@@ -84,7 +84,7 @@ if (isset($_GET['msg']) && isset($_GET['request_ID'])) {
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        echo displayDepartmentRequests();
+                        echo displayAllRequests();
                         ?>
                     </tbody>
                 </table>

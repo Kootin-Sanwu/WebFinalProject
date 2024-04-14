@@ -1,118 +1,58 @@
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
 include "../settings/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
     $message = $_GET["msg"];
     $request_ID = $_POST["request_ID"];
-    echo $request_ID;
+    $project_Name = $_POST["project_name"];
+    $begin_Date = $_POST["begin_date"];
+    $end_Date = $_POST["end_date"];
 
-    
     if ($message == "approve") {
-        // Update the request_status to approved in requests table
-        $sql = "UPDATE requests SET request_status = 'approved' WHERE request_ID = $request_ID";
+        $sql_project_update = "UPDATE requests SET request_status = 'APPROVED' WHERE request_ID = ?";
         
-        if ($conn->query($sql) === TRUE) {
-            echo $message;
-            echo "Request status updated successfully to approved.";
+        $stmt = $conn->prepare($sql_project_update);
+        $stmt->bind_param("i", $request_ID);
 
-            // Retrieve project_name, employee_ID from requests table
-            $sql_select = "SELECT project_name, employee_ID, begin_date, end_date FROM requests WHERE request_ID = $request_ID";
-            $result = $conn->query($sql_select);
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                $projectName = $row["project_name"];
-                $employee_ID = $row["employee_ID"];
-                $beginDate = $row["begin_date"];
-                $endDate = $row["end_date"];
-
-                // Retrieve department_ID from employees table using employee_ID
-                $sql_department = "SELECT department_ID FROM employees WHERE employee_ID = $employee_ID";
-                $result_department = $conn->query($sql_department);
-
-                if ($result_department->num_rows > 0) {
-                    $row_department = $result_department->fetch_assoc();
-                    $departmentId = $row_department["department_ID"];
-                
-                    // Check if the project already exists in projects table
-                    $sql_check = "SELECT project_ID FROM projects WHERE request_ID = $request_ID";
-                    $result_check = $conn->query($sql_check);
-
-                    if ($result_check->num_rows > 0) {
-                        $row_check = $result_check->fetch_assoc();
-                        $projectId = $row_check["project_ID"];
-                        
-                        // Update the existing project in projects table
-                        $sql_project_update = "UPDATE projects SET project_name = '$projectName', department_ID = $departmentId, employee_ID = $employee_ID, begin_date = '$beginDate', end_date = '$endDate', workflow = 'Assigned', status = 'approved' WHERE project_ID = $projectId";
-                        
-                        if ($conn->query($sql_project_update) === TRUE) {
-                            
-                            // Update assignment table using the updated project_ID
-                            $sql_assignment_update = "UPDATE assignment SET department_ID = $departmentId, begin_date = '$beginDate', end_date = '$endDate' WHERE project_ID = $projectId";
-                            
-                            if ($conn->query($sql_assignment_update) === TRUE) {
-                                header("Location: ../requests/admin_request.php");
-                            } else {
-                                echo "Error updating assignment: " . $conn->error;
-                            }
-                        } else {
-                            echo "Error updating project: " . $conn->error;
-                        }
-                    } else {
-                        // Insert the project into projects table with department_ID and request_ID
-                        $sql_project_insert = "INSERT INTO projects (request_ID, project_name, department_ID, employee_ID, begin_date, end_date, workflow, status) 
-                                               VALUES ($request_ID, '$projectName', $departmentId, $employee_ID, '$beginDate', '$endDate', 'Assigned', 'approved')";
-                
-                        if ($conn->query($sql_project_insert) === TRUE) {
-                            // Get the last inserted project_ID
-                            $last_insert_id = $conn->insert_id;
-                
-                            // Insert into assignment table
-                            $sql_assignment_insert = "INSERT INTO assignment (project_ID, department_ID, begin_date, end_date) 
-                                                      VALUES ($last_insert_id, $departmentId, '$beginDate', '$endDate')";
-                
-                            if ($conn->query($sql_assignment_insert) === TRUE) {
-                                header("Location: ../requests/admin_request.php");
-                            } else {
-                                echo "Error: " . $sql_assignment_insert . "<br>" . $conn->error;
-                            }
-                        } else {
-                            echo "Error: " . $sql_project_insert . "<br>" . $conn->error;
-                        }
-                    }
-                } else {
-                    echo "Error retrieving department_ID: " . $conn->error;
-                }
+        if ($stmt->execute()) {
+            $sql_project_insert = "INSERT INTO projects (project_name, begin_date, end_date, workflow, status) 
+            VALUES (?, ?, ?, 'ASSIGNED', 'APPROVED')";
+            
+            $stmt_insert = $conn->prepare($sql_project_insert);
+            $stmt_insert->bind_param("sss", $project_Name, $begin_Date, $end_Date);
+            
+            if ($stmt_insert->execute()) {
+                header("Location: {$_SERVER['HTTP_REFERER']}");
+            } else {
+                echo "Error creating project: " . $conn->error;
             }
+
+            $stmt_insert->close();
         } else {
-            echo "Error updating request status: " . $conn->error;
+            echo "Error updating request status: " . $stmt->error;
         }
+
+        $stmt->close();
+
     } elseif ($message == "reject") {
-        // Update the request_status to rejected in requests table
-        $sql = "UPDATE requests SET request_status = 'rejected' WHERE request_ID = $request_ID";
+        $sql_project_update = "UPDATE requests SET request_status = 'REJECTED' WHERE request_ID = ?";
+        
+        $stmt = $conn->prepare($sql_project_update);
+        $stmt->bind_param("i", $request_ID);
 
-        if ($conn->query($sql) === TRUE) {
-            echo "Request status updated successfully to rejected.";
-
-            // Remove the request from requests table
-            // $sql_remove = "DELETE FROM requests WHERE request_ID = $request_ID";
-            // if ($conn->query($sql_remove) === TRUE) {
-            // echo "Request removed from requests table.";
-            header("Location: ../requests/admin_request.php");
-            // } else {
-            // echo "Error removing request from requests table: " . $conn->error;
-            // }
+        if ($stmt->execute()) {
+            header("Location: {$_SERVER['HTTP_REFERER']}");
         } else {
-            echo "Error updating request status: " . $conn->error;
+            echo "Error updating request status: " . $stmt->error;
         }
+
+        $stmt->close();
+
     } else {
-        echo "Error";
+        echo "Unknown error caught";
     }
 } else {
-    echo "error";
+    echo "Message not received of form not submitted";
 }
 
 $conn->close();

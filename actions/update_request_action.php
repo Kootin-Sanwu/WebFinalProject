@@ -1,11 +1,9 @@
 <?php
-// Include your database connection file here
 include '../settings/connection.php';
 
-// Check if the request_ID is set in the URL
-if(isset($_GET['msg']) && isset($_POST['actionValue'])) {
+if(isset($_GET['msg']) && isset($_POST['request_ID'])) {
     
-    $requestID = $_POST['actionValue'];
+    $request_ID = $_POST['request_ID'];
     
     // SQL query to check if the request_ID is already in the database
     $sql_check_request = "SELECT * FROM requests WHERE request_ID = ?";
@@ -14,7 +12,7 @@ if(isset($_GET['msg']) && isset($_POST['actionValue'])) {
     $stmt = $conn->prepare($sql_check_request);
     
     // Bind the request_ID parameter
-    $stmt->bind_param("i", $requestID);
+    $stmt->bind_param("i", $request_ID);
     
     // Execute the SQL statement
     $stmt->execute();

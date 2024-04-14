@@ -47,14 +47,14 @@ function displayEmployeeRequests()
         echo "<input type='hidden' name='department_ID' value='{$department_ID}'>";
         echo "<input type='hidden' name='employee_ID' value='{$employee_ID}'>";
         echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
-        echo "<button type='submit' name='deleteButton' value='Delete'>Delete</button>";
+        echo "<button type='submit' name='deleteButton' value='Delete'>DELETE</button>";
         echo "</form>";
 
         echo "<form class='status-container' action='../requests/edit_request_redirect.php?msg=edit' method='POST'>";
         echo "<input type='hidden' name='department_ID' value='{$department_ID}'>";
         echo "<input type='hidden' name='employee_ID' value='{$employee_ID}'>";
         echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
-        echo "<button type='submit' name='editButton' value='Edit'>Edit</button>";
+        echo "<button type='submit' name='editButton' value='Edit'>EDIT</button>";
         echo "</form></td>";
 
         echo '</tr>';
@@ -62,7 +62,7 @@ function displayEmployeeRequests()
 }
 
 
-function displayDepartmentRequests()
+function displayAllRequests()
 {
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
@@ -86,26 +86,34 @@ function displayDepartmentRequests()
     $output = "";
 
     foreach ($requests as $request) {
-        $requestID = $request['request_ID'];
-        $projectName = $request['project_name'];
-        $beginDate = $request['begin_date'];
-        $endDate = $request['end_date'];
-        $status = $request['request_status'];
+        $request_ID = $request['request_ID'];
+        $project_Name = $request['project_name'];
+        $begin_Date = $request['begin_date'];
+        $end_Date = $request['end_date'];
+        $request_Status = $request['request_status'];
 
         $output .= '<tr>';
-        $output .= "<td>{$projectName}</td>";
-        $output .= "<td>{$beginDate}</td>";
-        $output .= "<td>{$endDate}</td>";
-        $output .= "<td>{$status}</td>";
+        $output .= "<td>{$project_Name}</td>";
+        $output .= "<td>{$begin_Date}</td>";
+        $output .= "<td>{$end_Date}</td>";
+        $output .= "<td>{$request_Status}</td>";
 
         $output .= '<td>';
 
         $output .= "<form class='status-container' action='../actions/update_request_action.php?msg=approve' method='POST'>";
-        $output .= "<button type='submit' name='actionValue' value='{$requestID}'>APPROVE</button>";
+        $output .= "<input type='hidden' name='request_ID' value='{$request_ID}'>";
+        $output .= "<input type='hidden' name='project_name' value='{$project_Name}'>";
+        $output .= "<input type='hidden' name='begin_date' value='{$begin_Date}'>";
+        $output .= "<input type='hidden' name='end_date' value='{$end_Date}'>";
+        $output .= "<button type='submit' name='approveButton' value='Approve'>APPROVE</button>";
         $output .= "</form>";
 
         $output .= "<form class='status-container' action='../actions/update_request_action.php?msg=reject' method='POST'>";
-        $output .= "<button type='submit' name='actionValue' value='{$requestID}'>REJECT</button>";
+        $output .= "<input type='hidden' name='request_ID' value='{$request_ID}'>";
+        $output .= "<input type='hidden' name='project_name' value='{$project_Name}'>";
+        $output .= "<input type='hidden' name='begin_date' value='{$begin_Date}'>";
+        $output .= "<input type='hidden' name='end_date' value='{$end_Date}'>";
+        $output .= "<button type='submit' name='rejectButton' value='Reject'>REJECT</button>";
         $output .= "</form>";
 
         $output .= '</td>';
@@ -114,3 +122,4 @@ function displayDepartmentRequests()
 
     return $output;
 }
+
