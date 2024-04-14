@@ -1,4 +1,5 @@
 <?php
+include "../functions/request_project_func.php";
 include "../settings/connection.php";
 include "../settings/core.php";
 
