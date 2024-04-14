@@ -159,7 +159,7 @@
 .close-form-group {
     position: absolute;
     top: 30%;
-    right: 35%;
+    right: 40%;
     z-index: 1;
 }
 
@@ -175,7 +175,7 @@
     border: none;
     transition-duration: 0.7s;
     border-radius: 5px;
-    height: 300%;
+    height: 500%;
     width: 150%;
 }
 
