@@ -62,15 +62,13 @@ document.addEventListener('DOMContentLoaded', function () {
         applyAddPressedEffect(this);
         closePopup(this);
     });
-
+    
+    function closePopup() {
+        window.location.href = "../directions/close_direction.php";
+    };
 });
-
-function closePopup() {
-    window.location.href = "../directions/close_direction.php";
-}
 
 function openPopup() {
     document.getElementById('overlay').style.display = 'block';
     document.getElementById('popup').style.display = 'block';
 }
-
