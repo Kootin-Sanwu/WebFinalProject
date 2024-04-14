@@ -14,9 +14,9 @@ checkLogin();
 </head>
 
 <body>
-    <div class="close-form-group">
+    <!-- <div class="close-form-group">
         <button name="closeButton" onclick="closePopup()">Close</button>
-    </div>
+    </div> -->
     <form class="container-15" id="myModal" method="POST" action="../actions/project_request_action.php">
         <div class="container-16">
             <div class="close-form-group">
