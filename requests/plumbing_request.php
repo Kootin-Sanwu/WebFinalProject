@@ -11,6 +11,10 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'delete') {
     $_SESSION['employee_ID'] = $employee_ID;
     $_SESSION['request_ID'] = $request_ID;
 
+    echo $department_ID;
+    echo $employee_ID;
+    echo $request_ID;
+
     include '../administrator/delete_request.php';
 }
 
