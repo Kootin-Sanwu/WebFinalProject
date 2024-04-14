@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo $close_Value;
         
         if ($close_Value == "close") {
-            header("Location: ../directions/close_request_direction.php?msg=close");
+            header("Location: ../directions/close_request_direction.php?msg=close_delete");
             exit();
         }    
         // } else {

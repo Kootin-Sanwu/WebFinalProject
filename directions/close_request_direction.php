@@ -38,4 +38,7 @@ if (isset($_GET['department_ID'])) {
 } else if (isset($_GET['msg']) && $_GET['msg'] == 'close'){
     header("Location: {$_SERVER['HTTP_REFERER']}");
     exit();
+}  else if (isset($_GET['msg']) && $_GET['msg'] == 'close_delete'){
+    header("Location: {$_SERVER['HTTP_REFERER']}");
+    exit();
 }
