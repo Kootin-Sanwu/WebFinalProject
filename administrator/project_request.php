@@ -14,9 +14,12 @@ checkLogin();
 </head>
 
 <body>
-    <button name="closeButton" id="closePopup" onclick="closePopup(event)">Close</button>
     <form class="container-15" id="myModal" method="POST" action="../actions/project_request_action.php">
         <div class="container-16">
+            <div class="close-form-group">
+            <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button>
+                <!-- <button name="closeButton" onclick="closePopup()">Close</button> -->
+            </div>
             <input type="hidden" name="employee_ID" value="<?php echo $_SESSION['employee_ID']; ?>">
 
             <div class="form-group">
@@ -38,12 +41,6 @@ checkLogin();
         </div>
     </form>
     <script src="../javascript/request_project.js" defer></script>
-    <!-- <script>
-        function closePopup(event) {
-            event.preventDefault();
-            window.location.href = "../directions/close_request_direction.php?msg=close";
-        }
-    </script> -->
 </body>
 
 </html>

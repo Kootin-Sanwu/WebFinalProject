@@ -60,13 +60,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     closeButton.addEventListener('mousedown', function () {
         applyAddPressedEffect(this);
-        closePopup(this);
+        window.location.href = "../directions/close_request_direction.php?msg=close";
     });
     
-    function closePopup(event) {
-        event.preventDefault();
-        window.location.href = "../directions/close_request_direction.php?msg=close";
-    };
+    // function closePopup(event) {
+    //     event.preventDefault();
+    //     window.location.href = "../directions/close_request_direction.php?msg=close";
+    // };
+
+    // const closeButton = document.getElementById("closePopup");
+
+    // closeButton.addEventListener("click", function(event) {
+    //     event.preventDefault();
+    //     window.location.href = "../directions/close_request_direction.php?msg=close";
+    // });
 });
 
 function openPopup() {
