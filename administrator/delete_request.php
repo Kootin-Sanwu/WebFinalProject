@@ -1,17 +1,11 @@
 <?php
 include "../settings/core.php";
-include "../functions/select_department_func.php";
 checkLogin();
 
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
-// Check if request_ID is set in session
-if(isset($_SESSION['request_ID'])) {
+if(isset($_SESSION['request_ID']) && isset($_SESSION['department_ID']) && isset($_SESSION['employee_ID'])) {
     $requestID = $_SESSION['request_ID'];
-} else {
-    echo "Error: Request ID not specified.";
+    $department_ID = $_SESSION['department_ID'];
+    $employee_ID = $_SESSION['employee_ID'];
 }
 ?>
 
@@ -22,7 +16,7 @@ if(isset($_SESSION['request_ID'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/create_project.css">
-    <title>Request Project</title>
+    <title>Delete Project</title>
 </head>
 
 <body>
@@ -31,14 +25,13 @@ if(isset($_SESSION['request_ID'])) {
             <div class="close-form-group">
                 <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button>
             </div>
-            <input type="hidden" name="employee_ID" value="<?php echo $_SESSION['user_ID']; ?>">
-            <input type="hidden" name="request_ID" value="<?php echo $_SESSION['request_ID']; ?>">
+            <input type="hidden" name="department_ID" value="<?php echo $department_ID; ?>">
+            <input type="hidden" name="employee_ID" value="<?php echo $employee_ID; ?>">
+            <input type="hidden" name="request_ID" value="<?php echo $requestID; ?>">
 
             <div class="form-group">
-            CONFIRM DELETION
+                CONFIRM DELETION
             </div>
-            <input type="hidden" name="request_status" value="pending">
-
             <div class="submit">
                 <button name="submitButton">Delete</button>
             </div>

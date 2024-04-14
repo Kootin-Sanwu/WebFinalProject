@@ -7,15 +7,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'delete') {
     $employee_ID = $_POST['employee_ID'];
     $request_ID = $_POST['request_ID'];
 
-    echo "Department";
-    echo $department_ID;
-    echo "Employee";
-    echo $employee_ID;
-    echo "Request";
-    echo $request_ID;
-
-    // $_SESSION['request_ID'] = $requestID;
-    // include '../administrator/delete_request.php';
+    include '../administrator/delete_request.php';
 }
 
 // if (isset($_GET['msg']) && isset($_GET['user_ID'])) {
