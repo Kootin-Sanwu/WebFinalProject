@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function closePopup() {
-    window.location.href = "../requests/close_request.php";
+    // window.location.href = "../requests/close_request.php";
 }
 
 function openPopup() {
