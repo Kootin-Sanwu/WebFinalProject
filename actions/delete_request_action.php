@@ -3,14 +3,14 @@ include "../settings/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (
+        isset($_POST['department_ID']) && !empty($_POST['departmentID']) &&
         isset($_POST['employee_ID']) && !empty($_POST['employee_ID']) &&
-        isset($_POST['department']) && !empty($_POST['department']) &&
         isset($_POST['request_ID']) && !empty($_POST['request_ID'])
     ) {   
         $department_ID = $_POST['department_ID'];
         $employee_ID = $_POST['employee_ID'];
-        $request_ID = $_POST['request_ID'];
         $close_Value = $_POST['closeButton'];
+        $request_ID = $_POST['request_ID'];
         
         if ($close_Value == "close") {
             header("Location: ../directions/close_request_direction.php?msg=close");
