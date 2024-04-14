@@ -142,11 +142,12 @@ document.addEventListener('DOMContentLoaded', function () {
     requestButton.addEventListener('mouseup', function () {
         submitHover(this);
     });
+
+    function closePopup() {
+        window.location.href = "../directions/close_direction.php";
+    }
 });
 
-function closePopup() {
-    window.location.href = "../directions/close_direction.php";
-}
 
 function togglePopup() {
     var popup = document.getElementById("assignchore-container");
