@@ -65,11 +65,11 @@ checkLogin();
     <title>Request Project</title>
 </head>
 
-<body>
+<body id="myModal">
     <div class="close-form-group">
         <button name="closeButton" onclick="closePopup()">Close</button>
     </div>
-    <form class="container-15" id="myModal" method="POST" action="../actions/project_request_action.php">
+    <form class="container-15" method="POST" action="../actions/project_request_action.php">
         <div class="container-16">
             <input type="hidden" name="employee_ID" value="<?php echo $_SESSION['employee_ID']; ?>">
 
