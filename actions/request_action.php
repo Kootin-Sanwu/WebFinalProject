@@ -1,8 +1,5 @@
 <?php
 include "../settings/connection.php";
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
     $project_Name = $_POST["project_name"];
@@ -27,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
             if ($stmt_insert->execute()) {
                 $project_ID = $stmt_insert->insert_id;
 
-                $sql_assignment_insert = "INSERT INTO assignment (project_ID, department_ID, begin_date, end_date, workflow) 
+                $sql_assignment_insert = "INSERT INTO assignments (project_ID, department_ID, begin_date, end_date, workflow) 
                 VALUES (?, ?, ?, ?, 'ASSIGNED')";
                 
                 $department_ID = $_POST["department_ID"];
