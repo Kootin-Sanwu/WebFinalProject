@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
         closeButton.style.boxShadow = '1px 1px grey';
     }
 
+    function closePressEffect() {
+        closeButton.style.transform = 'translateY(2px)';
+        closeButton.style.backgroundColor = '#red';
+        closeButton.style.boxShadow = 'none';
+    }
+
     function applyAddPressedEffect(button) {
         button.style.transform = 'translateY(4px)';
         button.style.backgroundColor = "black";
@@ -59,13 +65,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     closeButton.addEventListener('mousedown', function (event) {
-        event.preventDefault();
-        window.location.href = "../directions/close_request_direction.php?msg=close";
+        closePressEffect(this);
     });
 
-    // closeButton.addEventListener('mouseup', function () {
-    //     closeHover(this);
-    // });
+    closeButton.addEventListener('mouseup', function () {
+        closeHover(this);
+    });
 });
 
 function openPopup() {
