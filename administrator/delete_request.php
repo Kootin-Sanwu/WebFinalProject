@@ -4,9 +4,9 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 if(isset($_SESSION['request_ID']) && isset($_SESSION['department_ID']) && isset($_SESSION['employee_ID'])) {
-    $requestID = $_SESSION['request_ID'];
     $department_ID = $_SESSION['department_ID'];
     $employee_ID = $_SESSION['employee_ID'];
+    $requestID = $_SESSION['request_ID'];
 }
 ?>
 

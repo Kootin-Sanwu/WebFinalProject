@@ -1,7 +1,5 @@
 <?php
-
 include "../settings/connection.php";
-include "../settings/core.php";
 
 if (isset($_POST['request_ID']) && isset($_POST['employee_ID']) && isset($_POST['department_ID'])) {
     $department_ID = $_POST['department_ID'];
