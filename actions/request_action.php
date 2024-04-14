@@ -2,11 +2,11 @@
 include "../settings/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
-    $message = $_GET["msg"];
-    $request_ID = $_POST["request_ID"];
     $project_Name = $_POST["project_name"];
+    $request_ID = $_POST["request_ID"];
     $begin_Date = $_POST["begin_date"];
     $end_Date = $_POST["end_date"];
+    $message = $_GET["msg"];
 
     if ($message == "approve") {
         $sql_project_update = "UPDATE requests SET request_status = 'APPROVED' WHERE request_ID = ?";
@@ -22,7 +22,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
             $stmt_insert->bind_param("sss", $project_Name, $begin_Date, $end_Date);
             
             if ($stmt_insert->execute()) {
-                header("Location: {$_SERVER['HTTP_REFERER']}");
+                $project_ID = $stmt_insert->insert_id;
+
+                $sql_assignment_insert = "INSERT INTO assignment (project_ID, department_ID, begin_date, end_date, workflow) 
+                VALUES (?, ?, ?, ?, 'ASSIGNED')";
+                
+                $department_ID = $_POST["department_ID"];
+                
+                $stmt_assignment_insert = $conn->prepare($sql_assignment_insert);
+                $stmt_assignment_insert->bind_param("iiss", $project_ID, $department_ID, $begin_Date, $end_Date);
+
+                if ($stmt_assignment_insert->execute()) {
+                    echo "Request approved and project created successfully.";
+                } else {
+                    echo "Error creating assignment: " . $conn->error;
+                }
+
+                $stmt_assignment_insert->close();
             } else {
                 echo "Error creating project: " . $conn->error;
             }
@@ -52,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
         echo "Unknown error caught";
     }
 } else {
-    echo "Message not received of form not submitted";
+    echo "Message not received or form not submitted";
 }
 
 $conn->close();
