@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     } else {
-        echo "All fields are required.";
+        header("Location: ../directions/close_request_direction.php?msg=close");
     }
 }
 
