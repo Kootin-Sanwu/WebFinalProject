@@ -32,7 +32,7 @@ if (isset($_GET['department_ID'])) {
             header("Location: ../managements/admin_management.php");
             exit();
         default:
-            header("Location: default_page.php");
+            header("Location: ../logins/login_view.php?msg=Not Logged In");
             exit();
     }
 } else if (isset($_GET['msg']) && $_GET['msg'] == 'close'){
