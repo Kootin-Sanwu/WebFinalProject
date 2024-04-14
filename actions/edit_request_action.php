@@ -5,8 +5,9 @@ include "../settings/connection.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $department_ID = $_POST['department_ID'];
-    $request_ID = $_POST['request_ID'];
     $project_name = $_POST['project_name'];
+    $close_Value = $_POST['closeButton'];
+    $request_ID = $_POST['request_ID'];
     $begin_date = $_POST['begin_date'];
     $end_date = $_POST['end_date'];
 
