@@ -2,14 +2,18 @@
 include "../functions/request_project_func.php";
 include "../settings/core.php";
 
-// // Check if request_ID is set
-// if (isset($_GET['request_ID']) && !isset($_GET['msg'])) {
-//     $requestID = $_GET['request_ID'];
+if (isset($_GET['msg']) && $_GET['msg'] == 'delete') {
+    $department_ID = $_POST['department_ID'];
+    $employee_ID = $_POST['employee_ID'];
+    $request_ID = $_POST['request_ID'];
 
-//     // Set session variable
-//     $_SESSION['request_ID'] = $requestID;
-//     include '../administrator/delete_request.php';
-// }
+    echo $department_ID;
+    echo $employee_ID;
+    echo $request_ID;
+
+    // $_SESSION['request_ID'] = $requestID;
+    // include '../administrator/delete_request.php';
+}
 
 // if (isset($_GET['msg']) && isset($_GET['user_ID'])) {
 //     $msg = $_GET['msg'];

@@ -43,7 +43,7 @@ function displayEmployeeRequests()
         echo "<td>{$endDate}</td>";
         echo "<td>{$status}</td>";
         
-        echo "<td><form class='status-container' action='../actions/delete_request_action.php' method='POST'>";
+        echo "<td><form class='status-container' action='../requests/plumbing_request.php?msg=delete' method='POST'>";
         echo "<input type='hidden' name='department_ID' value='{$department_ID}'>";
         echo "<input type='hidden' name='employee_ID' value='{$employee_ID}'>";
         echo "<input type='hidden' name='request_ID' value='{$request_ID}'>";
