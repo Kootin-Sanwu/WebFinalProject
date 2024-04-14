@@ -65,7 +65,10 @@ document.addEventListener('DOMContentLoaded', function () {
         applyAddPressedEffect(this);
         closePopup(this);
     });
-
+    
+    function closePopup() {
+        window.location.href = "../directions/close_request_direction.php?msg=close";
+    };
 });
 
 function openPopup() {
