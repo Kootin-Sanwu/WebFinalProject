@@ -12,17 +12,18 @@ function displayEmployeeRequests()
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     
-    $employee_ID = $_SESSION['employee_ID'];
     
     $sql = "SELECT r.request_ID, r.project_name, r.begin_date, r.end_date, r.request_status, e.department_ID 
             FROM requests r
             JOIN employees e ON r.employee_ID = e.employee_ID
             WHERE e.employee_ID = ?";
             
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("i", $employee_ID);
-            $stmt->execute();
-            $result = $stmt->get_result();
+    $employee_ID = $_SESSION['employee_ID'];
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $employee_ID);
+    $stmt->execute();
+    $result = $stmt->get_result();
             
     $requests = [];
     while ($row = $result->fetch_assoc()) {
