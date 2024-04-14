@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($stmt) {
                     $stmt->bind_param("sssss", $project_Name, $employee_ID, $begin_Date, $end_Date, $request_Status);
                     if ($stmt->execute()) {
-                        header("Location: ../directions/close_direction.php?department_ID={$department_ID}");
+                        header("Location: ../directions/close_request_direction.php?department_ID={$department_ID}");
                         exit();
                     } else {
                         echo "Error: " . $stmt->error;
