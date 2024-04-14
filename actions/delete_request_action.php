@@ -6,9 +6,12 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-
 if (isset($_POST['request_ID']) && isset($_POST['employee_ID'])) {
+    $employee_ID = $_POST['employee_ID'];
     $request_ID = $_POST['request_ID'];
+    
+    echo $employee_ID;
+    echo $request_ID;
     
     $sql = "DELETE FROM requests WHERE request_ID = {$request_ID}";
     // header("Location: {$_SERVER['HTTP_REFERER']}");
