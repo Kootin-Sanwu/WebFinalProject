@@ -12,7 +12,7 @@
 <body>
     <form class="container-15" id="myModal" method="POST" action="../actions/edit_request_action.php?msg=cannot_edit">
         <div class="container-16">
-            CAN NO LONGER EDIT THIS ASSIGNMENT. REQUEST STATUS CHANGED
+            CAN NO LONGER EDIT THIS ASSIGNMENT. REQUEST APPROVED
             <div class="submit">
             <input type="hidden" name="department_ID" value="<?php 
                                                             echo $department_ID; 
