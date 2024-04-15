@@ -72,6 +72,10 @@ function displayDepartmentProjects()
     // Get the current department_ID from the session
     $currentDepartmentID = $_SESSION['department_ID'];
 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     // SQL query to fetch projects of the current department with join
     $sql = "SELECT a.project_ID, p.project_name, a.employee_ID, a.status, a.workflow, a.begin_date, a.end_date
             FROM assignments a
@@ -79,12 +83,18 @@ function displayDepartmentProjects()
             WHERE a.department_ID = {$currentDepartmentID}";
 
     $result = $conn->query($sql);
+
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
+
     // Check if any rows are returned
     if ($result->num_rows > 0) {
 
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+            
         while ($row = $result->fetch_assoc()) {
             $project_ID = $row["project_ID"];
             $projectName = $row["project_name"];
