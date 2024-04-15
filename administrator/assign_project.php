@@ -23,7 +23,9 @@ checkLogin();
                 <button name="closeButton" value="close">Close</button>
             </div>
 
-            <input type="hidden" name="employee_ID" value="<?php echo $_SESSION['employee_ID']; ?>">
+            <input type="hidden" name="employee_ID" value="<?php 
+                                                            echo $_SESSION['employee_ID']; 
+                                                            ?>">
 
             <div class="form-group">
                 <select name="project_ID" id="assign_project_name" required>
@@ -50,7 +52,7 @@ checkLogin();
             <input type="hidden" name="request_status" value="pending">
 
             <div class="submit">
-                <button name="submitButton">Create</button>
+                <button name="submitButton">Assign</button>
             </div>
         </div>
     </form>

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var addButton = document.querySelector(".submit button[name=submitButton]");
     var closeButton = document.querySelector(".close-form-group button[name=closeButton]");
     var projectName = document.getElementById("assign_project_name");
-    var projectDepartment = document.getElementById("assign_project_department");
+    var projectDepartment = document.getElementById("assign_department_name");
 
     function submitHover(button) {
         button.style.transform = 'translateY(-2px)';
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function closeHover(button) {
         button.style.transform = 'translateY(-2px)';
-        button.style.backgroundColor = '#red';
+        button.style.backgroundColor = 'red';
         button.style.boxShadow = '5px 5px grey';
     }
 
@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function closeResetStyles() {
         closeButton.style.transform = 'translateY(2px)';
-        closeButton.style.backgroundColor = '#red';
+        closeButton.style.backgroundColor = 'red';
         closeButton.style.boxShadow = '1px 1px grey';
     }
 
     function closePressEffect() {
         closeButton.style.transform = 'translateY(2px)';
-        closeButton.style.backgroundColor = '#red';
+        closeButton.style.backgroundColor = 'red';
         closeButton.style.boxShadow = 'none';
     }
 
