@@ -32,7 +32,7 @@ checkLogin();
             <input type="hidden" name="request_status" value="pending">
 
             <div class="submit">
-                <button name="addButton">Delete</button>
+                <button name="deleteButton">Delete</button>
             </div>
         </div>
     </form>

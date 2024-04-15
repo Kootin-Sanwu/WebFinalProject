@@ -7,7 +7,7 @@ if (isset($_POST['project_ID'])) {
     $project_ID = $_POST['project_ID'];
 
     if ($close_Value == "close") {
-        header("Location: ../directions/close_delete_direction.php?department_ID={$department_ID}");
+        header("Location: {$_SERVER['HTTP_REFERER']}");
         exit();
     } else {
         // Check if the project_ID exists in the assignment table
