@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         closeResetStyles();
     });
 
-    closeButton.addEventListener('mousedown', function (event) {
+    closeButton.addEventListener('mousedown', function () {
         closePressEffect(this);
     });
 
