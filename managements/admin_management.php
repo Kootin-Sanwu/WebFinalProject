@@ -1,5 +1,5 @@
 <?php
-include "../functions/create_project_func.php";
+include "../functions/manage_project_func.php";
 
 if (isset($_GET['msg']) && $_GET['msg'] == 'cannot delete') {
     include '../constraints/delete_project.php';
@@ -81,7 +81,6 @@ if (isset($_GET['msg']) && isset($_POST['project_ID']) && isset($_POST['employee
                 include "../administrator/create_project.php";
                 ?>
             </div>
-
             <div class="table-container">
                 <table class="styled-table">
                     <thead>
@@ -96,7 +95,7 @@ if (isset($_GET['msg']) && isset($_POST['project_ID']) && isset($_POST['employee
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        displayProjects();
+                        displayAllProjects();
                         ?>
                     </tbody>
                 </table>
@@ -105,9 +104,6 @@ if (isset($_GET['msg']) && isset($_POST['project_ID']) && isset($_POST['employee
     </div>
     <div id="overlay"></div>
     <div id="popup">
-        <?php
-        // include "../administrator/create_project.php";
-        ?>
     </div>
     <script src="../javascript/primary_admin_management.js" defer></script>
 </body>
