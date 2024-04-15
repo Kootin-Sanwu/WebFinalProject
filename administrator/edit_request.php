@@ -1,6 +1,6 @@
-<!-- <?php
-// include "../settings/core.php";
-// checkLogin();
+<?php
+include "../settings/core.php";
+checkLogin();
 ?>
 
 <!DOCTYPE html>
@@ -22,10 +22,10 @@
             </div>
 
             <input type="hidden" name="department_ID" value="<?php 
-                                                            // echo $department_ID; 
+                                                            echo $department_ID; 
                                                             ?>">
             <input type="hidden" name="request_ID" value="<?php 
-                                                            // echo $request_ID; 
+                                                            echo $request_ID; 
                                                             ?>">
 
             <div class="form-group">
@@ -49,15 +49,15 @@
     <script src="../javascript/request_project.js" defer></script>
 </body>
 
-</html> -->
+</html>
 
 
 
 
-
+<!-- 
 <?php
-include "../settings/core.php";
-checkLogin();
+// include "../settings/core.php";
+// checkLogin();
 ?>
 
 <!DOCTYPE html>
@@ -103,4 +103,4 @@ checkLogin();
     <script src="../javascript/request_project.js" defer></script>
 </body>
 
-</html>
+</html> -->
