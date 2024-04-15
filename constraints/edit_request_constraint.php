@@ -14,7 +14,7 @@
         <div class="container-16">
             CAN NO LONGER EDIT THIS ASSIGNMENT. REQUEST STATUS CHANGED
             <div class="submit">
-            <input type="hidden" name="employee_ID" value="<?php 
+            <input type="" name="employee_ID" value="<?php 
                                                             echo $department_ID; 
                                                             ?>">
                 <div>
