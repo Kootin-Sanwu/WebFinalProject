@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../directions/close_edit_direction.php?msg=cannot_edit&department_ID={$department_ID}");
         exit();
     } else if (isset($_GET['msg']) && $_GET['msg'] == 'cannot_edit') {
+        $department_ID = $_POST['department_ID'];
         // header("Location: ../directions/close_edit_constraint.php?msg=cannot_edit&department_ID={$department_ID}");
         echo $department_ID;
         echo "Something";
