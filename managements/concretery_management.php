@@ -72,7 +72,7 @@ include "../functions/manage_project_func.php";
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        displayDepartmentManagementDetails();
+                        displayDepartmentProjects();
                         ?>
                     </tbody>
                 </table>
