@@ -61,6 +61,7 @@ function displayDepartmentAssignments()
     error_reporting(E_ALL);
 
     $currentDepartmentID = $_SESSION['department_ID'];
+    echo $currentDepartmentID;
 
     $sql = "SELECT a.project_ID, p.project_name, CONCAT(e.first_name, ' ', e.last_name) AS assigned_by, p.workflow, p.status
             FROM assignments a
