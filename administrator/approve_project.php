@@ -1,13 +1,16 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+// if (session_status() == PHP_SESSION_NONE) {
+//     session_start();
+// }
 
-$department_ID = $_SESSION["department_ID"];
-$project_name = $_SESSION["project_name"];
-$request_ID = $_SESSION["request_ID"];
-$begin_date = $_SESSION["begin_date"];
-$end_date = $_SESSION["end_date"];
+// $department_ID = $_SESSION["department_ID"];
+// $project_name = $_SESSION["project_name"];
+// $request_ID = $_SESSION["request_ID"];
+// $begin_date = $_SESSION["begin_date"];
+// $end_date = $_SESSION["end_date"];
+
+include "../settings/core.php";
+checkLogin();
 ?>
 
 <!DOCTYPE html>

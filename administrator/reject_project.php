@@ -1,14 +1,16 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+// if (session_status() == PHP_SESSION_NONE) {
+//     session_start();
+// }
 
-$department_ID = $_SESSION["department_ID"];
-$project_name = $_SESSION["project_name"];
-$request_ID = $_SESSION["request_ID"];
-$begin_date = $_SESSION["begin_date"];
-$end_date = $_SESSION["end_date"];
+// $department_ID = $_SESSION["department_ID"];
+// $project_name = $_SESSION["project_name"];
+// $request_ID = $_SESSION["request_ID"];
+// $begin_date = $_SESSION["begin_date"];
+// $end_date = $_SESSION["end_date"];
 
+include "../settings/core.php";
+checkLogin();
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +26,11 @@ $end_date = $_SESSION["end_date"];
 <body>
     <form class="container-15" id="myModal" method="POST" action="../actions/request_action.php?msg=reject">
         <div class="container-16">
+
             <div class="close-form-group">
-                <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button>
+                <button name="closeButton" value="close">Close</button>
             </div>
+
             <input type="hidden" name="department_ID" value="<?php echo $department_ID; ?>">
             <input type="hidden" name="project_name" value="<?php echo $project_name; ?>">
             <input type="hidden" name="request_ID" value="<?php echo $request_ID; ?>">
@@ -34,7 +38,7 @@ $end_date = $_SESSION["end_date"];
             <input type="hidden" name="end_date" value="<?php echo $end_date; ?>">
 
             <div class="text">
-                CONFIRM REJECTION
+                CONFIRM APPROVAL
             </div>
             <div class="submit">
                 <button name="submitButton">Confirm</button>
