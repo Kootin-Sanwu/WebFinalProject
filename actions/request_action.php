@@ -75,7 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
         $stmt->bind_param("i", $request_ID);
 
         if ($stmt->execute()) {
-            header("Location: {$_SERVER['HTTP_REFERER']}");
+            // header("Location: {$_SERVER['HTTP_REFERER']}");
+            echo "Successfully rejected";
         } else {
             echo "Error updating request status: " . $stmt->error;
         }
