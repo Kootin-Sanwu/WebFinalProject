@@ -9,8 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $department_ID = $_POST['department_ID'];
         $close_Value = $_POST['closeButton'];
         $request_ID = $_POST['request_ID'];
-
-        echo $close_Value;
         
         if ($close_Value == "close") {
             header("Location: ../directions/close_delete_direction.php?department_ID={$department_ID}");
