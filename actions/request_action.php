@@ -68,20 +68,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
 
     } elseif ($message == "reject") {
         $request_ID = $_POST["request_ID"];
-        
-        $sql_request_update = "UPDATE requests SET request_status = 'REJECTED' WHERE request_ID = ?";
-        
-        $stmt = $conn->prepare($sql_request_update);
-        $stmt->bind_param("i", $request_ID);
 
-        if ($stmt->execute()) {
+        if ($close_Value == "close") {
             header("Location: {$_SERVER['HTTP_REFERER']}");
+            exit();
         } else {
-            echo "Error updating request status: " . $stmt->error;
+            
+            $sql_request_update = "UPDATE requests SET request_status = 'REJECTED' WHERE request_ID = ?";
+            
+            $stmt = $conn->prepare($sql_request_update);
+            $stmt->bind_param("i", $request_ID);
+    
+            if ($stmt->execute()) {
+                header("Location: {$_SERVER['HTTP_REFERER']}");
+            } else {
+                echo "Error updating request status: " . $stmt->error;
+            }
+    
+            $stmt->close();
         }
-
-        $stmt->close();
-
     } else {
         echo "Unknown error caught";
     }
