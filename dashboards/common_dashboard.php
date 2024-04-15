@@ -1,3 +1,10 @@
+<?php
+include "../settings/core.php";
+include "../functions/assign_project_func.php";
+checkLogin();
+redirectUser();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,8 +84,7 @@
             </div>
             <div class="inner-container-three">
                 <?php
-                displayDepartmentRecentAssignments();
-                ?>
+                displayDepartmentRecentAssignments()                ?>
             </div>
         </div>
         <script src="../javascript/common_dashboard.js" defer></script>
