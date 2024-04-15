@@ -56,55 +56,37 @@ function displayDepartmentAssignments()
         session_start();
     }
 
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-
     $currentDepartmentID = $_SESSION['department_ID'];
-    // echo $currentDepartmentID;
 
-    $sql = "SELECT a.project_ID, p.project_name, CONCAT(e.first_name, ' ', e.last_name) AS assigned_by, p.workflow, p.status
+    $sql = "SELECT a.project_ID, p.project_name, CONCAT(e.first_name, ' ', e.last_name) AS assigned_by, p.workflow, p.status, a.begin_date, a.end_date
             FROM assignments a
             JOIN projects p ON a.project_ID = p.project_ID
             JOIN employees e ON p.employee_ID = e.employee_ID
             WHERE a.department_ID = {$currentDepartmentID}";
 
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);        
-
     $result = $conn->query($sql);
-
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-
-    echo $result->num_rows;
 
     if ($result->num_rows > 0) {
 
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
-
         while ($row = $result->fetch_assoc()) {
-            $projectID = $row["project_ID"];
             $projectName = $row["project_name"];
             $assignedBy = $row["assigned_by"];
+            $projectID = $row["project_ID"];
+            $beginDate = $row["begin_date"];
             $workflow = $row["workflow"];
+            $endDate = $row["end_date"];
             $status = $row["status"];
 
             echo "<tr>";
             echo "<td>{$projectName}</td>";
             echo "<td>{$assignedBy}</td>";
-            echo "<td>{$workflow}</td>";
-            echo "<td>{$projectName}</td>";
-            echo "<td>{$status}</td>";
+            echo "<td>{$beginDate}</td>";
+            echo "<td>{$endDate}</td>";
 
             echo "</tr>";
         }
     } else {
-        echo "0 results";
+        echo "No Assignments";
     }
 
     $conn->close();
