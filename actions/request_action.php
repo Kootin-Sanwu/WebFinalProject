@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
         $department_ID = $_POST["department_ID"];
         $project_Name = $_POST["project_name"];
         $employee_ID = $_POST["employee_ID"];
-        $close_Value = $_POST['closeButton'];
+        // $close_Value = $_POST['closeButton'];
         $request_ID = $_POST["request_ID"];
         $begin_Date = $_POST["begin_date"];
         $end_Date = $_POST["end_date"];
