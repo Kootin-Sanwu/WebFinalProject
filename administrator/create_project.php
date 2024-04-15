@@ -17,14 +17,16 @@ checkLogin();
 <body>
     <form class="container-15" id="myModal" method="POST" action="../actions/create_project_action.php">
         <div class="container-16">
+
             <div class="close-form-group">
-                <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button>
+                <button name="closeButton" value="close">Close</button>
             </div>
+            
             <input type="hidden" name="employee_ID" value="<?php echo $_SESSION['employee_ID']; ?>">
 
             <div class="form-group">
                 <label for="projectname">Project Name:</label>
-                <input type="text" required name="projectname" id="projectName" placeholder="Project Name" required>
+                <input type="text" required name="projectname" id="projectname" placeholder="Project Name" required>
                 
                 <label for="start_date">Project Name:</label>
                 <input type="date" required name="start_date" id="start_date" placeholder="Start date" required>
