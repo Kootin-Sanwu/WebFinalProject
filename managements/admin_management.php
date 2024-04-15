@@ -1,17 +1,17 @@
 <?php
 include "../functions/manage_project_func.php";
 
-if (isset($_GET['msg']) && $_GET['msg'] == 'cannot delete') {
-    include '../constraints/delete_project.php';
-}
+// if (isset($_GET['msg']) && $_GET['msg'] == 'cannot delete') {
+//     include '../constraints/delete_project.php';
+// }
 
-if (isset($_GET['msg']) && isset($_POST['project_ID']) && isset($_POST['employee_ID'])) {
-    $msg = $_GET['msg'];
-    $project_ID = $_POST['project_ID'];
-    $employee_ID = $_POST['employee_ID'];
+// if (isset($_GET['msg']) && isset($_POST['project_ID']) && isset($_POST['employee_ID'])) {
+//     $msg = $_GET['msg'];
+//     $project_ID = $_POST['project_ID'];
+//     $employee_ID = $_POST['employee_ID'];
 
-    include '../administrator/edit_project.php';
-}
+//     include '../administrator/edit_project.php';
+// }
 
 ?>
 <!DOCTYPE html>
@@ -95,7 +95,7 @@ if (isset($_GET['msg']) && isset($_POST['project_ID']) && isset($_POST['employee
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        // displayAllProjects();
+                        displayAllProjects();
                         ?>
                     </tbody>
                 </table>
