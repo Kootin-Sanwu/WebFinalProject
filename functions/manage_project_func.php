@@ -120,21 +120,21 @@ function displayAllProjects()
             
             $employee_ID = $row["employee_ID"];
             $project_ID = $row["project_ID"];
-            $projectName = $row["project_name"];
-            $employeeName = $row["employee_name"];
-            $beginDate = $row["begin_date"];
-            $endDate = $row["end_date"];
-            $workState = $row["workflow"];
+            $project_Name = $row["project_name"];
+            $employee_Name = $row["employee_name"];
+            $begin_Date = $row["begin_date"];
+            $end_Date = $row["end_date"];
+            $workflow = $row["workflow"];
             $status = $row["status"];
 
             echo '<tr>';
-            echo "<td>{$projectName}</td>";
-            echo "<td>{$employeeName}</td>";
-            echo "<td>{$beginDate}</td>";
-            echo "<td>{$endDate}</td>";
-            echo "<td>{$workState}</td>";
+            echo "<td>{$project_Name}</td>";
+            echo "<td>{$employee_Name}</td>";
+            echo "<td>{$begin_Date}</td>";
+            echo "<td>{$end_Date}</td>";
+            echo "<td>{$workflow}</td>";
 
-            echo "<td><form class='action-container-two' action='../actions/delete_project_action.php' method='post'>";
+            echo "<td><form class='action-container-two' action='../managements/admin_management.php'?msg='delete' method='post'>";
             echo "<input type='hidden' name='project_ID' value='{$project_ID}'>";
             echo "<button type='submit' value='Delete'>Delete</button>";
             echo "</form>";

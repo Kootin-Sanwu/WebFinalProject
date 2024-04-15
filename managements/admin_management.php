@@ -1,9 +1,17 @@
 <?php
 include "../functions/manage_project_func.php";
 
-// if (isset($_GET['msg']) && $_GET['msg'] == 'cannot delete') {
-//     include '../constraints/delete_project.php';
-// }
+if (isset($_GET['msg']) && $_GET['msg'] == 'delete') {
+    $project_ID = $_POST['project_ID'];
+
+    $_SESSION['project_ID'] = $project_ID;
+
+    include '../administrator/delete_project.php';
+}
+
+if (isset($_GET['msg']) && $_GET['msg'] == 'cannot delete') {
+    include '../constraints/delete_project.php';
+}
 
 // if (isset($_GET['msg']) && isset($_POST['project_ID']) && isset($_POST['employee_ID'])) {
 //     $msg = $_GET['msg'];
