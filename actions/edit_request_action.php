@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else if (isset($_GET['msg']) && $_GET['msg'] == 'cannot_edit') {
         // header("Location: ../directions/close_edit_constraint.php?msg=cannot_edit&department_ID={$department_ID}");
         echo $department_ID;
+        echo "Something";
         exit();
     } else {
 
