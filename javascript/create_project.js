@@ -128,7 +128,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    var addButton = document.querySelector(".submit button[name=addButton]");
+    var addButton = document.querySelector(".submit button[name=submitButton]");
     var closeButton = document.querySelector(".close-form-group button[name=closeButton]");
     var projectName = document.getElementById("project_name");
     var beginDate = document.getElementById("begin_date");

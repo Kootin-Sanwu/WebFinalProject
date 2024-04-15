@@ -7,7 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $request_Status = $_POST["request_status"];
-    $project_Name = $_POST["projectname"];
+    $project_Name = $_POST["project_name"];
     $employee_ID = $_POST["employee_ID"];
     $close_Value = $_POST["closeButton"];
     $start_Date = $_POST["start_date"];
