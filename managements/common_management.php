@@ -63,7 +63,7 @@ include "../functions/manage_project_func.php";
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        displayCommonManagementDetails();
+                        displayCommonProjects();
                         ?>
                     </tbody>
                 </table>

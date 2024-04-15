@@ -55,18 +55,20 @@ function displayDepartmentProjects()
 
 
 
-function displayCommonManagementDetails()
+function displayCommonProjects()
 {
     include "../settings/connection.php";
 
-    // Start the session
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
 
     $department_ID = $_SESSION['department_ID'];
 
-    $sql = "SELECT * FROM assignments WHERE department_ID = {$department_ID}";
+    $sql = "SELECT a.assignment_ID, p.project_name, a.workflow
+            FROM assignments a
+            JOIN projects p ON a.project_ID = p.project_ID
+            WHERE a.department_ID = {$department_ID}";
 
     $result = $conn->query($sql);
 
