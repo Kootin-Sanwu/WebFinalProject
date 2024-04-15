@@ -89,16 +89,16 @@ function displayProjectDetails()
     $conn->close();
 }
 
-function displayAssignmentDetails()
+function displayAllAssignments()
 {
     include "../settings/connection.php";
 
     // SQL query to fetch assignment details
-    $sql = "SELECT assignment.assignment_ID, projects.project_name, departments.department_name, CONCAT(employees.first_name, ' ', employees.last_name) AS assigned_by, assignment.begin_date, assignment.end_date
-    FROM assignment
-    JOIN projects ON assignment.project_ID = projects.project_ID
-    JOIN departments ON assignment.department_ID = departments.department_ID
-    JOIN employees ON projects.employee_ID = employees.employee_ID";
+    $sql = "SELECT a.assignment_ID, p.project_name, d.department_name, CONCAT(e.first_name, ' ', e.last_name) AS assigned_by, a.begin_date, a.end_date
+            FROM assignments a
+            JOIN projects p ON a.project_ID = p.project_ID
+            JOIN departments d ON a.department_ID = d.department_ID
+            JOIN employees e ON p.employee_ID = e.employee_ID";
 
     $result = $conn->query($sql);
 
@@ -127,10 +127,13 @@ function displayAssignmentDetails()
 
             echo "</tr>";
         }
+    } else {
+        echo "<tr><td colspan='6'>No assignments found.</td></tr>";
     }
 
     $conn->close();
 }
+
 
 // In use
 function displayDepartmentAssignmentDetails()

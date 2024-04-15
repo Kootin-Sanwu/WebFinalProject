@@ -106,8 +106,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'cannot delete') {
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        // displayProjectDetails();
-                        displayAssignmentDetails();
+                        displayAllAssignments();
                         ?>
                     </tbody>
                 </table>
