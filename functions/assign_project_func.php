@@ -47,7 +47,7 @@
 
 
 
-function displayDepartmentProjectDetails()
+function displayDepartmentAssignments()
 {
     include "../settings/connection.php";
 
@@ -55,6 +55,10 @@ function displayDepartmentProjectDetails()
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
+
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
     $currentDepartmentID = $_SESSION['department_ID'];
 
@@ -66,7 +70,15 @@ function displayDepartmentProjectDetails()
 
     $result = $conn->query($sql);
 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     if ($result->num_rows > 0) {
+
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
 
         while ($row = $result->fetch_assoc()) {
             $projectID = $row["project_ID"];
