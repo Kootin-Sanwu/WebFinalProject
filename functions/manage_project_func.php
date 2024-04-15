@@ -7,7 +7,9 @@ function displayDepartmentProjects()
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     // Get the current department_ID from the session
     $currentDepartmentID = $_SESSION['department_ID'];
 
@@ -19,8 +21,16 @@ function displayDepartmentProjects()
 
     $result = $conn->query($sql);
 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     // Check if any rows are returned
     if ($result->num_rows > 0) {
+
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
 
         while ($row = $result->fetch_assoc()) {
             $project_ID = $row["project_ID"];
