@@ -8,12 +8,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
 
     $department_ID = $_POST["department_ID"];
     $project_Name = $_POST["project_name"];
+    $employee_ID = $_POST['employee_ID'];
     $request_ID = $_POST["request_ID"];
     $begin_Date = $_POST["begin_date"];
     $end_Date = $_POST["end_date"];
-    
+
     $_SESSION["department_ID"] = $department_ID;
     $_SESSION["project_name"] = $project_Name;
+    $_SESSION["employee_ID"] = $employee_ID;
     $_SESSION["request_ID"] = $request_ID;
     $_SESSION["begin_date"] = $begin_Date;
     $_SESSION["end_date"] = $end_Date;

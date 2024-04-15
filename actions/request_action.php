@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
     if ($message == "approve") {
         $department_ID = $_POST["department_ID"];
         $project_Name = $_POST["project_name"];
+        $employee_ID = $_POST["employee_ID"];
         $close_Value = $_POST['closeButton'];
         $request_ID = $_POST["request_ID"];
         $begin_Date = $_POST["begin_date"];
@@ -33,11 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
             $stmt->bind_param("i", $request_ID);
 
             if ($stmt->execute()) {
-                $sql_project_insert = "INSERT INTO projects (project_name, begin_date, end_date, workflow, status) 
-                VALUES (?, ?, ?, 'ASSIGNED', 'APPROVED')";
+                $sql_project_insert = "INSERT INTO projects (project_name, employee_ID, begin_date, end_date, workflow, status) 
+                VALUES (?, ?, ?, ?, 'ASSIGNED', 'APPROVED')";
 
                 $stmt_insert = $conn->prepare($sql_project_insert);
-                $stmt_insert->bind_param("sss", $project_Name, $begin_Date, $end_Date);
+                $stmt_insert->bind_param("sss", $project_Name, $_employee_ID, $begin_Date, $end_Date);
 
                 if ($stmt_insert->execute()) {
                     $project_ID = $stmt_insert->insert_id;
