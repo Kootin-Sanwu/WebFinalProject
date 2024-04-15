@@ -16,7 +16,7 @@
 <body>
     <form class="container-15" id="myModal" method="POST" action="../allocations/admin_allocation.php">
         <div class="container-16">
-            CANNOT DELETE THIS ASSIGNMENT. THIS ASSIGNMENT IS CURRENTLY IN PROGRESS.
+            CANNOT DELETE THIS ASSIGNMENT. ASSIGNMENT IS IN PROGRESS.
             <div class="submit">
                 <div>
                     <button class="log-Out-button" name="logoutButton">OKAY</button>

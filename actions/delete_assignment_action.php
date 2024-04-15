@@ -36,7 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
             } else {
                 header("location: ../allocations/admin_allocation.php?msg=cannot delete");
-                echo "Assignment cannot be deleted. Workflow is In Progress or Rejected";
             }
         } else {
             echo "Assignment not found.";
