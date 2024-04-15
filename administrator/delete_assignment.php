@@ -21,7 +21,7 @@ checkLogin();
                 <button name="closeButton" value="close">Close</button>
             </div>
 
-            <input type="hidden" name="project_ID" value="<?php 
+            <input type="hidden" name="assignment_ID" value="<?php 
                                                             echo $assignment_ID; 
                                                             ?>">
 
