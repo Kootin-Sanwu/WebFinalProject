@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $end_Date = $_POST["end_date"];
 
     if ($close_Value == "close") {
-        header("Location: ../directions/close_request_direction.php?msg=close");
+        header("Location: {$_SERVER['HTTP_REFERER']}");
         exit();
     } else {
         $sql = "INSERT INTO projects (project_name, employee_ID, begin_date, end_date) VALUES (?, ?, ?, ?)";
