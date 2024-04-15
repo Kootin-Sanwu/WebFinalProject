@@ -20,7 +20,7 @@ checkLogin();
             <div class="close-form-group">
                 <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button>
             </div>
-            <input type="hidden" name="employee_ID" value="<?php echo $_SESSION['user_ID']; ?>">
+            <input type="" name="employee_ID" value="<?php echo $_SESSION['employee_ID']; ?>">
 
             <div class="form-group">
                 <label for="projectname">Project Name:</label>
