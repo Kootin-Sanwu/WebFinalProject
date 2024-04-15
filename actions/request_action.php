@@ -17,13 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
         $begin_Date = $_POST["begin_date"];
         $end_Date = $_POST["end_date"];
 
-        echo $close_Value;
-        // echo $department_ID . "<br>";
-        // echo $project_Name . "<br>";
-        // echo $request_ID . "<br>";
-        // echo $begin_Date . "<br>";
-        // echo $end_Date . "<br>";
-
         if ($close_Value == "close") {
             header("Location: {$_SERVER['HTTP_REFERER']}");
             exit();
@@ -39,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
                 VALUES (?, ?, ?, ?, 'ASSIGNED', 'APPROVED')";
 
                 $stmt_insert = $conn->prepare($sql_project_insert);
-                $stmt_insert->bind_param("sss", $project_Name, $_employee_ID, $begin_Date, $end_Date);
+                $stmt_insert->bind_param("siss", $project_Name, $_employee_ID, $begin_Date, $end_Date);
 
                 if ($stmt_insert->execute()) {
                     $project_ID = $stmt_insert->insert_id;
