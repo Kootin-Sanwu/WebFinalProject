@@ -61,7 +61,7 @@ function displayDepartmentAssignments()
     error_reporting(E_ALL);
 
     $currentDepartmentID = $_SESSION['department_ID'];
-    echo $currentDepartmentID;
+    // echo $currentDepartmentID;
 
     $sql = "SELECT a.project_ID, p.project_name, CONCAT(e.first_name, ' ', e.last_name) AS assigned_by, p.workflow, p.status
             FROM assignments a
@@ -78,6 +78,8 @@ function displayDepartmentAssignments()
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
+
+    echo $result->num_rows;
 
     if ($result->num_rows > 0) {
 
