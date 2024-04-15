@@ -94,7 +94,6 @@ function displayDepartmentRecentAssignments()
 {
     include "../settings/connection.php";
 
-    // Start the session
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
@@ -131,7 +130,13 @@ function displayDepartmentRecentAssignments()
             echo "</tr>";
         }
     } else {
-        echo "No Recent Assigments";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "NO RECENT ASSIGNMENTS";
     }
 
     $conn->close();
@@ -143,7 +148,6 @@ function displayAllRecentAssignments()
 {
     include "../settings/connection.php";
 
-    // Start the session
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
@@ -175,7 +179,13 @@ function displayAllRecentAssignments()
             echo '</div>';
         }
     } else {
-        echo "0 results";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "NO RECENT ASSIGNMENTS";
     }
 
     $conn->close();
@@ -224,7 +234,13 @@ function displayCommonRecentAssignments()
             echo "</tr>";
         }
     } else {
-        echo "No Recent Assigments";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "NO RECENT ASSIGNMENTS";
     }
 
     $conn->close();
