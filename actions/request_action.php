@@ -17,11 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
         $begin_Date = $_POST["begin_date"];
         $end_Date = $_POST["end_date"];
 
-        echo $department_ID . "<br>";
-        echo $project_Name . "<br>";
-        echo $request_ID . "<br>";
-        echo $begin_Date . "<br>";
-        echo $end_Date . "<br>";
+        // echo $department_ID . "<br>";
+        // echo $project_Name . "<br>";
+        // echo $request_ID . "<br>";
+        // echo $begin_Date . "<br>";
+        // echo $end_Date . "<br>";
 
         if ($close_Value == "close") {
             header("Location: {$_SERVER['HTTP_REFERER']}");
