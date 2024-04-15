@@ -125,30 +125,30 @@ redirectUser();
     <div class="concept-container">
         <div class="container-two">
             <div class="title-container">
-                <h3>PLUMBING PROJECT</h3>
+                <h3>ELECTRICAL PROJECT</h3>
             </div>
-            <a href="../dashboards/plumbing_dashboard.php">
+            <a href="../dashboards/electrical_dashboard.php">
                 <div class="container-three">
                     <button name="homeButton">
                         <h3>DASHBORAD</h3>
                     </button>
                 </div>
             </a>
-            <a href="../managements/plumbing_management.php">
+            <a href="../managements/electrical_management.php">
                 <div class="container-three">
                     <button name="manageButton">
                         <h3>PROJECT MANAGEMENT</h3>
                     </button>
                 </div>
             </a>
-            <a href="../allocations/plumbing_allocation.php">
+            <a href="../allocations/electrical_allocation.php">
                 <div class="container-three">
                     <button name="choreButton">
                         <h3>PROJECT ASSIGNMENTS</h3>
                     </button>
                 </div>
             </a>
-            <a href="../requests/plumbing_request.php">
+            <a href="../requests/electrical_request.php">
                 <div class="container-three">
                     <button name="requestButton">
                         <h3>REQUESTED PROJECTS</h3>
@@ -171,7 +171,7 @@ redirectUser();
             </div>
             <div class="inner-container-two">
                 <div class="statistic-container">
-                    <button name="allChoresButton">PLUMBING PROJECTS</button>
+                    <button name="allChoresButton">ELECTRICAL PROJECTS</button>
                 </div>
                 <div class="statistic-container">
                     <button id="inProgressButton" name="inProgressButton">
