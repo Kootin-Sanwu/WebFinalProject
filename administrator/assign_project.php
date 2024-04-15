@@ -54,7 +54,7 @@ checkLogin();
             </div>
         </div>
     </form>
-    <script src="../javascript/create_project.js" defer></script>
+    <script src="../javascript/assign_project.js" defer></script>
 </body>
 
 </html>
