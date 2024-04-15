@@ -46,25 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
         projectName.required = !projectName.required;
         beginDate.required = !beginDate.required;
         endDate.required = !endDate.required;
-
-        // Disable the required attribute for input fields
-        if (!projectName.required) {
-            projectName.removeAttribute('required');
-        } else {
-            projectName.setAttribute('required', 'required');
-        }
-
-        if (!beginDate.required) {
-            beginDate.removeAttribute('required');
-        } else {
-            beginDate.setAttribute('required', 'required');
-        }
-
-        if (!endDate.required) {
-            endDate.removeAttribute('required');
-        } else {
-            endDate.setAttribute('required', 'required');
-        }
     }
 
     addButton.addEventListener('mouseover', function () {
