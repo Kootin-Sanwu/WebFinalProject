@@ -118,10 +118,10 @@ function displayAllProjects()
             ini_set('display_startup_errors', 1);
             error_reporting(E_ALL);
             
+            $employee_Name = $row["employee_name"];
+            $project_Name = $row["project_name"];
             $employee_ID = $row["employee_ID"];
             $project_ID = $row["project_ID"];
-            $project_Name = $row["project_name"];
-            $employee_Name = $row["employee_name"];
             $begin_Date = $row["begin_date"];
             $end_Date = $row["end_date"];
             $workflow = $row["workflow"];
@@ -134,14 +134,14 @@ function displayAllProjects()
             echo "<td>{$end_Date}</td>";
             echo "<td>{$workflow}</td>";
 
-            echo "<td><form class='action-container-two' action='../managements/admin_management.php?msg=delete' method='post'>";
+            echo "<td><form class='action-container-two' action='../managements/admin_management.php?msg=delete' method='POST'>";
             echo "<input type='hidden' name='project_ID' value='{$project_ID}'>";
             echo "<button type='submit' value='Delete'>Delete</button>";
             echo "</form>";
 
-            echo "<form class='action-container-two' action='../managements/admin_management.php?msg=edit' method='post'>";
-            echo "<input type='hidden' name='project_ID' value='{$project_ID}'>";
+            echo "<form class='action-container-two' action='../managements/admin_management.php?msg=edit' method='POST'>";
             echo "<input type='hidden' name='employee_ID' value='{$employee_ID}'>";
+            echo "<input type='hidden' name='project_ID' value='{$project_ID}'>";
             echo "<button type='submit' value='Edit'>Edit</button>";
             echo "</form></td>";
             echo '</tr>';

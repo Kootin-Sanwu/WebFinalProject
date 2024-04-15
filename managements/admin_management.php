@@ -13,6 +13,16 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'cannot delete') {
     include '../constraints/delete_project.php';
 }
 
+if (isset($_GET['msg']) && $_GET['msg'] == 'edit') {
+    $employee_ID = $_POST['employee_ID'];
+    $project_ID = $_POST['project_ID'];
+
+    $_SESSION['employee_ID'] = $employee_ID;
+    $_SESSION['project_ID'] = $project_ID;
+
+    include '../administrator/edit_project.php';
+}
+
 // if (isset($_GET['msg']) && isset($_POST['project_ID']) && isset($_POST['employee_ID'])) {
 //     $msg = $_GET['msg'];
 //     $project_ID = $_POST['project_ID'];

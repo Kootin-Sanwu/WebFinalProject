@@ -1,35 +1,33 @@
 <?php
 
-include "../settings/connection.php";  // Assuming this file contains your database connection code
+include "../settings/connection.php";
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Get the values from the form
+    $project_name = $_POST['project_name'];
     $employee_ID = $_POST['employee_ID'];
     $project_ID = $_POST['project_ID'];
-    // $request_ID = $_POST['request_ID'];
-    $project_name = $_POST['project_name'];
     $begin_date = $_POST['begin_date'];
     $end_date = $_POST['end_date'];
 
-    // SQL query to update the project request
-    $sql = "UPDATE projects SET 
-            project_name = '$project_name', 
-            begin_date = '$begin_date', 
-            end_date = '$end_date',
-            status = 'approved' 
-            WHERE project_ID = $project_ID";
+    // SQL query to update the project request using prepared statements
+    $sql = "UPDATE projects SET project_name = ?, begin_date = ?, end_date = ?, status = 'APPROVED' WHERE project_ID = ?";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Record updated successfully";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssi", $project_name, $begin_date, $end_date, $project_ID);
+
+    if ($stmt->execute()) {
         header("Location: ../managements/admin_management.php");
     } else {
-        echo "Error updating record: " . $conn->error;
+        echo "Error updating record: " . $stmt->error;
     }
 
-    // Close the database connection
+    $stmt->close();
     $conn->close();
 } else {
     echo "Form not submitted.";
 }
+
+?>
