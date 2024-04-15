@@ -95,7 +95,7 @@ function displayDepartmentAssignments()
             $status = $row["status"];
 
             echo "<tr>";
-            echo "<td>{$projectName}</td>";
+            echo "<td>{$projectID}</td>";
             echo "<td>{$assignedBy}</td>";
             echo "<td>{$workflow}</td>";
             echo "<td>{$projectName}</td>";
