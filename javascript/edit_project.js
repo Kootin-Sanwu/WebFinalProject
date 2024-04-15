@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addButton.addEventListener('mouseup', function () {
         submitHover(this);
-        addChore(this);
     });
 
     closeButton.addEventListener('mouseover', function () {
@@ -73,15 +72,12 @@ document.addEventListener('DOMContentLoaded', function () {
         closeResetStyles();
     });
 
-    closeButton.addEventListener('mousedown', function (event) {
+    closeButton.addEventListener('mousedown', function () {
         closePressEffect(this);
     });
 
     closeButton.addEventListener('mouseup', function () {
         closeHover(this);
-    });
-
-    closeButton.addEventListener('click', function () {
         toggleRequired();
     });
 
