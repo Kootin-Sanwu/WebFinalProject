@@ -1,6 +1,11 @@
 <?php
 include "../functions/assign_project_func.php";
 
+                        
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Check if the URL has a 'msg' parameter with the value 'assigned'
 if (isset($_GET['msg']) && $_GET['msg'] == 'assigned') {
     include '../constraints/assign_constraint.php';

@@ -101,14 +101,10 @@ function displayAllAssignments()
             JOIN employees e ON p.employee_ID = e.employee_ID";
 
     $result = $conn->query($sql);
-
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-
+    
     // Check if any rows are returned
     if ($result->num_rows > 0) {
-
+        
         while ($row = $result->fetch_assoc()) {
             $assignmentID = $row["assignment_ID"];
             $projectName = $row["project_name"];
@@ -116,6 +112,10 @@ function displayAllAssignments()
             $departmentName = $row["department_name"];
             $beginDate = $row["begin_date"];
             $endDate = $row["end_date"];
+            
+                ini_set('display_errors', 1);
+                ini_set('display_startup_errors', 1);
+                error_reporting(E_ALL);
 
             echo "<tr>";
             echo "<td>{$projectName}</td>";
