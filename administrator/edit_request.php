@@ -46,7 +46,7 @@ checkLogin();
             </div>
         </div>
     </form>
-    <script src="../javascript/edit_request.js" defer></script>
+    <script src="../javascript/edit_project.js" defer></script>
 </body>
 
 </html>
