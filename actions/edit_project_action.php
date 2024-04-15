@@ -17,10 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../managements/admin_management.php");
         exit();
     } else {
-        $sql = "UPDATE projects SET project_name = ?, begin_date = ?, end_date = ?, status = 'APPROVED' WHERE project_ID = ?";
+        $sql = "UPDATE projects SET project_name = ?, employee_ID = ?, begin_date = ?, end_date = ?, status = 'APPROVED' WHERE project_ID = ?";
     
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssi", $project_name, $begin_date, $end_date, $project_ID);
+        $stmt->bind_param("sissi", $project_name, $employee_ID, $begin_date, $end_date, $project_ID);
     
         if ($stmt->execute()) {
             header("Location: ../managements/admin_management.php");
