@@ -1,6 +1,6 @@
 <?php
-include "../settings/core.php";
 include "../functions/assign_project_func.php";
+include "../settings/core.php";
 checkLogin();
 redirectUser();
 ?>
@@ -81,6 +81,9 @@ redirectUser();
                                     ?>
                     </button>
                 </div>
+            </div>
+            <div class="center-text">
+                <h4>RECENT PROJECTS</h4>
             </div>
             <div class="inner-container-three">
                 <?php
