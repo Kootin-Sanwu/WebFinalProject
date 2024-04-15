@@ -92,10 +92,6 @@ function displayProjectDetails()
 function displayAllAssignments()
 {
     include "../settings/connection.php";
-
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
     
     // SQL query to fetch assignment details
     $sql = "SELECT a.assignment_ID, p.project_name, d.department_name, CONCAT(e.first_name, ' ', e.last_name) AS assigned_by, a.begin_date, a.end_date
@@ -105,6 +101,10 @@ function displayAllAssignments()
             JOIN employees e ON p.employee_ID = e.employee_ID";
 
     $result = $conn->query($sql);
+
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
     // Check if any rows are returned
     if ($result->num_rows > 0) {
