@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($stmt->execute()) {
             echo "Record updated successfully";
-            header("Location: ../directions/close_edit_direction.php?department_ID={$department_ID}");
+            header("Location: ../directions/close_edit_direction.php?msg=edit&department_ID={$department_ID}");
         } else {
             echo "Error updating record: " . $stmt->error;
         }
