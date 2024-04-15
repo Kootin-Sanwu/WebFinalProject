@@ -139,7 +139,6 @@ function displayDepartmentRecentAssignments()
 
 
 
-
 function displayAllRecentAssignments()
 {
     include "../settings/connection.php";

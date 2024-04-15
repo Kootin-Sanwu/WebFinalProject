@@ -1,19 +1,13 @@
 <?php
 include "../functions/assign_project_func.php";
 
-                        
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+if (isset($_GET['msg']) && $_GET['msg'] == 'delete') {
 
-// Check if the URL has a 'msg' parameter with the value 'assigned'
-if (isset($_GET['msg']) && $_GET['msg'] == 'assigned') {
-    include '../constraints/assign_constraint.php';
-}
+    $assignment_ID = $_POST['assignment_ID'];
+    
+    $_SESSION['assignment_ID'] = $assignment_ID;
 
-// Check if the URL has a 'msg' parameter with the value 'assigned'
-if (isset($_GET['msg']) && $_GET['msg'] == 'cannot delete') {
-    include '../constraints/delete_assignment.php';
+    include '../administrator/delete_assignment.php';
 }
 
 ?>

@@ -22,7 +22,7 @@ checkLogin();
             </div>
 
             <input type="hidden" name="project_ID" value="<?php 
-                                                            echo $project_ID; 
+                                                            echo $assignment_ID; 
                                                             ?>">
 
             <div class="text">

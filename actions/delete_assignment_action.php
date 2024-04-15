@@ -8,14 +8,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($assignment_ID)) {
 
         // SQL query to fetch the workflow status of the assignment
-        $fetchSql = "SELECT projects.workflow 
-                     FROM assignment
+        $fetchSql = "SELECT projects.workflow FROM assignment
                      JOIN projects ON assignment.project_ID = projects.project_ID
                      WHERE assignment.assignment_ID = {$assignment_ID}";
 
         $result = $conn->query($fetchSql);
 
-        if ($result->num_rows > 0) {
+        if ($close_Value == "close") {
+            header("Location: ../allocations/admin_allocation.php");
+            exit();
+        }
+        else if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $workflow = $row['workflow'];
 
