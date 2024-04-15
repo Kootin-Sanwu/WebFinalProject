@@ -67,6 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
         }
 
     } elseif ($message == "reject") {
+        $close_Value = $_POST['closeButton'];
         $request_ID = $_POST["request_ID"];
 
         if ($close_Value == "close") {
