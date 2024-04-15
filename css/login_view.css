@@ -8,7 +8,7 @@ body {
 }
 
 .logIn-container {
-    transition: height 0.5s ease-in-out;
+    /* transition: height 0.5s ease-in-out; */
     box-shadow: 3.5px 3.5px grey;
     background-color: #dddcdc;
     text-align: center;
