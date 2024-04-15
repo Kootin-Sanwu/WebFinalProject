@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var requestPageButton = document.querySelector(".container-three button[name=requestPageButton]");
     var settingsButton = document.querySelector(".container-four button[name=settingsButton]");
     var requestButton = document.querySelector(".assignchore-container button[name=requestButton]");
-    // var deleteButton = document.querySelector(".status-container button[name=deleteButton]");
-    // var editButton = document.querySelector(".status-container button[name=editButton]");
 
     function submitHover(button) {
         button.style.transform = 'translateY(-2px)';
@@ -142,10 +140,6 @@ document.addEventListener('DOMContentLoaded', function () {
     requestButton.addEventListener('mouseup', function () {
         submitHover(this);
     });
-
-    function closePopup() {
-        window.location.href = "../directions/close_direction.php";
-    }
 });
 
 

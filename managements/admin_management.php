@@ -95,7 +95,7 @@ if (isset($_GET['msg']) && isset($_POST['project_ID']) && isset($_POST['employee
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        displayAllProjects();
+                        // displayAllProjects();
                         ?>
                     </tbody>
                 </table>
