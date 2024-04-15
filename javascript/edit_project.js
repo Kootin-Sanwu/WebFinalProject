@@ -46,6 +46,25 @@ document.addEventListener('DOMContentLoaded', function () {
         projectName.required = !projectName.required;
         beginDate.required = !beginDate.required;
         endDate.required = !endDate.required;
+
+        // Disable the required attribute for input fields
+        if (!projectName.required) {
+            projectName.removeAttribute('required');
+        } else {
+            projectName.setAttribute('required', 'required');
+        }
+
+        if (!beginDate.required) {
+            beginDate.removeAttribute('required');
+        } else {
+            beginDate.setAttribute('required', 'required');
+        }
+
+        if (!endDate.required) {
+            endDate.removeAttribute('required');
+        } else {
+            endDate.setAttribute('required', 'required');
+        }
     }
 
     addButton.addEventListener('mouseover', function () {
@@ -62,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addButton.addEventListener('mouseup', function () {
         submitHover(this);
+        addChore(this);
     });
 
     closeButton.addEventListener('mouseover', function () {
@@ -72,12 +92,15 @@ document.addEventListener('DOMContentLoaded', function () {
         closeResetStyles();
     });
 
-    closeButton.addEventListener('mousedown', function () {
+    closeButton.addEventListener('mousedown', function (event) {
         closePressEffect(this);
     });
 
     closeButton.addEventListener('mouseup', function () {
         closeHover(this);
+    });
+
+    closeButton.addEventListener('click', function () {
         toggleRequired();
     });
 

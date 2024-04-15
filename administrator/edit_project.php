@@ -29,7 +29,7 @@ checkLogin();
                                                             ?>">
 
             <div class="form-group">
-                <label for="project_name">Project Name:</label>
+                <label for="project_name">New Project Name:</label>
                 <input type="text" name="project_name" id="project_name" placeholder="New Project Name" required>
 
                 <label for="begin_date">New Begin date:</label>
