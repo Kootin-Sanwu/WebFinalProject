@@ -38,7 +38,7 @@ checkLogin();
             <input type="hidden" name="end_date" value="<?php echo $end_date; ?>">
 
             <div class="text">
-                CONFIRM APPROVAL
+                CONFIRM REJECTION
             </div>
             <div class="submit">
                 <button name="submitButton">Confirm</button>
