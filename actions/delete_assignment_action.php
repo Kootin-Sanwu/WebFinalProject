@@ -4,7 +4,7 @@ include "../settings/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $assignment_ID = $_POST["assignment_ID"];
-
+    $close_Value = $_POST["closeButton"];
     
     if (!empty($assignment_ID)) {
         
