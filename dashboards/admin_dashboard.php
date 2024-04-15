@@ -95,7 +95,7 @@ redirectUser();
             </div>
             <div class="inner-container-three">
                 <?php
-                displayAdminRecentAssignmentDetails();
+                displayAllRecentAssignments();
                 ?>
             </div>
         </div>
