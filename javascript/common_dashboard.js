@@ -14,6 +14,12 @@ document.addEventListener('DOMContentLoaded', function () {
         button.style.boxShadow = '5px 5px rgb(65, 65, 65)';
     }
 
+    function submitHoverGeneralAssignmentButton(button) {
+        button.style.transform = 'translateY(-2px)';
+        button.style.backgroundColor = 'rgb(110, 110, 110)';
+        button.style.boxShadow = '5px 5px rgb(65, 65, 65)';
+    };
+
     function resetStyles() {
         homeButton.style.transform = 'translateY(0px)';
         homeButton.style.backgroundColor = '#6f006d';
