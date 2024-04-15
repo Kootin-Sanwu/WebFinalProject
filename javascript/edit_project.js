@@ -100,6 +100,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var projectName = document.getElementById("project_name");
     var beginDate = document.getElementById("begin_date");
     var endDate = document.getElementById("end_date");
+    
+    function toggleRequired() {
+        projectName.required = !projectName.required;
+        beginDate.required = !beginDate.required;
+        endDate.required = !endDate.required;
+    }
 
     function submitHover(button) {
         button.style.transform = 'translateY(-2px)';
@@ -135,12 +141,6 @@ document.addEventListener('DOMContentLoaded', function () {
         button.style.transform = 'translateY(4px)';
         button.style.backgroundColor = "black";
         button.style.boxShadow = 'none';
-    }
-
-    function toggleRequired() {
-        projectName.required = !projectName.required;
-        beginDate.required = !beginDate.required;
-        endDate.required = !endDate.required;
     }
 
     addButton.addEventListener('mouseover', function () {
