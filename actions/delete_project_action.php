@@ -7,7 +7,7 @@ if (isset($_POST['project_ID'])) {
     $project_ID = $_POST['project_ID'];
 
     if ($close_Value == "close") {
-        header("Location: {$_SERVER['HTTP_REFERER']}");
+        header("Location: ../managements/admin_management.php");
         exit();
     } else {
         // Check if the project_ID exists in the assignment table
