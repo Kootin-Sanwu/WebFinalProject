@@ -1,5 +1,52 @@
 <?php
 
+// function displayDepartmentProjectDetails()
+// {
+//     include "../settings/connection.php";
+
+//     // Start the session
+//     if (session_status() == PHP_SESSION_NONE) {
+//         session_start();
+//     }
+
+//     $currentDepartmentID = $_SESSION['department_ID'];
+
+//     $sql = "SELECT projects.project_ID, projects.project_name, CONCAT(employees.first_name, ' ', employees.last_name) AS assigned_by, projects.status
+//             FROM projects
+//             JOIN employees ON projects.employee_ID = employees.employee_ID
+//             WHERE projects.department_ID = {$currentDepartmentID}";
+
+//     $result = $conn->query($sql);
+
+//     if ($result->num_rows > 0) {
+
+//         while ($row = $result->fetch_assoc()) {
+//             $projectID = $row["project_ID"];
+//             $projectName = $row["project_name"];
+//             $assignedBy = $row["assigned_by"];
+//             $status = $row["status"];
+
+//             echo "<tr>";
+//             echo "<td>{$projectName}</td>";
+//             echo "<td>{$assignedBy}</td>";
+//             echo "<td>{$projectName}</td>";
+//             echo "<td>{$projectName}</td>";
+//             echo "<td>{$status}</td>";
+
+//             // echo "<td><form class='action-container' action='../allocations/edit_project_action.php' method='post'>";
+//             // echo "<input type='hidden' name='project_ID' value='{$projectID}'>";
+//             // echo "<button type='submit' value='Edit'>Edit</button>";
+//             // echo "</form></td>";
+
+//             echo "</tr>";
+//         }
+//     }
+
+//     $conn->close();
+// }
+
+
+
 function displayDepartmentProjectDetails()
 {
     include "../settings/connection.php";
@@ -11,10 +58,11 @@ function displayDepartmentProjectDetails()
 
     $currentDepartmentID = $_SESSION['department_ID'];
 
-    $sql = "SELECT projects.project_ID, projects.project_name, CONCAT(employees.first_name, ' ', employees.last_name) AS assigned_by, projects.status
-            FROM projects
-            JOIN employees ON projects.employee_ID = employees.employee_ID
-            WHERE projects.department_ID = {$currentDepartmentID}";
+    $sql = "SELECT a.project_ID, p.project_name, CONCAT(e.first_name, ' ', e.last_name) AS assigned_by, p.workflow, p.status
+            FROM assignments a
+            JOIN projects p ON a.project_ID = p.project_ID
+            JOIN employees e ON p.employee_ID = e.employee_ID
+            WHERE a.department_ID = {$currentDepartmentID}";
 
     $result = $conn->query($sql);
 
@@ -24,22 +72,20 @@ function displayDepartmentProjectDetails()
             $projectID = $row["project_ID"];
             $projectName = $row["project_name"];
             $assignedBy = $row["assigned_by"];
+            $workflow = $row["workflow"];
             $status = $row["status"];
 
             echo "<tr>";
             echo "<td>{$projectName}</td>";
             echo "<td>{$assignedBy}</td>";
-            echo "<td>{$projectName}</td>";
+            echo "<td>{$workflow}</td>";
             echo "<td>{$projectName}</td>";
             echo "<td>{$status}</td>";
 
-            // echo "<td><form class='action-container' action='../allocations/edit_project_action.php' method='post'>";
-            // echo "<input type='hidden' name='project_ID' value='{$projectID}'>";
-            // echo "<button type='submit' value='Edit'>Edit</button>";
-            // echo "</form></td>";
-
             echo "</tr>";
         }
+    } else {
+        echo "0 results";
     }
 
     $conn->close();
