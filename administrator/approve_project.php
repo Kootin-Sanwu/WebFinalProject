@@ -21,11 +21,11 @@ checkLogin();
                 <button name="closeButton" value="close">Close</button>
             </div>
 
-            <input type="" name="department_ID" value="<?php echo $department_ID; ?>">
-            <input type="" name="project_name" value="<?php echo $project_Name; ?>">
-            <input type="" name="request_ID" value="<?php echo $request_ID; ?>">
-            <input type="" name="begin_date" value="<?php echo $begin_Date; ?>">
-            <input type="" name="end_date" value="<?php echo $end_Date; ?>">
+            <input type="hidden" name="department_ID" value="<?php echo $department_ID; ?>">
+            <input type="hidden" name="project_name" value="<?php echo $project_Name; ?>">
+            <input type="hidden" name="request_ID" value="<?php echo $request_ID; ?>">
+            <input type="hidden" name="begin_date" value="<?php echo $begin_Date; ?>">
+            <input type="hidden" name="end_date" value="<?php echo $end_Date; ?>">
 
             <div class="text">
                 CONFIRM APPROVAL
