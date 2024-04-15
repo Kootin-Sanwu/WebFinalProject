@@ -107,7 +107,7 @@ function displayAllRequests()
         $output .= "<form class='status-container' action='../requests/admin_request.php?msg=approve' method='POST'>";
         $output .= "<input type='hidden' name='department_ID' value='{$department_ID}'>";
         $output .= "<input type='hidden' name='project_name' value='{$project_Name}'>";
-        $output .= "<input type='hidden' name='employee_ID' value='{$emeployee_ID}'>";
+        $output .= "<input type='hidden' name='employee_ID' value='{$employee_ID}'>";
         $output .= "<input type='hidden' name='request_ID' value='{$request_ID}'>";
         $output .= "<input type='hidden' name='begin_date' value='{$begin_Date}'>";
         $output .= "<input type='hidden' name='end_date' value='{$end_Date}'>";
@@ -117,7 +117,7 @@ function displayAllRequests()
         $output .= "<form class='status-container' action='../requests/admin_request.php?msg=reject' method='POST'>";
         $output .= "<input type='hidden' name='department_ID' value='{$department_ID}'>";
         $output .= "<input type='hidden' name='project_name' value='{$project_Name}'>";
-        $output .= "<input type='hidden' name='employee_ID' value='{$emeployee_ID}'>";
+        $output .= "<input type='hidden' name='employee_ID' value='{$employee_ID}'>";
         $output .= "<input type='hidden' name='request_ID' value='{$request_ID}'>";
         $output .= "<input type='hidden' name='begin_date' value='{$begin_Date}'>";
         $output .= "<input type='hidden' name='end_date' value='{$end_Date}'>";
