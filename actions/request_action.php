@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
         }
 
     } elseif ($message == "reject") {
-        $request_ID = $_SESSION["request_ID"];
+        $request_ID = $_POST["request_ID"];
         
         $sql_request_update = "UPDATE requests SET request_status = 'REJECTED' WHERE request_ID = ?";
         
@@ -75,8 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
         $stmt->bind_param("i", $request_ID);
 
         if ($stmt->execute()) {
-            // header("Location: {$_SERVER['HTTP_REFERER']}");
-            echo "Successfully rejected";
+            header("Location: {$_SERVER['HTTP_REFERER']}");
         } else {
             echo "Error updating request status: " . $stmt->error;
         }
