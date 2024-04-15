@@ -32,11 +32,11 @@ checkLogin();
             <input type="hidden" name="request_status" value="pending">
 
             <div class="submit">
-                <button name="addButton">Edit</button>
+                <button name="addButton">Delete</button>
             </div>
         </div>
     </form>
-    <script src="../javascript/edit_project.js" defer></script>
+    <script src="../javascript/delete_request.js" defer></script>
 </body>
 
 </html>
