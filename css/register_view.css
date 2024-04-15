@@ -92,6 +92,7 @@ input:hover {
 .container-one {
     justify-content: center;
     align-content: center;
+    flex-wrap: wrap;
     display: flex;
     width: 100%;
 }
