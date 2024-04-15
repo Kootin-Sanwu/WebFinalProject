@@ -2,32 +2,32 @@
 include "../functions/request_project_func.php";
 include "../settings/core.php";
 
-// Check if request_ID is set
-if (isset($_GET['request_ID']) && !isset($_GET['msg'])) {
-    $requestID = $_GET['request_ID'];
+if (isset($_GET['msg']) && $_GET['msg'] == 'delete') {
+    $department_ID = $_GET['department_ID'];
+    $request_ID = $_GET['request_ID'];
 
-    // Set session variable
-    $_SESSION['request_ID'] = $requestID;
+    $_SESSION['department_ID'] = $department_ID;
+    $_SESSION['request_ID'] = $request_ID;
+
     include '../administrator/delete_request.php';
 }
 
-if (isset($_GET['msg']) && isset($_GET['user_ID'])) {
-    $msg = $_GET['msg'];
-    $user_ID = $_GET['user_ID'];
+if (isset($_GET['msg']) && $_GET['msg'] == 'edit') {
+    $department_ID = $_GET['department'];
+    $request_ID = $_GET['request_ID'];
 
-    if ($msg == 'cannot delete') {
-        include "../constraints/delete_request.php";
-    }
+    $_SESSION['department_ID'] = $department_ID;
+    $_SESSION['request_ID'] = $request_ID;
+
+    include '../administrator/edit_request.php';
 }
 
-if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['employee_ID'])) {
-    $msg = $_GET['msg'];
-    $request_ID = $_GET['request_ID'];
-    $employee_ID = $_GET['employee_ID'];
+if (isset($_GET['msg']) && $_GET['msg'] == 'cannot_edit') {
+    $department_ID = $_GET['department_ID'];
 
-    if ($msg == 'edit') {
-        include "../administrator/edit_request.php";
-    }
+    $_SESSION['department_ID'] = $department_ID;
+
+    include '../constraints/edit_request_constraint.php';
 }
 ?>
 
@@ -90,8 +90,13 @@ if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['employee_I
                     <h3>PROJECTS LIST</h3>
                 </div>
                 <div class="assignchore-container">
-                    <button onclick="openPopup()" name="requestButton">REQUEST PROJECT</button>
+                    <button onclick="togglePopup()" name="requestButton">REQUEST PROJECT</button>
                 </div>
+            </div>
+            <div class="assignchore-popup" id="assignchore-container" style="display: none;">
+                <?php
+                include "../administrator/project_request.php";
+                ?>
             </div>
             <div class="table-container">
                 <table class="styled-table">
@@ -115,9 +120,6 @@ if (isset($_GET['msg']) && isset($_GET['request_ID']) && isset($_GET['employee_I
     </div>
     <div id="overlay"></div>
     <div id="popup">
-        <?php
-        include "../administrator/project_request.php";
-        ?>
     </div>
     <script src="../javascript/admin_request.js" defer></script>
 </body>
