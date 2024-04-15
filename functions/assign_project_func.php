@@ -181,8 +181,7 @@ function displayAllAssignments()
 //     $conn->close();
 // }
 
-
-function displayRecentAssignmentDetails()
+function displayDepartmentRecentAssignments()
 {
     include "../settings/connection.php";
 
@@ -195,11 +194,11 @@ function displayRecentAssignmentDetails()
     $currentDepartmentID = $_SESSION['department_ID'];
 
     // SQL query to fetch assignments of the current department
-    $sql = "SELECT assignment.assignment_ID, projects.project_ID, projects.project_name, CONCAT(employees.first_name, ' ', employees.last_name) AS assigned_by, assignment.begin_date, assignment.end_date
-            FROM assignment
-            JOIN projects ON assignment.project_ID = projects.project_ID
-            JOIN employees ON projects.employee_ID = employees.employee_ID
-            WHERE assignment.department_ID = {$currentDepartmentID}";
+    $sql = "SELECT a.assignment_ID, p.project_ID, p.project_name, CONCAT(e.first_name, ' ', e.last_name) AS assigned_by, a.begin_date, a.end_date
+            FROM assignments a
+            JOIN projects p ON a.project_ID = p.project_ID
+            JOIN employees e ON p.employee_ID = e.employee_ID
+            WHERE a.department_ID = {$currentDepartmentID}";
 
     $result = $conn->query($sql);
 
@@ -223,10 +222,13 @@ function displayRecentAssignmentDetails()
 
             echo "</tr>";
         }
+    } else {
+        echo "No Recent Assigments";
     }
 
     $conn->close();
 }
+
 
 
 
