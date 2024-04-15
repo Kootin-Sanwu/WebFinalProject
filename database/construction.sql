@@ -272,14 +272,26 @@ CREATE TABLE requests (
     FOREIGN KEY (employee_ID) REFERENCES employees(employee_ID)
 );
 
+-- CREATE TABLE projects (
+--     project_ID INT PRIMARY KEY AUTO_INCREMENT,
+--     project_name VARCHAR(100) NOT NULL,
+--     begin_date DATE,
+--     end_date DATE,
+--     workflow ENUM('IN PROGRESS', 'INCOMPLETE', 'COMPLETE', 'UNASSIGNED', 'ASSIGNED') DEFAULT 'UNASSIGNED',
+--     status ENUM('PENDING', 'APPROVED', 'REJECTED') DEFAULT 'PENDING'
+-- );
+
 CREATE TABLE projects (
     project_ID INT PRIMARY KEY AUTO_INCREMENT,
     project_name VARCHAR(100) NOT NULL,
+    employee_ID INT,
     begin_date DATE,
     end_date DATE,
     workflow ENUM('IN PROGRESS', 'INCOMPLETE', 'COMPLETE', 'UNASSIGNED', 'ASSIGNED') DEFAULT 'UNASSIGNED',
-    status ENUM('PENDING', 'APPROVED', 'REJECTED') DEFAULT 'PENDING'
+    status ENUM('PENDING', 'APPROVED', 'REJECTED') DEFAULT 'PENDING',
+    FOREIGN KEY (employee_ID) REFERENCES employees(employee_ID)
 );
+
 
 CREATE TABLE assignments (
     assignment_ID INT PRIMARY KEY AUTO_INCREMENT,
@@ -287,7 +299,7 @@ CREATE TABLE assignments (
     department_ID INT,
     begin_date DATE,
     end_date DATE,
-    workflow ENUM('IN PROGRESS', 'INCOMMPLETE', 'COMPLETE', 'UNASSIGNED', 'ASSIGNED') DEFAULT 'UNASSIGNED',
+    workflow ENUM('IN PROGRESS', 'INCOMPLETE', 'COMPLETE', 'UNASSIGNED', 'ASSIGNED') DEFAULT 'UNASSIGNED',
     FOREIGN KEY (project_ID) REFERENCES projects(project_ID),
     FOREIGN KEY (department_ID) REFERENCES departments(department_ID)
 );
