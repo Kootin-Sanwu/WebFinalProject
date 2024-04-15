@@ -3,7 +3,7 @@ include "../functions/request_project_func.php";
 include "../settings/core.php";
 
 if (isset($_GET['msg']) && $_GET['msg'] == 'delete') {
-    $department_ID = $_GET['department'];
+    $department_ID = $_GET['department_ID'];
     $request_ID = $_GET['request_ID'];
 
     $_SESSION['department_ID'] = $department_ID;
@@ -20,6 +20,14 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'edit') {
     $_SESSION['request_ID'] = $request_ID;
 
     include '../administrator/edit_request.php';
+}
+
+if (isset($_GET['msg']) && $_GET['msg'] == 'cannot_edit') {
+    $department_ID = $_GET['department_ID'];
+
+    $_SESSION['department_ID'] = $department_ID;
+
+    include '../constraints/edit_request_constraint.php';
 }
 
 // if (isset($_GET['msg']) && isset($_GET['user_ID'])) {

@@ -21,7 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt_check_status->close();
 
     if ($status == 'approved') {
-        header("Location: ../directions/close_edit_direction.php?department_ID={$department_ID}");
+        header("Location: ../directions/close_edit_direction.php?msg=cannot_edit&department_ID={$department_ID}");
+        exit();
+    } else if (isset($_GET['msg']) && $_GET['msg'] == 'cannot_edit') {
+        header("Location: ../directions/close_edit_constraint.php?msg=cannot_edit&department_ID{$department_ID}");
         exit();
     }
 
