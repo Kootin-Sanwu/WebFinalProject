@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var addButton = document.querySelector(".submit button[name=addButton]");
     var closeButton = document.querySelector(".close-form-group button[name=closeButton]");
-    var projectName = document.getElementById("project_name");
-    var beginDate = document.getElementById("begin_date");
-    var endDate = document.getElementById("end_date");
+    var projectName = document.getElementById("edit_request_project_name");
+    var beginDate = document.getElementById("edit_request_begin_date");
+    var endDate = document.getElementById("edit_request_end_date");
 
     function submitHover(button) {
         button.style.transform = 'translateY(-2px)';
@@ -84,10 +84,10 @@ document.addEventListener('DOMContentLoaded', function () {
     closeButton.addEventListener('click', function () {
         toggleRequired();
     });
-    
-    function openPopup() {
-        document.getElementById('overlay').style.display = 'block';
-        document.getElementById('popup').style.display = 'block';
-    }
 
 });
+
+function openPopup() {
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('popup').style.display = 'block';
+}
