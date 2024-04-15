@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt_check_status->close();
 
     if ($close_Value == "close") {
-        header("Location: ../directions/close_edit_direction.php?department_ID={$department_ID}");
+        header("Location: ../directions/close_edit_direction.php?msg=close&department_ID={$department_ID}");
         exit();
     }
 
