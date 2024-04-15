@@ -20,35 +20,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt_check_status->fetch();
     $stmt_check_status->close();
 
-    echo $close_Value;
-    // if ($close_Value == "close") {
-    //     header("Location: ../directions/close_edit_direction.php?msg=close&department_ID={$department_ID}");
-    //     exit();
-    // }
+    if ($close_Value == "close") {
+        header("Location: ../directions/close_edit_direction.php?msg=close&department_ID={$department_ID}");
+        exit();
+    }
 
-    // if ($status == 'APPROVED') {
-    //     header("Location: ../directions/close_edit_direction.php?msg=cannot_edit&department_ID={$department_ID}");
-    //     exit();
-    // } else if (isset($_GET['msg']) && $_GET['msg'] == 'cannot_edit') {
-    //     header("Location: ../directions/close_edit_constraint.php?msg=cannot_edit&department_ID={$department_ID}");
-    //     exit();
-    // } else {
+    if ($status == 'APPROVED') {
+        header("Location: ../directions/close_edit_direction.php?msg=cannot_edit&department_ID={$department_ID}");
+        exit();
+    } else if (isset($_GET['msg']) && $_GET['msg'] == 'cannot_edit') {
+        header("Location: ../directions/close_edit_constraint.php?msg=cannot_edit&department_ID={$department_ID}");
+        exit();
+    } else {
 
-    //     $sql = "UPDATE requests SET project_name = ?, begin_date = ?, end_date = ?, request_status = 'pending' WHERE request_ID = ?";
+        $sql = "UPDATE requests SET project_name = ?, begin_date = ?, end_date = ?, request_status = 'pending' WHERE request_ID = ?";
 
-    //     $stmt = $conn->prepare($sql);
-    //     $stmt->bind_param("sssi", $project_name, $begin_date, $end_date, $request_ID);
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sssi", $project_name, $begin_date, $end_date, $request_ID);
 
-    //     if ($stmt->execute()) {
-    //         echo "Record updated successfully";
-    //         header("Location: ../directions/close_edit_direction.php?msg=edit&department_ID={$department_ID}");
-    //     } else {
-    //         echo "Error updating record: " . $stmt->error;
-    //     }
+        if ($stmt->execute()) {
+            echo "Record updated successfully";
+            header("Location: ../directions/close_edit_direction.php?msg=edit&department_ID={$department_ID}");
+        } else {
+            echo "Error updating record: " . $stmt->error;
+        }
 
-    //     $stmt->close();
-    //     $conn->close();
-    // }
+        $stmt->close();
+        $conn->close();
+    }
 } else {
     echo "Form not submitted.";
 }
