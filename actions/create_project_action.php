@@ -31,36 +31,31 @@
 //     echo "Form not submitted.";
 // }
 
-
 include "../settings/connection.php";
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// echo $_SESSION['user_ID'];
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $projectName = $_POST["projectname"];
-    $startDate = $_POST["start_date"];
-    $endDate = $_POST["end_date"];
-    $requestStatus = $_POST["request_status"];
-    $employeeID = $_POST["employee_ID"];
-    $supervisorID = $_SESSION['user_ID'];
+    $request_Status = $_POST["request_status"];
+    $project_Name = $_POST["projectname"];
+    $employee_ID = $_POST["employee_ID"];
+    $start_Date = $_POST["start_date"];
+    $end_Date = $_POST["end_date"];
 
-    if (!empty($projectName)) {
+    $sql = "INSERT INTO projects (project_name, employee_ID, begin_date, end_date) VALUES (?, ?, ?, ?)";
+        
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("siss", $project_Name, $employee_ID, $start_Date, $end_Date);
 
-        $sql = "INSERT INTO projects (project_name, employee_ID, begin_date, end_date) VALUES ('$projectName', $supervisorID, '$startDate', '$endDate')";
-
-        if ($conn->query($sql) === TRUE) {
-            header("Location: ../managements/admin_management.php");
-            // echo "Project created successfully.";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
+    if ($stmt->execute()) {
+        header("Location: ../managements/admin_management.php");
     } else {
-        echo "Project name and department cannot be empty.";
+        echo "Error: " . $stmt->error;
     }
+
+    $stmt->close();
 
     $conn->close();
 } else {
