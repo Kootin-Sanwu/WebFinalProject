@@ -8,9 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (!empty($assignment_ID)) {
         
-        $fetchSql = "SELECT projects.workflow FROM assignment
-                     JOIN projects ON assignment.project_ID = projects.project_ID
-                     WHERE assignment.assignment_ID = {$assignment_ID}";
+        $fetchSql = "SELECT p.workflow 
+                     FROM assignments a
+                     JOIN projects p ON a.project_ID = p.project_ID
+                     WHERE a.assignment_ID = {$assignment_ID}";
 
         $result = $conn->query($fetchSql);
 
@@ -22,11 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = $result->fetch_assoc();
             $workflow = $row['workflow'];
 
-            // Check if the workflow is "complete" or "assigned"
-            if ($workflow == 'Complete' || $workflow == 'Unassigned') {
+            // Check if the workflow is "COMPLETE", "ASSIGNED", or "UNASSIGNED"
+            if ($workflow == 'COMPLETE' || $workflow == 'ASSIGNED' || $workflow == 'UNASSIGNED') {
 
                 // SQL query to delete assignment
-                $sql = "DELETE FROM assignment WHERE assignment_ID = $assignment_ID";
+                $sql = "DELETE FROM assignments WHERE assignment_ID = $assignment_ID";
 
                 if ($conn->query($sql) === TRUE) {
                     header("Location: ../allocations/admin_allocation.php");
@@ -35,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
             } else {
                 header("location: ../allocations/admin_allocation.php?msg=cannot delete");
-                echo "Assignment cannot be deleted. Workflow is In Progress. Or Assigned";
+                echo "Assignment cannot be deleted. Workflow is In Progress or Rejected";
             }
         } else {
             echo "Assignment not found.";
