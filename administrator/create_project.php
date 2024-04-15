@@ -26,13 +26,13 @@ checkLogin();
 
             <div class="form-group">
                 <label for="projectname">Project Name:</label>
-                <input type="text" required name="project_name" id="project_name" placeholder="Project Name" required>
+                <input type="text" name="project_name" id="project_name" placeholder="Project Name" required>
                 
                 <label for="start_date">Project Name:</label>
-                <input type="date" required name="start_date" id="start_date" placeholder="Start date" required>
+                <input type="date" name="start_date" id="start_date" placeholder="Start date" required>
                 
                 <label for="end_date">Project Name:</label>
-                <input type="date" required name="end_date" id="end_date" placeholder="End Date" required>
+                <input type="date" name="end_date" id="end_date" placeholder="End Date" required>
             </div>
             <input type="hidden" name="request_status" value="pending">
 
