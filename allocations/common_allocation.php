@@ -72,7 +72,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'edit') {
                     </thead>
                     <tbody id="createdChoresTable">
                         <?php
-                        displayDepartmentAssignmentDetails();
+                        displayDepartmentAssignments();
                         ?>
                     </tbody>
                 </table>

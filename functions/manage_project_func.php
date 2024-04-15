@@ -7,12 +7,12 @@ function displayDepartmentProjects()
         session_start();
     }
 
-    $currentDepartmentID = $_SESSION['department_ID'];
+    $department_ID = $_SESSION['department_ID'];
 
     $sql = "SELECT a.project_ID, p.project_name, p.employee_ID, p.workflow, a.begin_date, a.end_date
             FROM assignments a
             INNER JOIN projects p ON a.project_ID = p.project_ID
-            WHERE a.department_ID = {$currentDepartmentID}";
+            WHERE a.department_ID = {$department_ID}";
 
     $result = $conn->query($sql);
 
@@ -20,27 +20,27 @@ function displayDepartmentProjects()
 
         while ($row = $result->fetch_assoc()) {
             $project_ID = $row["project_ID"];
-            $projectName = $row["project_name"];
+            $project_Name = $row["project_name"];
             $employee_ID = $row["employee_ID"];
             $workflow = $row["workflow"];
             $beginDate = $row["begin_date"];
             $endDate = $row["end_date"];
 
             echo "<tr>";
-            echo "<td>{$projectName}</td>";
+            echo "<td>{$project_Name}</td>";
             echo "<td>{$workflow}</td>";
 
             echo "<td><form class='action-container' action='../actions/workflow_action.php' method='post'>";
-            echo "<input type='hidden' name='employee_ID' value='{$employee_ID}'>";
+            echo "<input type='hidden' name='department_ID' value='{$department_ID}'>";
             echo "<input type='hidden' name='project_ID' value='{$project_ID}'>";
-            echo "<input type='hidden' name='workflow' value='In Progress'>";
+            echo "<input type='hidden' name='workflow' value='IN PROGRESS'>";
             echo "<button type='submit' value='Edit'>IN PROGRESS</button>";
             echo "</form>";
 
             echo "<form class='action-container' action='../actions/workflow_action.php' method='post'>";
-            echo "<input type='hidden' name='employee_ID' value='{$employee_ID}'>";
+            echo "<input type='hidden' name='department_ID' value='{$department_ID}'>";
             echo "<input type='hidden' name='project_ID' value='{$project_ID}'>";
-            echo "<input type='hidden' name='workflow' value='Complete'>";
+            echo "<input type='hidden' name='workflow' value='COMPLETE'>";
             echo "<button type='submit' value='Edit'>COMPLETE</button>";
             echo "</form></td>";
 
@@ -64,20 +64,20 @@ function displayCommonManagementDetails()
         session_start();
     }
 
-    $currentDepartmentID = $_SESSION['department_ID'];
+    $department_ID = $_SESSION['department_ID'];
 
-    $sql = "SELECT * FROM assignments WHERE department_ID = {$currentDepartmentID}";
+    $sql = "SELECT * FROM assignments WHERE department_ID = {$department_ID}";
 
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
 
         while ($row = $result->fetch_assoc()) {
-            $projectName = $row["project_name"];
+            $project_Name = $row["project_name"];
             $workflow = $row["workflow"];
 
             echo "<tr>";
-            echo "<td>{$projectName}</td>";
+            echo "<td>{$project_Name}</td>";
             echo "<td>{$workflow}</td>";
 
             echo "</tr>";

@@ -1,8 +1,13 @@
 <?php
 include "../functions/assign_project_func.php";
 
-if (isset($_GET['msg']) && $_GET['msg'] == 'edit') {
-    include '../administrator/edit_request.php';
+if (isset($_GET['msg']) && $_GET['msg'] == 'delete') {
+
+    $assignment_ID = $_POST['assignment_ID'];
+    
+    $_SESSION['assignment_ID'] = $assignment_ID;
+
+    include '../administrator/delete_assignment.php';
 }
 
 ?>
