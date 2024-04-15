@@ -18,7 +18,7 @@ checkLogin();
         <div class="container-16">
 
             <div class="close-form-group">
-                <button name="closeButton" value="close">Close</button>
+                <button type="button" name="closeButton" id="closeButton" value="close">Close</button>
             </div>
 
             <input type="hidden" name="department_ID" value="<?php 

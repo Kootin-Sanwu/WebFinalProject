@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-
     var addButton = document.querySelector(".submit button[name=addButton]");
     var closeButton = document.querySelector(".close-form-group button[name=closeButton]");
     var projectName = document.getElementById("project_name");
@@ -62,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addButton.addEventListener('mouseup', function () {
         submitHover(this);
-        addChore(this);
     });
 
     closeButton.addEventListener('mouseover', function () {
@@ -73,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         closeResetStyles();
     });
 
-    closeButton.addEventListener('mousedown', function (event) {
+    closeButton.addEventListener('mousedown', function () {
         closePressEffect(this);
     });
 
@@ -84,10 +82,4 @@ document.addEventListener('DOMContentLoaded', function () {
     closeButton.addEventListener('click', function () {
         toggleRequired();
     });
-
 });
-
-function openPopup() {
-    document.getElementById('overlay').style.display = 'block';
-    document.getElementById('popup').style.display = 'block';
-}
