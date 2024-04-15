@@ -2,9 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var addButton = document.querySelector(".submit button[name=submitButton]");
     var closeButton = document.querySelector(".close-form-group button[name=closeButton]");
-    var projectName = document.getElementById("project_name");
-    var beginDate = document.getElementById("start_date");
-    var endDate = document.getElementById("end_date");
+    var projectName = document.getElementById("assign_project_name");
+    var projectDepartment = document.getElementById("assign_project_department");
 
     function submitHover(button) {
         button.style.transform = 'translateY(-2px)';
@@ -44,8 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function toggleRequired() {
         projectName.required = !projectName.required;
-        beginDate.required = !beginDate.required;
-        endDate.required = !endDate.required;
+        projectDepartment.required = !projectDepartment.required;
     }
 
     addButton.addEventListener('mouseover', function () {

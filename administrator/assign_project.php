@@ -18,15 +18,15 @@ checkLogin();
 <body>
     <form class="container-15" id="myModal" method="POST" action="../actions/assign_project_action.php">
         <div class="container-16">
+
             <div class="close-form-group">
-                <button name="closeButton" id="closePopup" onclick="closePopup()">Close</button>
+                <button name="closeButton" value="close">Close</button>
             </div>
-            <input type="hidden" name="employee_ID" value="<?php echo $_SESSION['user_ID']; ?>">
+
+            <input type="hidden" name="employee_ID" value="<?php echo $_SESSION['employee_ID']; ?>">
 
             <div class="form-group">
-                <!-- <label for="projectname">Project Name:</label>
-                <input type="text" required name="projectname" id="projectName" placeholder="Project Name" required> -->
-                <select name="project_ID" required>
+                <select name="project_ID" id="assign_project_name" required>
                     <option value="" disabled selected>Project</option>
                     <?php
                     foreach ($project_results as $item_index => $item_value) {
@@ -35,9 +35,9 @@ checkLogin();
                     ?>
                 </select>
 
-                <input type="hidden" name="departmentID" value="<?php echo $_SESSION['department_ID']; ?>">
+                <input type="hidden" name="department_ID" value="<?php echo $_SESSION['department_ID']; ?>">
 
-                <select name="department_ID" required>
+                <select name="department_ID" id="assign_department_name" required>
                     <option value="" disabled selected>Department</option>
                     <?php
                     foreach ($department_results as $item_index => $item_value) {

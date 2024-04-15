@@ -70,17 +70,6 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'cannot delete') {
             </a>
         </div>
         <div class="container-one">
-            <!-- <div class="topcontainer-1">
-                <div class="maintitle-container">
-                    <h3>PROJECTS LIST</h3>
-                </div>
-                <div class="assignchore-container">
-                    <button onclick="openPopup()" name="assignButton">ASSIGN PROJECT</button>
-                    <?php
-                    // include "../administrator/assign_project.php";
-                    ?>
-                </div>
-            </div> -->
             <div class="topcontainer-1">
                 <div class="maintitle-container">
                     <h3>PROJECTS LIST</h3>
@@ -124,9 +113,6 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'cannot delete') {
     </div>
     <div id="overlay"></div>
     <div id="popup">
-        <?php
-        // include "../administrator/assign_project.php";
-        ?>
     </div>
     <script src="../javascript/admin_allocation.js" defer></script>
 </body>
