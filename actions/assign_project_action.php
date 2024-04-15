@@ -11,17 +11,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $close_Value = $_POST["closeButton"];
     $project_ID = $_POST["project_ID"];
 
-    if (!empty($project_ID) && !empty($department_ID)) {
+    if ($close_Value == "close") {
+        header("Location: ../allocations/admin_allocation.php");
+        exit();
+    } else if (!empty($project_ID) && !empty($department_ID)) {
 
         // Check if project_ID already exists in assignment table
         $checkSql = "SELECT * FROM assignments WHERE project_ID = {$project_ID}";
         $checkResult = $conn->query($checkSql);
 
-        if ($close_Value == "close") {
-            header("Location: ../allocations/admin_allocation.php");
-            exit();
-        }
-        else if ($checkResult->num_rows > 0) {
+        if ($checkResult->num_rows > 0) {
             header("Location: ../allocations/admin_allocation.php?msg=assigned");
             exit; // Stop executing the rest of the code
         }
