@@ -26,8 +26,8 @@ if(isset($_SESSION['request_ID']) && isset($_SESSION['department_ID'])) {
                 <button name="closeButton" value="close">Close</button>
             </div>
 
-            <input type="hidden" name="department_ID" value="<?php echo $department_ID; ?>">
-            <input type="hidden" name="request_ID" value="<?php echo $requestID; ?>">
+            <input type="" name="department_ID" value="<?php echo $department_ID; ?>">
+            <input type="" name="request_ID" value="<?php echo $requestID; ?>">
 
             <div class="text">
                 CONFIRM DELETION
