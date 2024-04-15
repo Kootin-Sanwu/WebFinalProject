@@ -68,6 +68,10 @@ function displayDepartmentAssignments()
             JOIN employees e ON p.employee_ID = e.employee_ID
             WHERE a.department_ID = {$currentDepartmentID}";
 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);        
+
     $result = $conn->query($sql);
 
     ini_set('display_errors', 1);
