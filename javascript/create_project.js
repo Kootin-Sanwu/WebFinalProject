@@ -126,12 +126,13 @@
 //     document.getElementById('popup').style.display = 'block';
 // }
 
+
 document.addEventListener('DOMContentLoaded', function () {
 
     var addButton = document.querySelector(".submit button[name=submitButton]");
     var closeButton = document.querySelector(".close-form-group button[name=closeButton]");
     var projectName = document.getElementById("project_name");
-    var beginDate = document.getElementById("begin_date");
+    var beginDate = document.getElementById("start_date");
     var endDate = document.getElementById("end_date");
 
     function submitHover(button) {
@@ -190,7 +191,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addButton.addEventListener('mouseup', function () {
         submitHover(this);
-        addChore(this);
     });
 
     closeButton.addEventListener('mouseover', function () {
@@ -201,21 +201,13 @@ document.addEventListener('DOMContentLoaded', function () {
         closeResetStyles();
     });
 
-    closeButton.addEventListener('mousedown', function (event) {
+    closeButton.addEventListener('mousedown', function () {
         closePressEffect(this);
     });
 
     closeButton.addEventListener('mouseup', function () {
         closeHover(this);
-    });
-
-    closeButton.addEventListener('click', function () {
-        toggleRequired();
+        toggleRequired();  // Toggle the required attribute
     });
 
 });
-
-function openPopup() {
-    document.getElementById('overlay').style.display = 'block';
-    document.getElementById('popup').style.display = 'block';
-}

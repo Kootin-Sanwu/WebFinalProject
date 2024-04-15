@@ -25,13 +25,13 @@ checkLogin();
             <input type="hidden" name="employee_ID" value="<?php echo $_SESSION['employee_ID']; ?>">
 
             <div class="form-group">
-                <label for="projectname">Project Name:</label>
+                <label for="project_name">Project Name:</label>
                 <input type="text" name="project_name" id="project_name" placeholder="Project Name" required>
                 
-                <label for="start_date">Project Name:</label>
+                <label for="start_date">Start Date:</label>
                 <input type="date" name="start_date" id="start_date" placeholder="Start date" required>
                 
-                <label for="end_date">Project Name:</label>
+                <label for="end_date">End Date:</label>
                 <input type="date" name="end_date" id="end_date" placeholder="End Date" required>
             </div>
             <input type="hidden" name="request_status" value="pending">
