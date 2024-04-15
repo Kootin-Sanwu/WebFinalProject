@@ -16,16 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else if (!empty($project_ID) && !empty($department_ID)) {
 
-        // Check if project_ID already exists in assignment table
         $checkSql = "SELECT * FROM assignments WHERE project_ID = {$project_ID}";
         $checkResult = $conn->query($checkSql);
 
         if ($checkResult->num_rows > 0) {
             header("Location: ../allocations/admin_allocation.php?msg=assigned");
-            exit; // Stop executing the rest of the code
+            exit;
         }
 
-        // Fetch begin_date and end_date of the project
         $fetchSql = "SELECT begin_date, end_date FROM projects WHERE project_ID = {$project_ID}";
         $result = $conn->query($fetchSql);
 
@@ -36,11 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $sqlProjects = "UPDATE projects SET department_ID = $department_ID, workflow = 'Assigned' WHERE project_ID = '$project_ID'";
 
-            // Insert into assignment table
             $sqlAssignment = "INSERT INTO assignments (project_ID, department_ID, begin_date, end_date) 
                               VALUES ($project_ID, $department_ID, '{$begin_date}', '{$end_date}')";
 
-            // Execute the queries
             if ($conn->query($sqlProjects) === TRUE && $conn->query($sqlAssignment) === TRUE) {
                 header("Location: ../allocations/admin_allocation.php");
             } else {

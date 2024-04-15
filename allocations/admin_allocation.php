@@ -15,6 +15,11 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'cannot delete') {
     include '../constraints/delete_assignment.php';
 }
 
+if (isset($_GET['msg']) && $_GET['msg'] == 'assigned') {
+
+    include '../constraints/assign_project.php';
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
