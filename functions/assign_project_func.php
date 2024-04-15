@@ -193,12 +193,14 @@ function displayDepartmentRecentAssignments()
     // Get the current department_ID from the session
     $currentDepartmentID = $_SESSION['department_ID'];
 
-    // SQL query to fetch assignments of the current department
+    // SQL query to fetch 4 most recent assignments of the current department
     $sql = "SELECT a.assignment_ID, p.project_ID, p.project_name, CONCAT(e.first_name, ' ', e.last_name) AS assigned_by, a.begin_date, a.end_date
             FROM assignments a
             JOIN projects p ON a.project_ID = p.project_ID
             JOIN employees e ON p.employee_ID = e.employee_ID
-            WHERE a.department_ID = {$currentDepartmentID}";
+            WHERE a.department_ID = {$currentDepartmentID}
+            ORDER BY a.assignment_ID DESC
+            LIMIT 4";
 
     $result = $conn->query($sql);
 
@@ -228,7 +230,6 @@ function displayDepartmentRecentAssignments()
 
     $conn->close();
 }
-
 
 
 
