@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function applyAddPressedEffect(button) {
         button.style.transform = 'translateY(4px)';
-        button.style.backgroundColor = "white";
+        button.style.backgroundColor = "red";
         button.style.boxShadow = 'none';
     }
 
