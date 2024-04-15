@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var projectName = document.getElementById("project_name");
     var beginDate = document.getElementById("begin_date");
     var endDate = document.getElementById("end_date");
+    var closeButtonValue = document.getElementById("closeButtonValue");
 
     function submitHover(button) {
         button.style.transform = 'translateY(-2px)';
@@ -165,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
     closeButton.addEventListener('mouseup', function () {
         closeHover(this);
         toggleRequired();
+        closeButtonValue.value = 'close';
     });
 
     closeButton.addEventListener('click', function () {
