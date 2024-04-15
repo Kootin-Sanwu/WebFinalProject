@@ -106,7 +106,7 @@ function displayAllProjects()
     error_reporting(E_ALL);
     include "../settings/connection.php";
 
-    $sql = "SELECT p.project_ID, p.project_name, CONCAT(e.first_name, ' ', e.last_name) AS employee_name, p.department_ID, p.employee_ID, p.begin_date, p.end_date, p.workflow, p.status
+    $sql = "SELECT p.project_ID, p.project_name, CONCAT(e.first_name, ' ', e.last_name) AS employee_name, p.employee_ID, p.begin_date, p.end_date, p.workflow, p.status
             FROM projects p
             INNER JOIN employees e ON p.employee_ID = e.employee_ID";
 
