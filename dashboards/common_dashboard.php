@@ -84,7 +84,8 @@ redirectUser();
             </div>
             <div class="inner-container-three">
                 <?php
-                displayDepartmentRecentAssignments()                ?>
+                displayDepartmentRecentAssignments();
+                ?>
             </div>
         </div>
         <script src="../javascript/common_dashboard.js" defer></script>
