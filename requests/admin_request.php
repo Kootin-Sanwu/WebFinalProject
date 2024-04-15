@@ -5,12 +5,18 @@ include "../settings/core.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["msg"])) {
     $message = $_GET["msg"];
+
+    $department_ID = $_POST["department_ID"];
+    $project_Name = $_POST["project_name"];
+    $request_ID = $_POST["request_ID"];
+    $begin_Date = $_POST["begin_date"];
+    $end_Date = $_POST["end_date"];
     
-    $_SESSION["department_ID"] = $_POST["department_ID"];
-    $_SESSION["project_name"] = $_POST["project_name"];
-    $_SESSION["request_ID"] = $_POST["request_ID"];
-    $_SESSION["begin_date"] = $_POST["begin_date"];
-    $_SESSION["end_date"] = $_POST["end_date"];
+    $_SESSION["department_ID"] = $department_ID;
+    $_SESSION["project_name"] = $project_Name;
+    $_SESSION["request_ID"] = $request_ID;
+    $_SESSION["begin_date"] = $begin_Date;
+    $_SESSION["end_date"] = $end_Date;
 
     if ($message == "approve") {
         include "../administrator/approve_project.php";
