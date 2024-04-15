@@ -23,7 +23,7 @@ checkLogin();
 
             <input type="hidden" name="department_ID" value="<?php echo $department_ID; ?>">
             <input type="hidden" name="project_name" value="<?php echo $project_Name; ?>">
-            <input type="" name="employee_ID" value="<?php echo $employee_ID; ?>">
+            <input type="hidden" name="employee_ID" value="<?php echo $employee_ID; ?>">
             <input type="hidden" name="request_ID" value="<?php echo $request_ID; ?>">
             <input type="hidden" name="begin_date" value="<?php echo $begin_Date; ?>">
             <input type="hidden" name="end_date" value="<?php echo $end_Date; ?>">
