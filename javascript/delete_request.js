@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var deleteButton = document.querySelector(".submit button[name=deleteButton]");
     var closeButton = document.querySelector(".close-form-group button[name=closeButton]");
 
-    function submitHover(button) {
+    function deleteHover(button) {
         button.style.transform = 'translateY(-2px)';
         button.style.backgroundColor = '#3d84ff';
         button.style.boxShadow = '5px 5px grey';
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         button.style.boxShadow = '5px 5px grey';
     }
 
-    function resetStyles() {
+    function deleteResetStyles() {
         deleteButton.style.transform = 'translateY(2px)';
         deleteButton.style.backgroundColor = '#1f4a94';
         deleteButton.style.boxShadow = '1px 1px grey';
@@ -27,26 +27,33 @@ document.addEventListener('DOMContentLoaded', function () {
         closeButton.style.boxShadow = '1px 1px grey';
     }
 
-    function applyAddPressedEffect(button) {
+
+    function submitPressEffect(button) {
+        button.style.transform = 'translateY(4px)';
+        button.style.backgroundColor = "black";
+        button.style.boxShadow = 'none';
+    }
+
+    function closePressEffect(button) {
         button.style.transform = 'translateY(4px)';
         button.style.backgroundColor = "red";
         button.style.boxShadow = 'none';
     }
 
     deleteButton.addEventListener('mouseover', function () {
-        submitHover(this);
+        deleteHover(this);
     });
 
     deleteButton.addEventListener('mouseout', function () {
-        resetStyles();
+        deleteResetStyles();
     });
 
     deleteButton.addEventListener('mousedown', function () {
-        applyAddPressedEffect(this);
+        submitPressEffect(this);
     });
 
     deleteButton.addEventListener('mouseup', function () {
-        submitHover(this);
+        deleteHover(this);
         addChore(this);
     });
 
@@ -59,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     closeButton.addEventListener('mousedown', function () {
-        applyAddPressedEffect(this);
+        closePressEffect(this);
     });
 
     closeButton.addEventListener('mouseup', function () {
