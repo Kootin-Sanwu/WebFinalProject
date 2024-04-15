@@ -101,9 +101,6 @@ function displayCommonManagementDetails()
 
 function displayAllProjects()
 {
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
     include "../settings/connection.php";
 
     $sql = "SELECT p.project_ID, p.project_name, CONCAT(e.first_name, ' ', e.last_name) AS employee_name, e.employee_ID, p.begin_date, p.end_date, p.workflow, p.status
@@ -140,9 +137,9 @@ function displayAllProjects()
             echo "<td><form class='action-container-two' action='../actions/delete_project_action.php' method='post'>";
             echo "<input type='hidden' name='project_ID' value='{$project_ID}'>";
             echo "<button type='submit' value='Delete'>Delete</button>";
-            echo "</form></td>";
+            echo "</form>";
 
-            echo "<td><form class='action-container-two' action='../managements/admin_management.php?msg=edit' method='post'>";
+            echo "<form class='action-container-two' action='../managements/admin_management.php?msg=edit' method='post'>";
             echo "<input type='hidden' name='project_ID' value='{$project_ID}'>";
             echo "<input type='hidden' name='employee_ID' value='{$employee_ID}'>";
             echo "<button type='submit' value='Edit'>Edit</button>";
