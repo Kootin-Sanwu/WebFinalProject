@@ -71,7 +71,7 @@ checkLogin();
 </head>
 
 <body>
-    <form class="container-15" id="myModal" method="POST" action="../actions/project_request_action.php">
+    <form class="container-15" id="myModal" method="POST" action="../actions/edit_request_action.php">
         <div class="container-16">
 
             <div class="close-form-group">
