@@ -97,9 +97,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var addButton = document.querySelector(".submit button[name=addButton]");
     var closeButton = document.querySelector(".close-form-group button[name=closeButton]");
-    var projectName = document.getElementById("project_name");
-    var beginDate = document.getElementById("begin_date");
-    var endDate = document.getElementById("end_date");
+    var projectName = document.getElementById("edit_project_project_name");
+    var beginDate = document.getElementById("edit_project_begin_date");
+    var endDate = document.getElementById("edit_project_end_date");
     
     function toggleRequired() {
         projectName.required = !projectName.required;

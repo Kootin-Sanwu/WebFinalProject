@@ -30,13 +30,13 @@ checkLogin();
 
             <div class="form-group">
                 <label for="project_name">New Project Name:</label>
-                <input type="text" name="project_name" id="project_name" placeholder="New Project Name" required>
+                <input type="text" name="project_name" id="edit_project_project_name" placeholder="New Project Name" required>
 
                 <label for="begin_date">New Begin date:</label>
-                <input type="date" name="begin_date" id="begin_date" placeholder="New Begin date" required>
+                <input type="date" name="begin_date" id="edit_project_begin_date" placeholder="New Begin date" required>
 
                 <label for="end_date">New End Date:</label>
-                <input type="date" name="end_date" id="end_date" placeholder="New End Date" required>
+                <input type="date" name="end_date" id="edit_project_end_date" placeholder="New End Date" required>
             </div>
 
             <div class="submit">
