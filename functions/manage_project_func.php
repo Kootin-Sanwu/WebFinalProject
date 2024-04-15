@@ -101,6 +101,9 @@ function displayCommonManagementDetails()
 
 function displayAllProjects()
 {
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     include "../settings/connection.php";
 
     $sql = "SELECT p.project_ID, p.project_name, CONCAT(e.first_name, ' ', e.last_name) AS employee_name, p.department_ID, p.employee_ID, p.begin_date, p.end_date, p.workflow, p.status
@@ -113,6 +116,11 @@ function displayAllProjects()
 
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
+
+            ini_set('display_errors', 1);
+            ini_set('display_startup_errors', 1);
+            error_reporting(E_ALL);
+            
             $employee_ID = $row["employee_ID"];
             $project_ID = $row["project_ID"];
             $projectName = $row["project_name"];
