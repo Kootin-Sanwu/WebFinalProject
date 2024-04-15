@@ -10,10 +10,12 @@ function displayDepartmentProjects()
 
     // Get the current department_ID from the session
     $currentDepartmentID = $_SESSION['department_ID'];
-    // echo $currentDepartmentID;
 
-    // SQL query to fetch projects of the current department
-    $sql = "SELECT * FROM assignments WHERE department_ID = {$currentDepartmentID}";
+    // SQL query to fetch projects of the current department with join
+    $sql = "SELECT a.project_ID, p.project_name, a.employee_ID, a.status, a.workflow, a.begin_date, a.end_date
+            FROM assignments a
+            INNER JOIN projects p ON a.project_ID = p.project_ID
+            WHERE a.department_ID = {$currentDepartmentID}";
 
     $result = $conn->query($sql);
 
@@ -23,7 +25,7 @@ function displayDepartmentProjects()
         while ($row = $result->fetch_assoc()) {
             $project_ID = $row["project_ID"];
             $projectName = $row["project_name"];
-            $employee_ID = $row["employee_ID"]; // Assuming you want to display the employee_ID as assigned_by
+            $employee_ID = $row["employee_ID"];
             $status = $row["status"];
             $workflow = $row["workflow"];
             $beginDate = $row["begin_date"];
@@ -56,6 +58,7 @@ function displayDepartmentProjects()
     // Close connection
     $conn->close();
 }
+
 
 function displayCommonManagementDetails()
 {
