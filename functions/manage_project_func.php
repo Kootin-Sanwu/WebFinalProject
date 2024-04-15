@@ -134,7 +134,7 @@ function displayAllProjects()
             echo "<td>{$end_Date}</td>";
             echo "<td>{$workflow}</td>";
 
-            echo "<td><form class='action-container-two' action='../managements/admin_management.php'?msg='delete' method='post'>";
+            echo "<td><form class='action-container-two' action='../managements/admin_management.php?msg=delete' method='post'>";
             echo "<input type='hidden' name='project_ID' value='{$project_ID}'>";
             echo "<button type='submit' value='Delete'>Delete</button>";
             echo "</form>";
